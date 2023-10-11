@@ -1,0 +1,15 @@
+{
+    "name": "draad/maps",
+    "title": "Kaart",
+    "description": "Laad een kaart in uit de kaarten post type",
+    "textdomain": "draad",
+    "style": [ "leaflet-style", "leaflet-markerCluster-style", "draad-maps-style" ],
+    "script": [ "leaflet-script", "leaflet-markerCluster-script", "leaflet-markercluster-src-script", "draad-tabs-script", "draad-maps-module" ],
+    "category": "widgets",
+    "icon": "location-alt",
+    "keywords": ["Kaart", "Kaarten", "Openstreetmap", "Draad", "Locaties"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "maps.php"
+    }
+}

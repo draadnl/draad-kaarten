@@ -1,0 +1,597 @@
+`use strict`;
+
+const draad = {};
+const mapEvent = new Event('draadMapsLoaded');
+
+function draadMapsInit() {
+
+    
+    draad.maps = [];
+    const maps = document.querySelectorAll('.draad-maps');
+    maps.forEach((map) => {
+        
+        const mapWrapper = map.closest('.draad-maps');
+
+        const locations = mapWrapper.querySelectorAll('.draad-infowindow');
+        let minHeight = 0;
+        locations.forEach((location) => {
+            
+            const height = location.offsetHeight;
+            if ( height > minHeight ) {
+                minHeight = height;
+            }
+        
+        });
+
+        const baseFontSize = parseInt(getComputedStyle(document.documentElement).fontSize);
+        map.style.minHeight = minHeight / baseFontSize + 2 + 'rem';
+        
+        // const center = [52.0633, 4.3235];
+        const draadMap = new Draad_Map(map);
+        
+        locations.forEach((location) => {
+            
+            draadMap.addMarker( location );
+        
+        });
+
+        const marker = (document.getElementById( map.id + '-geojson')) ? document.getElementById( map.id + '-geojson').getAttribute('data-draad-marker') : false;
+        const markerActive = (document.getElementById( map.id + '-geojson')) ? document.getElementById( map.id + '-geojson').getAttribute('data-draad-marker-active') : false;
+
+        if ( document.getElementById( map.id + '-geojson') ) {
+            draadMap.addData( JSON.parse(document.getElementById( map.id + '-geojson').textContent), marker, markerActive );
+        }
+        if ( document.getElementById( map.id + '-borders') ) {
+            draadMap.addData( JSON.parse(document.getElementById( map.id + '-borders').textContent) );
+        }
+        
+        draad.maps.push(draadMap);
+
+    });
+}
+
+document.addEventListener('DOMContentLoaded', draadMapsInit);
+
+class Draad_Map {
+
+    constructor( node ) {
+        this._node = node;
+
+        const wrapper = node.closest('.draad-maps__wrapper');
+        const search = wrapper.querySelector('.draad-search');
+        if (search) {
+
+            this._searchInput = search.querySelector('.draad-search__input');
+            this._searchSubmit = search.querySelector('.draad-search__submit');
+            this._searchHandler();
+
+        }
+
+        const centerAttr = node.getAttribute('data-draad-center');
+        if (!centerAttr) {
+            return;
+        }
+
+        const center = centerAttr.split('/').map(Number);
+        const zoom = center[0];
+        center.shift();
+
+        this._center = center;
+        this._zoom = zoom;
+        this._createMap();
+    }
+
+    _node = null;
+
+    get node() {
+        return this._node;
+    }
+
+    _center = null;
+
+    get center() {
+        return this._center;
+    }
+
+    _zoom = null;
+
+    get zoom() {
+        return this._zoom;
+    }
+
+    set zoom(zoom) {
+        this._zoom = zoom;
+    }
+
+    _map = null;
+
+    get map() {
+        return this._map;
+    }
+
+    _layers = [];
+
+    set layers(layers) {
+        this._layers = layers;
+    }
+
+    get layers() {
+        return this._layers;
+    }
+
+    _layerStyles = {
+        "default": {
+            "color": "#248641",
+            "weight": 4,
+            "dashArray": "8, 8",
+            "fillColor": "#248641",
+            "fillOpacity": 0
+        },
+        "focus": {
+            "color": "#7D6200",
+            "weight": 4,
+            "dashArray": "0, 0",
+            "fillColor": "#248641",
+            "fillOpacity": 0.15
+        },
+        "hover": {
+            "color": "#248641",
+            "weight": 4,
+            "dashArray": "0, 0",
+            "fillColor": "#248641",
+            "fillOpacity": 0.15
+        },
+        "highlight": {
+            "color": "#248641",
+            "weight": 4,
+            "dashArray": "0, 0",
+            "fillColor": "#248641",
+            "fillOpacity": 0.3
+        }
+    };
+
+    set layerStyles(styles) {   
+        this._layerStyles = styles;
+    }
+
+    _markers = [];
+
+    get markers() {
+        return this._markers;
+    }
+
+    _clusters = L.markerClusterGroup(
+        {
+            showCoverageOnHover: false,
+            iconCreateFunction: cluster => {
+
+                var childCount = cluster.getChildCount();    
+                var c = ' marker-cluster-';
+                if (childCount < 10) {
+                    c += 'small';
+                } else if (childCount < 100) {
+                    c += 'medium';
+                } else {
+                    c += 'large';
+                }
+    
+                return new L.DivIcon({ html: '<div><span>' + childCount + ' <span aria-label="markers"></span>' + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
+    
+            }
+        }
+    );
+
+    _markerStyles = {
+        "primary": L.icon({
+            iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker.png',        
+            iconSize:     [39.2, 51.2],
+            iconAnchor: [19.6, 51.2],
+            popupAnchor:  [-3, -76]
+        }),
+        "hover": L.icon({
+            iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png',
+            iconSize:     [39.2, 51.2],
+            iconAnchor: [19.6, 51.2],
+            popupAnchor:  [-3, -76]
+        }),
+        "active": L.icon({
+            iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png',
+            iconSize:     [39.2, 51.2],
+            iconAnchor: [19.6, 51.2],
+            popupAnchor:  [-3, -76]
+        }),
+        "search": L.icon({
+            iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png',
+            iconSize:     [39.2, 51.2],
+            iconAnchor: [19.6, 51.2],
+            popupAnchor:  [-3, -76]
+        }),
+    };
+
+    set markerStyles(styles) {
+        this._markerStyles = styles;
+    }
+
+    _searchMarker = null;
+
+    get searchMarker() {
+        return this._searchMarker;
+    }
+
+    _searchRadius = null;
+
+    get searchRadius() {
+        return this._searchRadius;
+    }
+
+    _radius = 3000;
+
+    get radius() {
+        return this._radius;
+    }
+
+    set radius(radius) {
+        this._radius = radius;
+    }
+
+    _searchInput = null;
+
+    _searchSubmit = null;
+
+    _createMap() {
+        this._map = L.map(this._node.id).setView(this._center, this._zoom);
+
+        // Tile layer
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 16,
+            minZoom: 10,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(this.map);
+
+        // remove zoom control
+        this.map.removeControl(this.map.zoomControl);
+
+        L.control.zoom(
+            {
+                position: 'bottomleft',
+                zoomInText: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g><path d="M10 4.16602V15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.16602 10H15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>',
+                zoomInTitle: 'Zoom in',
+                zoomOutText: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g><path d="M4.16602 10H15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>',
+                zoomOutTitle: 'Zoom out'
+            }
+        ).addTo(this.map);
+        
+    }
+
+    addData( data, marker = '', markerActive = '' ) {
+
+        const layer = L.geoJson(data);
+        const polygonStyles = this._layerStyles;
+        const markerStyles = this._markerStyles;
+
+        layer.eachLayer( (collection) => {
+            collection.bindPopup(collection.feature.properties.name);
+
+            if ( typeof collection.setStyle === 'function' ) {
+                collection.setStyle(polygonStyles.default);
+            } else if ( typeof collection.setIcon === 'function' ) {
+
+                if ( marker ) {
+                    collection.setIcon( L.icon({
+                        iconUrl: marker,
+                        iconSize:     [40, 45],
+                        iconAnchor: [20, 45],
+                        popupAnchor:  [-3, -76]
+                    }) );
+                } else {
+                    collection.setIcon(markerStyles.primary);
+                }
+            }
+
+            collection.addEventListener('click', () => {
+
+                // close all collections
+                this._layers.forEach((layer) => {
+                    layer.eachLayer( (collection) => {
+                        collection.closePopup();
+
+                        if ( typeof collection.setIcon === 'function' ) {
+
+                            collection._popup._isOpen = false;
+
+                            if ( marker ) {
+                                collection.setIcon( L.icon({
+                                    iconUrl: marker,
+                                    iconSize:     [39.2, 51.2],
+                                    iconAnchor: [19.6, 51.2],
+                                    popupAnchor:  [-3, -76]
+                                }) );
+                            } else {
+                                collection.setIcon(markerStyles.primary);
+                            }
+
+                        }
+
+                    });
+                });
+
+                collection.openPopup();
+
+                if ( typeof collection.setStyle === 'function' ) {
+                    collection.setStyle(polygonStyles.highlight);
+
+                    collection._popup._isOpen = true;
+
+                    // zoom to collection
+                    this._map.flyToBounds(collection.getBounds(), {padding: [0, 0]});
+
+                } else if ( typeof collection.setIcon === 'function' ) {
+
+                    if ( markerActive ) {
+                        collection.setIcon( L.icon({
+                            iconUrl: markerActive,
+                            iconSize:     [39.2, 51.2],
+                            iconAnchor: [19.6, 51.2],
+                            popupAnchor:  [-3, -76]
+                        }) );
+                    } else {
+                        collection.setIcon(markerStyles.active);
+                    }
+
+                }
+
+            });
+
+            collection.addEventListener('mouseover', () => {
+
+                if ( typeof collection.setStyle === 'function' ) {
+                    collection.setStyle(polygonStyles.hover);
+                }
+
+            });
+
+            collection.addEventListener('mouseout', () => {
+
+                if ( typeof collection.setStyle === 'function' ) {
+
+                    if ( collection._popup._isOpen ) {
+                        collection.setStyle(polygonStyles.highlight);
+                    } else {
+                        collection.setStyle(polygonStyles.default);
+                    }
+                    
+                }
+
+            });
+
+            // on close popup
+            collection.addEventListener('popupclose', () => {
+                
+                if ( typeof collection.setStyle === 'function' ) {
+                    collection.setStyle(polygonStyles.default);
+
+                    collection._popup._isOpen = false;
+
+                } else if ( typeof collection.setIcon === 'function' ) {
+
+                    if ( marker ) {
+                        collection.setIcon( L.icon({
+                            iconUrl: marker,
+                            iconSize:     [39.2, 51.2],
+                            iconAnchor: [19.6, 51.2],
+                            popupAnchor:  [-3, -76]
+                        }) );
+                    } else {
+                        collection.setIcon(markerStyles.primary);
+                    }
+
+                }
+
+            });
+
+            this._clusters.addLayer(collection);
+        });
+
+        this._clusters.addTo(this._map);
+        
+        this._layers.push(layer);
+
+    }
+
+    addMarker( node, style = 'primary' ) {
+
+        const centerAttr = node.getAttribute('data-draad-center');
+        if (!centerAttr) {
+            return;
+        }
+
+        const center = centerAttr.split('/').map(Number);
+
+        const marker = L.marker( new L.LatLng(center[0], center[1]), {
+            icon: this._markerStyles[style], 
+            alt: node.querySelector('.draad-infowindow__title').textContent
+        });
+        this._clusters.addLayer(marker);
+
+        marker.addEventListener('click', () => {
+
+            // Close all other markers
+            this._markers.forEach((marker) => {
+                marker.setIcon(this._markerStyles.primary);
+
+                if ( marker._icon ) {
+                    marker._icon.setAttribute( 'aria-selected', 'false' );
+                }
+            });
+
+            // Close all other cards
+            const cards = document.querySelectorAll('.draad-infowindow');
+            cards.forEach((card) => {
+                card.classList.remove('draad-map__card--active');
+                card.setAttribute( 'aria-hidden', 'true' );
+                card.setAttribute( 'hidden', 'true' );
+            });
+
+            marker.setIcon(this._markerStyles.active);
+
+            marker._icon.setAttribute( 'aria-selected', 'true' );
+
+            node.classList.add('draad-map__card--active');
+            node.setAttribute( 'aria-hidden', 'false' );
+            node.removeAttribute( 'hidden' );
+
+            node.focus();
+        });
+
+        const closeButton = node.querySelector('.draad-infowindow__close');
+        closeButton.addEventListener('click', () => {
+            marker.setIcon(this._markerStyles.primary);
+
+            marker._icon.setAttribute( 'aria-selected', 'false' );
+
+            node.classList.remove('draad-map__card--active');
+            node.setAttribute( 'aria-hidden', 'true' );
+            node.setAttribute( 'hidden', 'true' );
+
+            marker._icon.focus();
+        });
+
+        this._markers.push(marker);
+
+    }
+
+    removeMarkers() {
+            
+        this._markers.forEach((marker) => {
+            this._map.removeLayer(marker);
+        });
+
+        this._markers = [];
+
+    }
+
+    _searchHandler() {
+
+        const autocomplete = document.getElementById( this._searchInput.getAttribute('list') );
+
+        this._searchInput.addEventListener( 'keyup', debounce(() => {
+
+            // get posible locations from nominatim api
+            fetch(`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this._searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=json&addressdetails=1&limit=10`)
+                .then(response => response.json())
+                .then(data => {
+
+                    autocomplete.innerHTML = '';
+                    data.forEach((location) => {
+                        const option = document.createElement('option');
+                        option.value = location.display_name;
+                        autocomplete.appendChild(option);
+                    });
+                });
+
+        }, 750) );
+
+        this._searchSubmit.addEventListener( 'click', (e) => {
+            e.preventDefault();
+
+            this.removeSearchMarker();
+
+            // get posible locations from nominatim api
+            fetch(`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this._searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&limit=1`)
+                .then(response => response.json())
+                .then(data => {
+
+                    if ( data.features.length === 0 ) {
+                        return;
+                    }
+
+                    this.addSearchMarker( data );
+                }).then(() => {
+                    this.sortLocations();
+                });
+
+        } );
+
+    }
+
+    addSearchMarker(geojson) {
+
+        // add new layer group top map with search marker
+        this._searchMarker = L.layerGroup();
+
+        // add geojson layer to layer group
+        this._searchMarker.addLayer( L.geoJson(geojson, {
+            style: {
+                color: "#1261A3",
+                weight: 3,
+                fillColor: "#1261A3",
+                fillOpacity: .3,
+            },
+            onEachFeature: (feature, layer) => {
+
+                if ( typeof layer.setIcon === 'function' ) {
+                    layer.setIcon( this._markerStyles.search );
+                } else if ( typeof layer.setStyle === 'function' ) {
+                    layer.setStyle( this._layerStyles.default );
+                }
+            }
+        }) );
+
+        this._searchMarker.addTo(this._map);
+
+        // zoom to search marker
+        this._map.flyToBounds(L.geoJson(geojson).getBounds(), {padding: [50, 50]});
+        
+
+    }
+
+    removeSearchMarker() {
+
+        if ( !this._searchMarker ) {
+            return;
+        }
+
+        this._map.removeLayer(this._searchMarker);
+        this._searchMarker = null;
+
+    }
+
+    sortLocations() {
+
+        const wrapper = this._node.closest('.draad-maps__wrapper');
+        const list = wrapper.querySelector('.draad-grid');
+        const locations = wrapper.querySelectorAll('.draad-card');
+        const center = this._searchMarker.getLayers()[0].getBounds().getCenter();
+
+        // sort locations by distance to search marker
+        const sortedLocations = [...locations].sort((a, b) => {
+
+            const aCenter = a.getAttribute('data-draad-center').split('/').map(Number);
+            const bCenter = b.getAttribute('data-draad-center').split('/').map(Number);
+
+            const aDistance = this._map.distance(center, aCenter);
+            const bDistance = this._map.distance(center, bCenter);
+
+            return aDistance - bDistance;
+
+        });
+
+        // remove all locations from dom
+        list.innerHTML = '';
+
+        // add sorted locations to dom
+        sortedLocations.forEach((location) => {
+            list.appendChild(location);
+        });
+
+    }
+
+}
+
+function debounce(callback, wait) {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(function () { callback.apply(this, args); }, wait);
+    };
+}

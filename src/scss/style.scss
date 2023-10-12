@@ -98,6 +98,7 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
+    white-space: nowrap;
 
     &:focus-visible {
         outline: 2px dashed var(--clr-secondary);
@@ -174,11 +175,11 @@
     &__list {
         grid-column: 1 / -1;
         grid-row: 2;
-        place-self: end;
-        display: flex;
+        display: block;
+        position: relative;
         
         @media (min-width: 30rem) {
-            grid-column: 2;
+            grid-column: 3;
             grid-row: 1;
         }
 
@@ -192,6 +193,10 @@
 
         &[aria-selected="true"] {
             @extend .sr-only;
+
+            @supports (-webkit-appearance:none) {
+                display: none;
+            }
         }
 
     } 
@@ -332,6 +337,7 @@
     }
 
     &__list {
+        position: relative;
         z-index: 401;
         pointer-events: none;
         grid-row: 2 / -1;
@@ -360,9 +366,10 @@
     position: relative;
     isolation: isolate;
     pointer-events: auto;
+    display: grid;
 
     &[hidden] {
-        display: block;
+        display: grid;
         visibility: hidden;
         pointer-events: none;
         position: absolute;

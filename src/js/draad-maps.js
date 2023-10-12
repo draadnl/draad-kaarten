@@ -227,6 +227,23 @@ class Draad_Map {
 
             if ( location ) {
 
+                // close other infowindows
+                const locations = location.closest( '.draad-maps__wrapper' ).querySelectorAll( '.draad-infowindow' );
+                for ( const location of locations ) {
+                    location.classList.remove( 'draad-infowindow--active' );
+                    location.setAttribute( 'aria-hidden', 'true' );
+                    location.setAttribute( 'hidden', '' );
+                }
+
+                // update marker of other infowindows
+                this._layers['locations'].eachLayer( ( layer ) => {
+                    if ( layer.selected === true ) {
+                        draad._markerSetState( layer, 'default' );
+                        layer.selected = false;
+                    }
+                } );
+
+
                 if ( marker.selected === true ) {
 
                     marker.locationTrap.active = false;
@@ -293,38 +310,62 @@ class Draad_Map {
 
         switch ( state ) {
             case 'default':
-                var style = this._markerStyles.primary;
                 if ( markerSrc ) {
-                    style.options.iconUrl = markerSrc;
+                    marker.setIcon( L.icon({
+                        iconUrl: markerSrc,
+                        iconSize:     [39.2, 51.2],
+                        iconAnchor: [19.6, 51.2],
+                        popupAnchor:  [-3, -76]
+                    }) );
+                } else {
+                    marker.setIcon( this._markerStyles.primary );
                 }
-                marker.setIcon( style );
+
                 break;
             case 'active':
-                var style = this._markerStyles.active;
-                if ( markerSrc ) {
-                    style.options.iconUrl = markerActiveSrc;
+                if ( markerActiveSrc ) {
+                    marker.setIcon( L.icon({
+                        iconUrl: markerActiveSrc,
+                        iconSize:     [39.2, 51.2],
+                        iconAnchor: [19.6, 51.2],
+                        popupAnchor:  [-3, -76]
+                    }) );
+                } else {
+                    marker.setIcon( this._markerStyles.active );
                 }
-                marker.setIcon( style );
+
                 break;
             case 'hover':
-                var style = this._markerStyles.hover;
-                if ( markerSrc ) {
-                    style.options.iconUrl = markerActiveSrc;
+                if ( markerActiveSrc ) {
+                    marker.setIcon( L.icon({
+                        iconUrl: markerActiveSrc,
+                        iconSize:     [39.2, 51.2],
+                        iconAnchor: [19.6, 51.2],
+                        popupAnchor:  [-3, -76]
+                    }) );
+                } else {
+                    marker.setIcon( this._markerStyles.hover );
                 }
-                marker.setIcon( style );
+
                 break;
             case 'focus':
-                var style = this._markerStyles.focus;
-                if ( markerSrc ) {
-                    style.options.iconUrl = markerActiveSrc;
+                if ( markerActiveSrc ) {
+                    marker.setIcon( L.icon({
+                        iconUrl: markerActiveSrc,
+                        iconSize:     [39.2, 51.2],
+                        iconAnchor: [19.6, 51.2],
+                        popupAnchor:  [-3, -76]
+                    }) );
+                } else {
+                    marker.setIcon( this._markerStyles.focus );
                 }
-                marker.setIcon( style );
+
                 break;
         }
                 
     }
 
-    _addData = ( data, marker = null, markerActive = null ) => {
+    _addData = ( data, markerSrc = null, markerActiveSrc = null ) => {
 
         const layer = L.geoJSON( data );
         for ( const feature of layer.getLayers() ) {
@@ -343,19 +384,20 @@ class Draad_Map {
             // set icon
             if ( typeof feature.setIcon === 'function' ) {
 
-                if ( marker ) {
-                    const style = this._markerStyles.primary;
-                    style.options.iconUrl = marker;
-                    feature.setIcon( style );
-                    feature.options.alt = feature.feature.properties.name;
-                    feature.selected = false;
-                    this._markerHandler( feature, null, marker, markerActive );
+                if ( markerSrc ) {
+                    feature.setIcon( L.icon({
+                        iconUrl: markerSrc,
+                        iconSize:     [39.2, 51.2],
+                        iconAnchor: [19.6, 51.2],
+                        popupAnchor:  [-3, -76]
+                    }) );
                 } else {
                     feature.setIcon( this._markerStyles.primary );
-                    feature.options.alt = feature.feature.properties.name;
-                    feature.selected = false;
-                    this._markerHandler( feature );
                 }
+
+                feature.options.alt = feature.feature.properties.name;
+                feature.selected = false;
+                this._markerHandler( feature, null, markerSrc, markerActiveSrc );
 
 
             }

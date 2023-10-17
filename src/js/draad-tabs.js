@@ -2,115 +2,115 @@
 
 class Draad_Tabs {
   constructor(groupNode) {
-    this.tablistNode = groupNode;
+	this.tablistNode = groupNode;
 
-    this.tabs = [];
+	this.tabs = [];
 
-    this.firstTab = null;
-    this.lastTab = null;
+	this.firstTab = null;
+	this.lastTab = null;
 
-    this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
-    this.tabpanels = [];
+	this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
+	this.tabpanels = [];
 
-    for (var i = 0; i < this.tabs.length; i++) {
-      var tab = this.tabs[i];
-      var tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
+	for (var i = 0; i < this.tabs.length; i++) {
+	  var tab = this.tabs[i];
+	  var tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
 
-      tab.setAttribute('aria-selected', 'false');
-      this.tabpanels.push(tabpanel);
+	  tab.setAttribute('aria-selected', 'false');
+	  this.tabpanels.push(tabpanel);
 
-      tab.addEventListener('keydown', this.onKeydown.bind(this));
-      tab.addEventListener('click', this.onClick.bind(this));
+	  tab.addEventListener('keydown', this.onKeydown.bind(this));
+	  tab.addEventListener('click', this.onClick.bind(this));
 
-      if (!this.firstTab) {
-        this.firstTab = tab;
-      }
-      this.lastTab = tab;
-    }
+	  if (!this.firstTab) {
+		this.firstTab = tab;
+	  }
+	  this.lastTab = tab;
+	}
 
-    this.setSelectedTab(this.firstTab);
+	this.setSelectedTab(this.firstTab);
   }
 
   setSelectedTab(currentTab) {
-    for (var i = 0; i < this.tabs.length; i += 1) {
-      var tab = this.tabs[i];
-      if (currentTab === tab) {
-        tab.setAttribute('aria-selected', 'true');
-        this.tabpanels[i].removeAttribute('hidden');
-    } else {
-        tab.setAttribute('aria-selected', 'false');
-        this.tabpanels[i].setAttribute('hidden', 'hidden');
-      }
-    }
+	for (var i = 0; i < this.tabs.length; i += 1) {
+	  var tab = this.tabs[i];
+	  if (currentTab === tab) {
+		tab.setAttribute('aria-selected', 'true');
+		this.tabpanels[i].removeAttribute('hidden');
+	} else {
+		tab.setAttribute('aria-selected', 'false');
+		this.tabpanels[i].setAttribute('hidden', 'hidden');
+	  }
+	}
   }
 
   moveFocusToTab(currentTab) {
-    currentTab.focus();
+	currentTab.focus();
   }
 
   moveFocusToPreviousTab(currentTab) {
-    var index;
+	var index;
 
-    if (currentTab === this.firstTab) {
-      this.moveFocusToTab(this.lastTab);
-    } else {
-      index = this.tabs.indexOf(currentTab);
-      this.moveFocusToTab(this.tabs[index - 1]);
-    }
+	if (currentTab === this.firstTab) {
+	  this.moveFocusToTab(this.lastTab);
+	} else {
+	  index = this.tabs.indexOf(currentTab);
+	  this.moveFocusToTab(this.tabs[index - 1]);
+	}
   }
 
   moveFocusToNextTab(currentTab) {
-    var index;
+	var index;
 
-    if (currentTab === this.lastTab) {
-      this.moveFocusToTab(this.firstTab);
-    } else {
-      index = this.tabs.indexOf(currentTab);
-      this.moveFocusToTab(this.tabs[index + 1]);
-    }
+	if (currentTab === this.lastTab) {
+	  this.moveFocusToTab(this.firstTab);
+	} else {
+	  index = this.tabs.indexOf(currentTab);
+	  this.moveFocusToTab(this.tabs[index + 1]);
+	}
   }
 
   /* EVENT HANDLERS */
 
   onKeydown(event) {
-    var tgt = event.currentTarget,
-      flag = false;
+	var tgt = event.currentTarget,
+	  flag = false;
 
-    switch (event.key) {
-      case 'ArrowLeft':
-        this.moveFocusToPreviousTab(tgt);
-        flag = true;
-        break;
+	switch (event.key) {
+	  case 'ArrowLeft':
+		this.moveFocusToPreviousTab(tgt);
+		flag = true;
+		break;
 
-      case 'ArrowRight':
-        this.moveFocusToNextTab(tgt);
-        flag = true;
-        break;
+	  case 'ArrowRight':
+		this.moveFocusToNextTab(tgt);
+		flag = true;
+		break;
 
-      case 'Home':
-        this.moveFocusToTab(this.firstTab);
-        flag = true;
-        break;
+	  case 'Home':
+		this.moveFocusToTab(this.firstTab);
+		flag = true;
+		break;
 
-      case 'End':
-        this.moveFocusToTab(this.lastTab);
-        flag = true;
-        break;
+	  case 'End':
+		this.moveFocusToTab(this.lastTab);
+		flag = true;
+		break;
 
-      default:
-        break;
-    }
+	  default:
+		break;
+	}
 
-    if (flag) {
-      event.stopPropagation();
-      event.preventDefault();
-    }
+	if (flag) {
+	  event.stopPropagation();
+	  event.preventDefault();
+	}
   }
 
   // Since this example uses buttons for the tabs, the click onr also is activated
   // with the space and enter keys
   onClick(event) {
-    this.setSelectedTab(event.currentTarget);
+	this.setSelectedTab(event.currentTarget);
   }
 }
 
@@ -119,6 +119,6 @@ class Draad_Tabs {
 window.addEventListener('load', function () {
   var tablists = document.querySelectorAll('[role=tablist]');
   for (var i = 0; i < tablists.length; i++) {
-    new Draad_Tabs(tablists[i]);
+	new Draad_Tabs(tablists[i]);
   }
 });

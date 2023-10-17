@@ -6,4 +6,3 @@
 
     echo draad_maps_renderer( '', $args );
 
-?>

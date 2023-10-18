@@ -346,15 +346,17 @@
 		display: grid;
 		grid-template-columns: subgrid;
 		place-items: center;
+		padding: 1rem;
 		background: hsl( 0deg 0% 0% / .5 );
 		color: hsl( 0deg 0% 100% );
 		font-size: 1.5rem;
+		text-wrap: balance;
+		text-align: center;
 		text-shadow: 0 0 .5rem hsl( 0deg 0% 0% / .75 );
-		pointer-events: none;
-	}
 
-	&:focus-within &__instructions {
-		display: none;
+		p {
+			width: MIN( 80lvw, 90% );
+		}
 	}
 
 	&__list {

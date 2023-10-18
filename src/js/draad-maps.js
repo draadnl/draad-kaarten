@@ -137,6 +137,16 @@ class Draad_Map {
 
 		}
 
+		const instructions = this._outerWrapper.querySelector('.draad-maps__instructions');
+		if ( instructions ) {
+			instructions.addEventListener( 'click', () => {
+				instructions.remove();
+			} );
+			instructions.addEventListener( 'touchstart', () => {
+				instructions.remove();
+			} );
+		}
+
 	}
 
 	_createMap = () => {

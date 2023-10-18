@@ -67,13 +67,13 @@
 
 .mobile-only {
 	@media (min-width: 61.875rem) {
-		display: none;
+		display: none !important;
 	}
 }
 
 .desktop-only {
 	@media (max-width: 61.874rem) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -334,6 +334,27 @@
 		display: grid;
 		grid-template-columns: subgrid;
 		align-items: end;
+	}
+
+	&__instructions {
+		position: absolute;
+		z-index: 401;
+		width: 100%;
+		height: 100%;
+		grid-column: 1 / -1;
+		grid-row: 2 / -1;
+		display: grid;
+		grid-template-columns: subgrid;
+		place-items: center;
+		background: hsl( 0deg 0% 0% / .5 );
+		color: hsl( 0deg 0% 100% );
+		font-size: 1.5rem;
+		text-shadow: 0 0 .5rem hsl( 0deg 0% 0% / .75 );
+		pointer-events: none;
+	}
+
+	&:focus-within &__instructions {
+		display: none;
 	}
 
 	&__list {

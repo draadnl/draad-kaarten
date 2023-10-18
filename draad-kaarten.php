@@ -191,6 +191,10 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 							<div class="draad-maps" id="draad-maps-'. $mapId .'" '. $attributes .'>
 
 								<div class="draad-maps__map" id="draad-maps-'. $mapId .'-map"></div>
+								
+								<div class="draad-maps__instructions mobile-only"> 
+									<p>'. __('Sleep met twee vingers om de kaart te bewegen.', 'draad') .'</p>
+								</div>
 
 								<div class="draad-maps__list" id="draad-maps-'. $mapId .'-list">';
 						

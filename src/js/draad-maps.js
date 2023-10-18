@@ -137,6 +137,16 @@ class Draad_Map {
 
 		}
 
+		const instructions = this._outerWrapper.querySelector('.draad-maps__instructions');
+		if ( instructions ) {
+			instructions.addEventListener( 'click', () => {
+				instructions.remove();
+			} );
+			instructions.addEventListener( 'touchstart', () => {
+				instructions.remove();
+			} );
+		}
+
 	}
 
 	_createMap = () => {
@@ -155,7 +165,6 @@ class Draad_Map {
 		// Tile layer
 		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 16,
-			minZoom: 10,
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 

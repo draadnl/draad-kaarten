@@ -308,45 +308,44 @@ class Draad_Map {
 
 			case 'default' :
 				if ( markerSrc ) {
-					src = markerSrc;
+					marker.setIcon( this._getLeafletIcon({
+						iconUrl: markerSrc,
+					}) );
 				} else {
 					marker.setIcon( this._markerStyles.primary );
 				}
 				break;
 
 			case 'active' :
-				if ( markerAactiveSrc ) {
-					src = markerAactiveSrc;
+				if ( markerActiveSrc ) {
+					marker.setIcon( this._getLeafletIcon({
+						iconUrl: markerActiveSrc,
+					}) );
 				} else {
 					marker.setIcon( this._markerStyles.active );
 				}
 				break;
 
 			case 'hover' :
-				if ( markerAactiveSrc ) {
-					src = markerAactiveSrc;
+				if ( markerActiveSrc ) {
+					marker.setIcon( this._getLeafletIcon({
+						iconUrl: markerActiveSrc,
+					}) );
 				} else {
 					marker.setIcon( this._markerStyles.hover );
 				}
 				break;
 
 			case 'focus' :
-				if ( markerAactiveSrc ) {
-					src = markerAactiveSrc;
+				if ( markerActiveSrc ) {
+					marker.setIcon( this._getLeafletIcon({
+						iconUrl: markerActiveSrc,
+					}) );
 				} else {
 					marker.setIcon( this._markerStyles.focus );
 				}
 				break;
 
-		}
-
-		if ( src ) {
-			marker.setIcon( {
-				url: src,
-				iconSize:	 [39.2, 51.2],
-				iconAnchor: [19.6, 51.2],
-				popupAnchor:  [-3, -76]
-			} );
 		}
 				
 	}
@@ -371,11 +370,8 @@ class Draad_Map {
 			if ( typeof feature.setIcon === 'function' ) {
 
 				if ( markerSrc ) {
-					feature.setIcon( L.icon({
+					feature.setIcon( this._getLeafletIcon({
 						iconUrl: markerSrc,
-						iconSize:	 [39.2, 51.2],
-						iconAnchor: [19.6, 51.2],
-						popupAnchor:  [-3, -76]
 					}) );
 				} else {
 					feature.setIcon( this._markerStyles.primary );
@@ -565,31 +561,18 @@ class Draad_Map {
 
 	_layers = [];
 
+	_getLeafletIcon = (config) => L.icon({
+		iconUrl: '',
+		iconSize:	 [39.2, 51.2],
+		iconAnchor: [19.6, 51.2],
+		popupAnchor:  [-3, -76]
+	, ...config});
+
 	_markerStyles = {
-		"primary": L.icon({
-			iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker.png',		
-			iconSize:	 [39.2, 51.2],
-			iconAnchor: [19.6, 51.2],
-			popupAnchor:  [-3, -76]
-		}),
-		"hover": L.icon({
-			iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png',
-			iconSize:	 [39.2, 51.2],
-			iconAnchor: [19.6, 51.2],
-			popupAnchor:  [-3, -76]
-		}),
-		"active": L.icon({
-			iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png',
-			iconSize:	 [39.2, 51.2],
-			iconAnchor: [19.6, 51.2],
-			popupAnchor:  [-3, -76]
-		}),
-		"search": L.icon({
-			iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png',
-			iconSize:	 [39.2, 51.2],
-			iconAnchor: [19.6, 51.2],
-			popupAnchor:  [-3, -76]
-		}),
+		"primary": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker.png'}),
+		"hover": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png'}),
+		"active": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png'}),
+		"search": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png'}),
 	};
 
 	_borderStyles = {

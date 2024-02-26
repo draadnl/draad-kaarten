@@ -1,0 +1,78 @@
+.button {
+	appearance: none;
+	background: var(--dk__button-background, var(--dk__clr-primary, #248641));
+	border: var(--dk__button-border, none);
+	border-color: var(--dk__button-border-color, transparent);
+	border-radius: var(--dk__button-border-radius 0.1875em);
+	box-shadow: none;
+	cursor: pointer;
+
+	position: relative;
+	isolation: isolate;
+
+	color: var(--dk__button-color, var(--dk__clr-text--light, #ffffff));
+	font-size: var(--dk__button-font-size, 1.125rem);
+	line-height: var(--dk__button-line-height, 1.5);
+	text-decoration: var(--dk__button-text-decoration, none);
+
+	padding-inline: var(--dk__button-padding-inline, 1em);
+	padding-block: var(--dk__button-padding-block, 0.5em);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--dk__button-gap, 0.5em);
+	white-space: nowrap;
+
+	&:focus-visible {
+		outline: var(--dk__button-outline, 0.125em dashed var(--dk__clr-secondary, #1261A3));
+	}
+
+	&--primary {
+		--dk__button-background: var(--dk__button-primary-background, var(--dk__clr-primary));
+		--dk__button-border: var(--dk__button-primary-border);
+		--dk__button-color: var(--dk__button-primary-color, var(--dk__clr-text--light));
+
+		&:hover,
+		&:focus-visible {
+			--dk__button-background: var(--dk__buttton-primary-background--hover, var(--dk__clr-primary--dark));
+		}
+	}
+
+	&--secondary {
+		--dk__button-background: var(--dk__button-secondary-background, #ffffff);
+		--dk__button-border: var(--dk__button-secondary-border, 0.0625em solid var(--dk__button-secondary-border-color, var(--dk__button-border-color)));
+		--dk__button-border-color: var(--dk__button-secondary-border-color, var(--dk__clr-primary, #248641));
+		--dk__button-color: var(--dk__button-secondary-color, var(--dk__clr-primary, #248641));
+
+		&:hover,
+		&:focus-visible {
+			--dk__button-border-color: var(--dk__button-secondary-border-color--hover, var(--dk__clr-primary--dark));
+			--dk__button-color: var(--dk__button-secondary-color--hover, var(--dk__clr-primary--dark));
+		}
+	}
+
+	&--icon-only {
+		width: var(--dk__button-icon-only-width, 2.75em);
+		height: var(--dk__button-icon-only-height, 2.75em);
+		padding-inline: var(--dk__button-icon-only-padding-inline, 0.5em);
+	}
+
+	svg {
+		width: var(--dk__button-icon-width, 1.25em);
+		height: var(--dk__button-icon-height, 1.25em);
+		
+		path {
+
+			&:not([fill]) {
+				fill: currentColor;
+			}
+
+			&[stroke-width] {
+				stroke: currentColor;
+				fill: none;
+			}
+		}
+	}
+
+}

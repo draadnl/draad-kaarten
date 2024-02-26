@@ -488,9 +488,9 @@ class Draad_Map {
 		// add geojson layer to layer group
 		searchLayer.addLayer( L.geoJson(geojson, {
 			style: {
-				color: "#1261A3",
+				color: this.colors.accent,
 				weight: 3,
-				fillColor: "#1261A3",
+				fillColor: this.colors.accent,
 				fillOpacity: .3,
 			},
 			onEachFeature: (feature, layer) => {
@@ -584,40 +584,47 @@ class Draad_Map {
 		"search": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png'}),
 	};
 
-	_borderStyles = {
+	documentComputedStyles = getComputedStyle(document.documentElement);
+	colors = {
+		"primary": this.documentComputedStyles.getPropertyValue('--dk__clr-primary') || "#248641",
+		"secondary": this.documentComputedStyles.getPropertyValue('--dk__clr-secondary') || "#7D6200",
+		"accent": this.documentComputedStyles.getPropertyValue('--dk__clr-accent') || "#1261A3",
+	};
+	
+	borderStyles = {
 		"default": {
-			"color": "#248641",
+			"color": this.colors.primary,
 			"weight": 4,
 			"dashArray": "8, 8",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0
 		},
 		"focus": {
-			"color": "#7D6200",
+			"color": this.colors.secondary,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0.15
 		},
 		"hover": {
-			"color": "#248641",
+			"color": this.colors.primary,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0.15
 		},
 		"highlight": {
-			"color": "#248641",
+			"color": this.colors.primary,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0.3
 		},
 		"search": {
-			"color": "#1261A3",
+			"color": this.colors.accent,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#1261A3",
+			"fillColor": this.colors.accent,
 			"fillOpacity": 0.3
 		}
 	};

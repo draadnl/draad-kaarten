@@ -3,6 +3,7 @@
 /**
  * Plugin Name: Draad Kaarten
  * text-domain: draad
+ * Version: 1.0.0
  */
 	
 function draad_maps_allow_json_upload($mimes) {

@@ -1,6 +1,6 @@
 .draad-card {
-	background: hsl( 0deg 0% 100% );
-	border: 0.0625rem solid hsl( 0deg 0% 75% );
+	background: hsl(0deg 0% 100%);
+	border: 0.0625rem solid hsl(0deg 0% 75%);
 	position: relative;
 	isolation: isolate;
 	pointer-events: auto;
@@ -27,7 +27,7 @@
 		}
 
 		> :first-child {
-			margin-block-start: var(--dk__card-padding-block, 2rem); 
+			margin-block-start: var(--dk__card-padding-block, 2rem);
 		}
 
 		> :last-child {

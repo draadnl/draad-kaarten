@@ -3,10 +3,10 @@
 
 		&-container {
 			.marker-cluster {
-				background: var(--dk__map-cluster-background, var(--dk__clr-accent, hsl( 207deg 80% 35% )));
-				border: var(--dk__map-cluster-border, .125rem solid var(--dk__map-cluster-border-color, hsl( 0deg 0% 100% )));
+				background: var(--dk__map-cluster-background, var(--dk__clr-accent, hsl(207deg 80% 35%)));
+				border: var(--dk__map-cluster-border, .125rem solid var(--dk__map-cluster-border-color, hsl(0deg 0% 100%)));
 				border-radius: var(--dk__map-cluster-border-radius, 50%);
-				box-shadow: var(--dk__map-cluster-shadow, 0 0 .25rem 0 hsl( 0deg 0% 0% / .3 ));
+				box-shadow: var(--dk__map-cluster-shadow, 0 0 .25rem 0 hsl(0deg 0% 0% / .3));
 				color: var(--dk__map-cluster-color, var(--dk__clr-text--light, #ffffff));
 				font-size: var(--dk__map-cluster-font-size, 1.25rem);
 				display: grid;
@@ -21,7 +21,7 @@
 		}
 
 		&-control-zoom {
-			background: var(--dk__map-controls-border-color, hsl( 138deg 58% 33% ));
+			background: var(--dk__map-controls-border-color, hsl(138deg 58% 33%));
 			border: none;
 			border-radius: var(--dk__map-controls-border-radius, 0.1875rem);
 			display: flex;
@@ -62,7 +62,7 @@
 
 		&-overlay-pane path {
 			fill-opacity: var(--dk__map-overlay-path-fill-opacity, 0);
-			
+
 			&:hover {
 				--dk__map-overlay-path-fill-opacity: var(--dk__map-overlay-path-fill-opacity--hover, .15);
 			}

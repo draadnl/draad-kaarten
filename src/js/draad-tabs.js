@@ -33,7 +33,7 @@ class Draad_Tabs {
 	 * @param {HTMLElement} currentTab the current tab element.
 	 */
 	setSelectedTab(currentTab) {
-		this.tabs?.forEach( (tab, i) => {
+		this.tabs?.forEach((tab, i) => {
 			const isSelected = tab === currentTab;
 			tab.setAttribute('aria-selected', isSelected);
 			this.tabPanels[i].hidden = !isSelected;
@@ -108,4 +108,4 @@ class Draad_Tabs {
 }
 
 // Initialize tablist.
-window.addEventListener( 'DOMContentLoaded', () => document.querySelectorAll( '.draad-tabs' )?.forEach( tablist => new Draad_Tabs( tablist ) ) );
+window.addEventListener('DOMContentLoaded', () => document.querySelectorAll('.draad-tabs')?.forEach(tablist => new Draad_Tabs(tablist)));

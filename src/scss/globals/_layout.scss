@@ -9,12 +9,12 @@
 	align-items: start;
 	aspect-ratio: var(--dk__map-aspect-ratio);
 	--dk__map-aspect-ratio: var(--dk__map-aspect-ratio--small, 360 / 670);
-	
+
 	@media (min-width: 37.4376rem) {
 		--dk__map-aspect-ratio: var(--dk__map-aspect-ratio--medium, initial);
 		grid-template-rows: auto 1fr;
 	}
-	
+
 	@media (min-width: 61.8125rem) {
 		--dk__map-aspect-ratio: var(--dk__map-aspect-ratio--large, 1200 / 830);
 	}
@@ -27,13 +27,13 @@
 		grid-template-rows: auto auto 1fr auto;
 		row-gap: var(--dk__layout-row-gap, 1rem);
 		align-items: start;
-		
+
 		@media (min-width: 29.9376rem) {
 			grid-template-rows: auto 1fr;
 		}
-		
+
 		@supports (grid-template-columns: subgrid) {
-			grid-template-columns: minmax( var(--dk__search-min-width, 14rem), var(--dk__search-max-width, 29.5rem) ) minmax( var(--dk__layout-gap, 1.25rem), 1fr ) auto;
+			grid-template-columns: minmax(var(--dk__search-min-width, 14rem), var(--dk__search-max-width, 29.5rem)) minmax(var(--dk__layout-gap, 1.25rem), 1fr) auto;
 		}
 	}
 
@@ -53,7 +53,7 @@
 		@media (min-width: 61.875rem) {
 			display: none;
 		}
-		
+
 		@media (max-width: 61.874rem) {
 			position: absolute;
 			z-index: 401;
@@ -65,15 +65,15 @@
 			grid-template-columns: subgrid;
 			place-items: center;
 			padding: 1rem;
-			background: var(--dk__map-instructions-background, hsl( 0deg 0% 0% / .5 ));
+			background: var(--dk__map-instructions-background, hsl(0deg 0% 0% / .5));
 			color: var(--dk__map-instructions-color, var(--dk__clr-text--light, #ffffff));
 			font-size: var(--dk__map-instructions-font-size, 1.5rem);
 			text-wrap: balance;
-			text-align: var( --dk__map-instructions-text-align, center );
-			text-shadow: var(--dk__map-instructions-text-shadow, 0 0 .5rem hsl( 0deg 0% 0% / .75 ));
+			text-align: var(--dk__map-instructions-text-align, center);
+			text-shadow: var(--dk__map-instructions-text-shadow, 0 0 .5rem hsl(0deg 0% 0% / .75));
 
 			p {
-				width: MIN( 80lvw, 90% );
+				width: MIN(80lvw, 90%);
 			}
 		}
 	}
@@ -83,7 +83,7 @@
 		z-index: 401;
 		pointer-events: none;
 		grid-row: 2 / -1;
-		width: MIN( var(--dk__infowindow-max-width, 24.0625rem), 100%);
+		width: MIN(var(--dk__infowindow-max-width, 24.0625rem), 100%);
 		padding: 1rem;
 		place-self: start end;
 
@@ -104,5 +104,5 @@
 .draad-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
-	gap: var(--dk__layout-gap, 1.25rem);	
-} 
+	gap: var(--dk__layout-gap, 1.25rem);
+}

@@ -7,7 +7,7 @@ class Draad_Focus_Trap {
 	 * 
 	 * @param {HTMLElement} node HTML element to trap focus in
 	 */
-	constructor( node ) {
+	constructor(node) {
 
 		this.rootEl = node;
 
@@ -25,57 +25,57 @@ class Draad_Focus_Trap {
 		return this._active;
 	}
 
-	set active( value ) {
+	set active(value) {
 
-		if ( typeof value !== 'boolean' ) {
+		if (typeof value !== 'boolean') {
 			return;
 		}
 
 		this._active = value;
 
-		if ( this._active ) {
+		if (this._active) {
 			this.activate();
 		} else {
 			this.deactivate();
 		}
 
 	}
-	
+
 	/**
 	 * Activate focus trap
 	 */
 	activate() {
 
-		if ( ! this._active ) {
+		if (!this._active) {
 			return;
 		}
 
 		// get all focusable children
-		const focusableElements = Array.from( this.rootEl.querySelectorAll( 'a[href], button, textarea, input, select, summary, [tabindex]' ) );
+		const focusableElements = Array.from(this.rootEl.querySelectorAll('a[href], button, textarea, input, select, summary, [tabindex]'));
 		// filter out elements with tabindex="-1"
-		focusableElements.filter( ( element ) => element.getAttribute( 'tabindex' ) !== '-1' );
+		focusableElements.filter((element) => element.getAttribute('tabindex') !== '-1');
 
-		if ( focusableElements.length === 0 ) {
+		if (focusableElements.length === 0) {
 			return;
 		}
 
 		// filter out elements that are not visible
-		const visibleFocusableElements = focusableElements.filter( ( element ) => element.offsetParent !== null );
+		const visibleFocusableElements = focusableElements.filter((element) => element.offsetParent !== null);
 
 		this.firstFocusableElement = visibleFocusableElements[0];
 
 		this.lastFocusableElement = visibleFocusableElements[visibleFocusableElements.length - 1];
 
-		this.rootEl.addEventListener( 'keydown', ( event ) => {
+		this.rootEl.addEventListener('keydown', (event) => {
 
-			if ( event.key !== 'Tab' ) {
+			if (event.key !== 'Tab') {
 				return;
 			}
 
-			if ( ! event.shiftKey && document.activeElement === this.lastFocusableElement ) {
+			if (!event.shiftKey && document.activeElement === this.lastFocusableElement) {
 				event.preventDefault();
 				this.firstFocusableElement.focus();
-			} else if ( event.shiftKey && document.activeElement === this.firstFocusableElement ) {
+			} else if (event.shiftKey && document.activeElement === this.firstFocusableElement) {
 				event.preventDefault();
 				this.lastFocusableElement.focus();
 			}
@@ -89,7 +89,7 @@ class Draad_Focus_Trap {
 	 */
 	deactivate() {
 
-		this.rootEl.removeEventListener( 'keydown', () => {} );
+		this.rootEl.removeEventListener('keydown', () => { });
 
 		this.firstFocusableElement = null;
 

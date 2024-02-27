@@ -242,7 +242,7 @@ class Draad_Map {
 
 				marker.locationTrap.active = false;
 
-				draad.markerSetState( marker, 'default', markerSrc, markerActiveSrc );
+				this.markerSetState( marker, 'default', markerSrc, markerActiveSrc );
 				marker.selected = false;
 
 				if ( marker.icon ) {
@@ -271,7 +271,7 @@ class Draad_Map {
 				// update marker of other infowindows
 				this.layers['locations'].eachLayer( ( layer ) => {
 					if ( layer.selected === true ) {
-						draad.markerSetState( layer, 'default' );
+						this.markerSetState( layer, 'default' );
 						layer.selected = false;
 					}
 				} );
@@ -306,14 +306,14 @@ class Draad_Map {
 				marker.openPopup();
 			}
 
-			draad.markerSetState( marker, (marker.selected ? 'default' : 'active'), markerSrc, markerActiveSrc );
+			this.markerSetState( marker, (marker.selected ? 'default' : 'active'), markerSrc, markerActiveSrc );
             marker.selected = !marker.selected;
 
 		} );
 
 		marker.on( 'popupclose', ( e ) => {
 
-			draad.markerSetState( marker, 'default', markerSrc, markerActiveSrc );
+			this.markerSetState( marker, 'default', markerSrc, markerActiveSrc );
 			marker.selected = false;
 
 			if ( location ) {
@@ -344,7 +344,6 @@ class Draad_Map {
 	 */
 	markerSetState = ( marker, state, markerSrc = null, markerActiveSrc = null ) => {
 
-		let src = null;
 		switch ( state ) {
 
 			case 'default' :
@@ -448,12 +447,12 @@ class Draad_Map {
 		const draad = this;
 		feature.on( 'click', ( e ) => {
 			
-			draad.dataSetState( feature, 'active' );
-			draad.map.flyToBounds(feature.getBounds(), {padding: [0, 0]});
+			this.dataSetState( feature, 'active' );
+			this.map.flyToBounds(feature.getBounds(), {padding: [0, 0]});
 
 		} );
 		
-		feature.on( 'popupclose', ( e ) => draad.dataSetState( feature, 'default' ) );
+		feature.on( 'popupclose', ( e ) => this.dataSetState( feature, 'default' ) );
 
 	}
 

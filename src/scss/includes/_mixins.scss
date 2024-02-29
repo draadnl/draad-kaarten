@@ -1,0 +1,49 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+	@font-face {
+		font-display: swap;
+		font-family: $font-family;
+		src: local($font-family),
+		url("#{$file-path}.woff2") format("woff2"),
+		url("#{$file-path}.woff") format("woff");
+		font-weight: $font-weight;
+		font-style: $font-style;
+		unicode-range: U+000-5FF;
+	}
+}
+
+@mixin sr-only($focusable: false) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+
+	@if $focusable {
+
+		&:focus,
+		&:focus-visible {
+			position: fixed;
+			inset: .5em auto auto .5em;
+			z-index: 100000;
+			width: auto;
+			height: auto;
+			margin: 0;
+			padding: .9375em 1.4375em .875em;
+			overflow: visible;
+			clip: auto;
+			white-space: normal;
+			outline-offset: -0.0625em;
+			background: hsl(240, 3.4%, 94.3%);
+			box-shadow: 0 0 0.125rem 0.125rem hsla(0, 0%, 0%, 0.6);
+			color: hsl(206.9, 67.8%, 41.4%);
+			font-size: 0.875rem;
+			font-weight: 600;
+			line-height: normal;
+			text-decoration: none;
+		}
+	}
+}

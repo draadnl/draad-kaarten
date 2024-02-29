@@ -1,124 +1,111 @@
-'use strict';
+`use strict`;
 
 class Draad_Tabs {
-  constructor(groupNode) {
-	this.tablistNode = groupNode;
 
-	this.tabs = [];
+	/** 
+	 * Constructor
+	 * 
+	 * @param {HTMLElement} groupNode The HTML element tat contains the tabs.
+	 */
+	constructor(groupNode) {
+		if (!groupNode) {
+			throw new Error('Draad Tabs: No tablist node provided.');
+		}
 
-	this.firstTab = null;
-	this.lastTab = null;
+		this.tablistNode = groupNode;
+		this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
+		this.tabPanels = this.tabs?.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+		this.firstTab = this.tabs[0] || null;
+		this.lastTab = this.tabs[this.tabs.length - 1] || null;
 
-	this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
-	this.tabpanels = [];
+		this.tabs?.forEach(tab => {
+			tab.setAttribute('aria-selected', 'false');
+			tab.addEventListener('keydown', this.onKeydown.bind(this));
+			tab.addEventListener('click', this.onClick.bind(this));
+		});
 
-	for (var i = 0; i < this.tabs.length; i++) {
-	  var tab = this.tabs[i];
-	  var tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
-
-	  tab.setAttribute('aria-selected', 'false');
-	  this.tabpanels.push(tabpanel);
-
-	  tab.addEventListener('keydown', this.onKeydown.bind(this));
-	  tab.addEventListener('click', this.onClick.bind(this));
-
-	  if (!this.firstTab) {
-		this.firstTab = tab;
-	  }
-	  this.lastTab = tab;
+		this.setSelectedTab(this.firstTab);
 	}
 
-	this.setSelectedTab(this.firstTab);
-  }
-
-  setSelectedTab(currentTab) {
-	for (var i = 0; i < this.tabs.length; i += 1) {
-	  var tab = this.tabs[i];
-	  if (currentTab === tab) {
-		tab.setAttribute('aria-selected', 'true');
-		this.tabpanels[i].removeAttribute('hidden');
-	} else {
-		tab.setAttribute('aria-selected', 'false');
-		this.tabpanels[i].setAttribute('hidden', 'hidden');
-	  }
-	}
-  }
-
-  moveFocusToTab(currentTab) {
-	currentTab.focus();
-  }
-
-  moveFocusToPreviousTab(currentTab) {
-	var index;
-
-	if (currentTab === this.firstTab) {
-	  this.moveFocusToTab(this.lastTab);
-	} else {
-	  index = this.tabs.indexOf(currentTab);
-	  this.moveFocusToTab(this.tabs[index - 1]);
-	}
-  }
-
-  moveFocusToNextTab(currentTab) {
-	var index;
-
-	if (currentTab === this.lastTab) {
-	  this.moveFocusToTab(this.firstTab);
-	} else {
-	  index = this.tabs.indexOf(currentTab);
-	  this.moveFocusToTab(this.tabs[index + 1]);
-	}
-  }
-
-  /* EVENT HANDLERS */
-
-  onKeydown(event) {
-	var tgt = event.currentTarget,
-	  flag = false;
-
-	switch (event.key) {
-	  case 'ArrowLeft':
-		this.moveFocusToPreviousTab(tgt);
-		flag = true;
-		break;
-
-	  case 'ArrowRight':
-		this.moveFocusToNextTab(tgt);
-		flag = true;
-		break;
-
-	  case 'Home':
-		this.moveFocusToTab(this.firstTab);
-		flag = true;
-		break;
-
-	  case 'End':
-		this.moveFocusToTab(this.lastTab);
-		flag = true;
-		break;
-
-	  default:
-		break;
+	/**
+	 * Set the selected tab.
+	 * 
+	 * @param {HTMLElement} currentTab the current tab element.
+	 */
+	setSelectedTab(currentTab) {
+		this.tabs?.forEach((tab, i) => {
+			const isSelected = tab === currentTab;
+			tab.setAttribute('aria-selected', isSelected);
+			this.tabPanels[i].hidden = !isSelected;
+		});
 	}
 
-	if (flag) {
-	  event.stopPropagation();
-	  event.preventDefault();
+	/**
+	 * Move focus to a tab.
+	 * 
+	 * @param {HTMLElement} currentTab The current tab element.
+	 */
+	moveFocusToTab(currentTab) {
+		currentTab.focus();
 	}
-  }
 
-  // Since this example uses buttons for the tabs, the click onr also is activated
-  // with the space and enter keys
-  onClick(event) {
-	this.setSelectedTab(event.currentTarget);
-  }
+	/**
+	 * Moves the focus to the adjacent tab based on teh spcified direction.
+	 * 
+	 * @param {HTMLElement} currentTab The current tab element.
+	 * @param {number} direction -	The direction to move the focus.
+	 * 								-1: Move to the previous tab.
+	 * 								1: Move to the next tab.
+	 */
+	moveFocusToAdjacentTab(currentTab, direction) {
+		let index = this.tabs.indexOf(currentTab);
+		index = (index + direction + this.tabs.length) % this.tabs.length;
+		this.moveFocusToTab(this.tabs[index]);
+	}
+
+	/**
+	 * onKeyDown event handler for tabs.
+	 * 
+	 * @param {object} event The keyboard event object.
+	 */
+	onKeydown(event) {
+		const tgt = event.currentTarget;
+		let stopPropagation = false;
+
+		switch (event.key) {
+			case 'ArrowLeft':
+				this.moveFocusToAdjacentTab(tgt, -1);
+				stopPropagation = true;
+				break;
+			case 'ArrowRight':
+				this.moveFocusToAdjacentTab(tgt, 1);
+				stopPropagation = true;
+				break;
+			case 'Home':
+				this.moveFocusToTab(this.firstTab);
+				stopPropagation = true;
+				break;
+			case 'End':
+				this.moveFocusToTab(this.lastTab);
+				stopPropagation = true;
+				break;
+		}
+
+		if (stopPropagation) {
+			event.stopPropagation();
+		}
+	}
+
+	/**
+	 * onClick event handler for tabs.
+	 * 
+	 * @param {object} event The click event object.
+	 */
+	onClick(event) {
+		this.setSelectedTab(event.currentTarget);
+	}
+
 }
 
-// Initialize tablist
-
-window.addEventListener('load', function () {
-  var tablists = document.querySelectorAll('[role=tablist]');
-  for (var i = 0; i < tablists.length; i++) {
-	new Draad_Tabs(tablists[i]);
-  }
-});
+// Initialize tablist.
+window.addEventListener('DOMContentLoaded', () => document.querySelectorAll('.draad-tabs')?.forEach(tablist => new Draad_Tabs(tablist)));

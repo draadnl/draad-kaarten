@@ -3,43 +3,56 @@ import Draad_Focus_Trap from './focusTrap.js';
 `use strict`;
 
 const draad = {};
-const mapEvent = new Event( 'draadMapsLoaded' );
+const mapEvent = new Event('draadMapsLoaded');
 
+/**
+ * Initialize maps
+ */
 function draadMapsInit() {
 
 	draad.maps = [];
-	const nodes = document.querySelectorAll( '.draad-maps' );
-	nodes.forEach( function ( node ) {
-		
+	const nodes = document.querySelectorAll('.draad-maps');
+	nodes.forEach((node) => {
+
 		// initialize map
-		const map = new Draad_Map( node );
+		const map = new Draad_Map(node);
 
 		// save map to draad.maps
-		draad.maps.push( map );
-		
-	} );
+		draad.maps.push(map);
+
+		document.dispatchEvent(mapEvent);
+
+	});
 
 }
 
-document.addEventListener( 'DOMContentLoaded', draadMapsInit );
+document.addEventListener('DOMContentLoaded', draadMapsInit);
 
 class Draad_Map {
 
-	constructor( node ) {
+	/**
+	 *  Constructor
+	 * 
+	 * @param {HTMLElement} node The HTML element that contains the map.
+	 */
+	constructor(node) {
+		if (!node) {
+			throw new Error('Draad Maps: No map node provided.');
+		}
 
-		this._node = node;
-		this._outerWrapper = node.closest( '.draad-maps__wrapper' );
+		this.mapNode = node;
+		this.outerWrapper = node.closest('.draad-maps__wrapper');
 
-		this._map = this._createMap();
+		this.map = this.createMap();
 
 		// Add clusters
 		const cluster = L.markerClusterGroup(
 			{
 				showCoverageOnHover: false,
 				iconCreateFunction: cluster => {
-	
-					var childCount = cluster.getChildCount();	
-					var c = ' marker-cluster-';
+
+					const childCount = cluster.getChildCount();
+					let c = ' marker-cluster-';
 					if (childCount < 10) {
 						c += 'small';
 					} else if (childCount < 100) {
@@ -47,120 +60,118 @@ class Draad_Map {
 					} else {
 						c += 'large';
 					}
-		
+
 					return new L.DivIcon({ html: '<div><span>' + childCount + ' <span aria-label="markers"></span>' + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
-		
+
 				},
 			}
 		);
 
 		// Manually created markers
-		const locations = this._outerWrapper.querySelectorAll( '.draad-infowindow' );
+		const locations = this.outerWrapper.querySelectorAll('.draad-card--infowindow');
 		const locationsLayer = L.layerGroup();
 		let minHeight = 0;
-		for ( const location of locations ) {
-			
+		locations.forEach(location => {
 			const height = location.offsetHeight;
-			if ( height > minHeight ) {
+			if (height > minHeight) {
 				minHeight = height;
 			}
 
-			const marker = this.addMarker( location );
-			marker.addTo( locationsLayer );
+			const marker = this.addMarker(location);
+			marker.addTo(locationsLayer);
 
-		}
-		this._layers['locations'] = locationsLayer;
-		this._layers['locations'].addTo( cluster );
+		});
+		this.layers['locations'] = locationsLayer;
+		this.layers['locations'].addTo(cluster);
 
 		const baseFontSize = parseInt(getComputedStyle(document.documentElement).fontSize);
 		node.style.minHeight = minHeight / baseFontSize + 3 + 'rem';
 
 		// Borders
-		if ( document.getElementById( node.id + '-borders') ) {
-			const borders = document.getElementById( node.id + '-borders').dataset.draadGeojson;
-			fetch( borders )
+		if (document.getElementById(node.id + '-borders')) {
+			const borders = document.getElementById(node.id + '-borders').dataset.draadGeojson;
+			fetch(borders)
 				.then(response => response.json())
 				.then(data => {
 
-					const geojsonLayer = this._addData( data );
-					this._layers['borders'] = geojsonLayer;
-					this._layers['borders'].addTo( cluster );
+					const geojsonLayer = this.addData(data);
+					this.layers['borders'] = geojsonLayer;
+					this.layers['borders'].addTo(cluster);
 				});
 		}
 
 		// GeoJSON
-		if ( document.getElementById( node.id + '-geojson') ) {
-			const geojson = document.getElementById( node.id + '-geojson').dataset.draadGeojson;
-			fetch( geojson )
+		if (document.getElementById(node.id + '-geojson')) {
+			const geojson = document.getElementById(node.id + '-geojson').dataset.draadGeojson;
+			fetch(geojson)
 				.then(response => response.json())
 				.then(data => {
 
-					const markerSrc = document.getElementById( node.id + '-geojson').dataset.draadMarker;
-					const markerActiveSrc = document.getElementById( node.id + '-geojson').dataset.draadMarkerActive;
-					const geojsonLayer = this._addData( data, markerSrc, markerActiveSrc );
-					this._layers['geojson'] = geojsonLayer;
-					this._layers['geojson'].addTo( cluster );
+					const markerSrc = document.getElementById(node.id + '-geojson').dataset.draadMarker;
+					const markerActiveSrc = document.getElementById(node.id + '-geojson').dataset.draadMarkerActive;
+					const geojsonLayer = this.addData(data, markerSrc, markerActiveSrc);
+					this.layers['geojson'] = geojsonLayer;
+					this.layers['geojson'].addTo(cluster);
 
 				});
 		}
 
 		// Add support to open infowindows with enter key
-		this._outerWrapper.addEventListener( 'keypress', ( e ) => {
+		this.outerWrapper.addEventListener('keypress', (e) => {
 
-			if ( e.key === 'Enter' ) {
+			if (e.key === 'Enter') {
 
-				var simulateClick = function (elem) {
+				const simulateClick = (elem) => {
 					// Create our event (with options)
-					var evt = new MouseEvent('click', {
+					const evt = new MouseEvent('click', {
 						bubbles: true,
 						cancelable: true,
 						view: window
 					});
 					// If cancelled, don't dispatch our event
-					var canceled = !elem.dispatchEvent(evt);
+					const canceled = !elem.dispatchEvent(evt);
 				};
 
-				simulateClick( e.target );
+				simulateClick(e.target);
 			}
 
-		} );
+		});
 
 		// Add clusters to map
-		this._map.addLayer( cluster );
+		this.map.addLayer(cluster);
 
-		const search = this._outerWrapper.querySelector('.draad-search');
+		const search = this.outerWrapper.querySelector('.draad-search');
 		if (search) {
 
-			this._searchInput = search.querySelector('.draad-search__input');
-			this._searchSubmit = search.querySelector('.draad-search__submit');
-			this._searchHandler();
+			this.searchInput = search.querySelector('.draad-search__input');
+			this.searchSubmit = search.querySelector('.draad-search__submit');
+			this.searchHandler();
 
 		}
 
-		const instructions = this._outerWrapper.querySelector('.draad-maps__instructions');
-		if ( instructions ) {
-			instructions.addEventListener( 'click', () => {
-				instructions.remove();
-			} );
-			instructions.addEventListener( 'touchstart', () => {
-				instructions.remove();
-			} );
+		const instructions = this.outerWrapper.querySelector('.draad-maps__instructions');
+		if (instructions) {
+			instructions.addEventListener('click', () => instructions.remove());
+			instructions.addEventListener('touchstart', () => instructions.remove());
 		}
 
 	}
 
-	_createMap = () => {
+	/**
+	 * Creates a new Leaflet map.
+	 */
+	createMap = () => {
 
-		const center = this._node.dataset.draadCenter.split( '/' );
+		const center = this.mapNode.dataset.draadCenter.split('/');
 
-		this._center = [ parseFloat( center[1] ), parseFloat( center[2] ) ];
-		this._zoom = parseInt( center[0] );
+		this.center = [parseFloat(center[1]), parseFloat(center[2])];
+		this.zoom = parseInt(center[0]);
 
-		const map = L.map( this._node.id, {
-			dragging: !L.Browser.mobile, 
+		const map = L.map(this.mapNode.id, {
+			dragging: !L.Browser.mobile,
 			tap: !L.Browser.mobile,
 			scrollWheelZoom: false
-		} ).setView( this._center, this._zoom );
+		}).setView(this.center, this.zoom);
 
 		// Tile layer
 		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -185,16 +196,21 @@ class Draad_Map {
 
 	}
 
-	addMarker = ( location ) => {
+	/**
+	 * Adds a marker to the map.
+	 * 
+	 * @param {HTMLElement} location Turns custom infowindow into a marker.
+	 */
+	addMarker = (location) => {
 
-		const center = location.dataset.draadCenter.split( '/' ).map( parseFloat );
-		const marker = L.marker( 
-			center, 
-			{ 
-				icon: this._markerStyles.primary,
+		const center = location.dataset.draadCenter.split('/').map(parseFloat);
+		const marker = L.marker(
+			center,
+			{
+				icon: this.markerStyles.primary,
 				riseOnHover: true,
-				alt: location.querySelector( '.draad-infowindow__title' ).textContent,
-			} 
+				alt: location.querySelector('.draad-card__title').textContent,
+			}
 		);
 
 		// set aria-selected
@@ -202,78 +218,86 @@ class Draad_Map {
 
 		marker.locationTrap = new Draad_Focus_Trap(location);
 
-		this._markerHandler( marker, location );
+		this.markerHandler(marker, location);
 
 		return marker;
 
 	}
 
-	_markerHandler = ( marker, location = null, markerSrc = null, markerActiveSrc = null ) => {
+	/**
+	 * Event handler for markers.
+	 * 
+	 * @param {object} marker The marker object.
+	 * @param {HTMLElement} location The infowindow.
+	 * @param {string} markerSrc The default marker image.
+	 * @param {string} markerActiveSrc The active marker image.
+	 */
+	markerHandler = (marker, location = null, markerSrc = null, markerActiveSrc = null) => {
 
 		const draad = this;
 
-		const close = location ? location.querySelector( '.draad-infowindow__close' ) : null;
-		if ( close ) {
-			close.addEventListener( 'click', ( e ) => {
+		const close = location ? location.querySelector('.draad-card__close') : null;
+		if (close) {
+			close.addEventListener('click', (e) => {
 
 				marker.locationTrap.active = false;
 
-				draad._markerSetState( marker, 'default', markerSrc, markerActiveSrc );
+				this.markerSetState(marker, 'default', markerSrc, markerActiveSrc);
 				marker.selected = false;
 
-				if ( marker._icon ) {
-					marker._icon.focus();
+				if (marker.icon) {
+					marker.icon.focus();
 				}
-				
-				location.classList.remove( 'draad-infowindow--active' );
-				location.setAttribute( 'aria-hidden', 'true' );
-				location.setAttribute( 'hidden', '' );
 
-			} );
+				location.classList.remove('draad-infowindow--active');
+				location.setAttribute('aria-hidden', 'true');
+				location.setAttribute('hidden', '');
+
+			});
 		}
 
-		marker.on( 'click', ( e ) => {
+		marker.on('click', (e) => {
 
-			if ( location ) {
+			if (location) {
 
 				// close other infowindows
-				const locations = location.closest( '.draad-maps__wrapper' ).querySelectorAll( '.draad-infowindow' );
-				for ( const location of locations ) {
-					location.classList.remove( 'draad-infowindow--active' );
-					location.setAttribute( 'aria-hidden', 'true' );
-					location.setAttribute( 'hidden', '' );
-				}
+				const locations = location.closest('.draad-maps__wrapper').querySelectorAll('.draad-card--infowindow');
+				locations.forEach((location) => {
+					location.classList.remove('draad-card--active');
+					location.setAttribute('aria-hidden', 'true');
+					location.setAttribute('hidden', '');
+				});
 
 				// update marker of other infowindows
-				this._layers['locations'].eachLayer( ( layer ) => {
-					if ( layer.selected === true ) {
-						draad._markerSetState( layer, 'default' );
+				this.layers['locations'].eachLayer((layer) => {
+					if (layer.selected === true) {
+						this.markerSetState(layer, 'default');
 						layer.selected = false;
 					}
-				} );
+				});
 
 
-				if ( marker.selected === true ) {
+				if (marker.selected === true) {
 
 					marker.locationTrap.active = false;
 
-					location.classList.remove( 'draad-infowindow--active' );
-					location.setAttribute( 'aria-hidden', 'true' );
-					location.setAttribute( 'hidden', '' );
+					location.classList.remove('draad-card--active');
+					location.setAttribute('aria-hidden', 'true');
+					location.setAttribute('hidden', '');
 
-					if ( marker._icon ) {
-						marker._icon.focus();
+					if (marker.icon) {
+						marker.icon.focus();
 					}
 
 				} else {
-					
-					location.classList.add( 'draad-infowindow--active' );
-					location.setAttribute( 'aria-hidden', 'false' );
-					location.removeAttribute( 'hidden' );
+
+					location.classList.add('draad-card--active');
+					location.setAttribute('aria-hidden', 'false');
+					location.removeAttribute('hidden');
 
 					marker.locationTrap.active = true;
 
-					const close = location.querySelector( '.draad-infowindow__close' );
+					const close = location.querySelector('.draad-card__close');
 					close.focus();
 
 				}
@@ -282,168 +306,192 @@ class Draad_Map {
 				marker.openPopup();
 			}
 
-			draad._markerSetState( marker, (marker.selected ? 'default' : 'active'), markerSrc, markerActiveSrc );
-            marker.selected = !marker.selected;
+			this.markerSetState(marker, (marker.selected ? 'default' : 'active'), markerSrc, markerActiveSrc);
+			marker.selected = !marker.selected;
 
-		} );
+		});
 
-		marker.on( 'popupclose', ( e ) => {
+		marker.on('popupclose', (e) => {
 
-			draad._markerSetState( marker, 'default', markerSrc, markerActiveSrc );
+			this.markerSetState(marker, 'default', markerSrc, markerActiveSrc);
 			marker.selected = false;
 
-			if ( location ) {
+			if (location) {
 
 				marker.locationTrap.active = false;
-				
 
-				location.classList.remove( 'draad-infowindow--active' );
-				location.setAttribute( 'aria-hidden', 'true' );
-				location.setAttribute( 'hidden', '' );
 
-				if ( marker._icon ) {
-					marker._icon.focus();
+				location.classList.remove('draad-card--active');
+				location.setAttribute('aria-hidden', 'true');
+				location.setAttribute('hidden', '');
+
+				if (marker.icon) {
+					marker.icon.focus();
 				}
 
 			}
 
-		} );
+		});
 	}
 
-	_markerSetState = ( marker, state, markerSrc = null, markerActiveSrc = null ) => {
+	/**
+	 * Changes the state of a marker.
+	 * 
+	 * @param {object} marker The marker object.
+	 * @param {string} state The state of the marker.
+	 * @param {string} markerSrc The default marker image.
+	 * @param {string} markerActiveSrc The active marker image.
+	 */
+	markerSetState = (marker, state, markerSrc = null, markerActiveSrc = null) => {
 
-		let src = null;
-		switch ( state ) {
+		switch (state) {
 
-			case 'default' :
-				if ( markerSrc ) {
-					marker.setIcon( this._getLeafletIcon({
+			case 'default':
+				if (markerSrc) {
+					marker.setIcon(this.getLeafletIcon({
 						iconUrl: markerSrc,
-					}) );
+					}));
 				} else {
-					marker.setIcon( this._markerStyles.primary );
+					marker.setIcon(this.markerStyles.primary);
 				}
 				break;
 
-			case 'active' :
-				if ( markerActiveSrc ) {
-					marker.setIcon( this._getLeafletIcon({
+			case 'active':
+				if (markerActiveSrc) {
+					marker.setIcon(this.getLeafletIcon({
 						iconUrl: markerActiveSrc,
-					}) );
+					}));
 				} else {
-					marker.setIcon( this._markerStyles.active );
+					marker.setIcon(this.markerStyles.active);
 				}
 				break;
 
-			case 'hover' :
-				if ( markerActiveSrc ) {
-					marker.setIcon( this._getLeafletIcon({
+			case 'hover':
+				if (markerActiveSrc) {
+					marker.setIcon(this.getLeafletIcon({
 						iconUrl: markerActiveSrc,
-					}) );
+					}));
 				} else {
-					marker.setIcon( this._markerStyles.hover );
+					marker.setIcon(this.markerStyles.hover);
 				}
 				break;
 
-			case 'focus' :
-				if ( markerActiveSrc ) {
-					marker.setIcon( this._getLeafletIcon({
+			case 'focus':
+				if (markerActiveSrc) {
+					marker.setIcon(this.getLeafletIcon({
 						iconUrl: markerActiveSrc,
-					}) );
+					}));
 				} else {
-					marker.setIcon( this._markerStyles.focus );
+					marker.setIcon(this.markerStyles.focus);
 				}
 				break;
 
 		}
-				
+
 	}
 
-	_addData = ( data, markerSrc = null, markerActiveSrc = null ) => {
+	/**
+	 * Adds a GeoJSON layer to the map.
+	 * 
+	 * @param {object} data The GeoJSON data.
+	 * @param {string} markerSrc The default marker image.
+	 * @param {string} markerActiveSrc The active marker image.
+	 */
+	addData = (data, markerSrc = null, markerActiveSrc = null) => {
 
-		const layer = L.geoJSON( data );
-		for ( const feature of layer.getLayers() ) {
-				
+		const layer = L.geoJSON(data);
+		layer.getLayers()?.forEach((feature) => {
+
 			// set popup
-			feature.bindPopup( feature.feature.properties.name );
+			feature.bindPopup(feature.feature.properties.name);
 
 			// set border
-			if ( typeof feature.setStyle === 'function' ) {
-				feature.setStyle( this._borderStyles.default );
+			if (typeof feature.setStyle === 'function') {
+				feature.setStyle(this.borderStyles.default);
 				feature.options.alt = feature.feature.properties.name;
 				feature.selected = false;
-				this._dataHandler( feature );
+				this.dataHandler(feature);
 			}
 
 			// set icon
-			if ( typeof feature.setIcon === 'function' ) {
+			if (typeof feature.setIcon === 'function') {
 
-				if ( markerSrc ) {
-					feature.setIcon( this._getLeafletIcon({
+				if (markerSrc) {
+					feature.setIcon(this.getLeafletIcon({
 						iconUrl: markerSrc,
-					}) );
+					}));
 				} else {
-					feature.setIcon( this._markerStyles.primary );
+					feature.setIcon(this.markerStyles.primary);
 				}
 
 				feature.options.alt = feature.feature.properties.name;
 				feature.selected = false;
-				this._markerHandler( feature, null, markerSrc, markerActiveSrc );
+				this.markerHandler(feature, null, markerSrc, markerActiveSrc);
 
 
 			}
 
-		}
+		});
 
 		return layer;
 
 	}
 
-	_dataHandler = ( feature ) => {
-		
+	/**
+	 * Event handler for GeoJSON data.
+	 * 
+	 * @param {object} feature The GeoJSON feature.
+	 */
+	dataHandler = (feature) => {
+
 		const draad = this;
-		feature.on( 'click', ( e ) => {
-			
-			draad._dataSetState( feature, 'active' );
-			draad._map.flyToBounds(feature.getBounds(), {padding: [0, 0]});
+		feature.on('click', (e) => {
 
-		} );
-		
-		feature.on( 'popupclose', ( e ) => {
+			this.dataSetState(feature, 'active');
+			this.map.flyToBounds(feature.getBounds(), { padding: [0, 0] });
 
-			draad._dataSetState( feature, 'default' );
+		});
 
-		} );
+		feature.on('popupclose', (e) => this.dataSetState(feature, 'default'));
 
 	}
 
-	_dataSetState = ( feature, state ) => {
+	/**
+	 * Changes the state of a GeoJSON feature.
+	 * 
+	 * @param {object} feature The GeoJSON feature.
+	 * @param {string} state The state of the feature.
+	 */
+	dataSetState = (feature, state) => {
 
-		switch ( state ) {
+		switch (state) {
 			case 'default':
-				feature.setStyle( this._borderStyles.default );
+				feature.setStyle(this.borderStyles.default);
 				break;
 			case 'active':
-				feature.setStyle( this._borderStyles.highlight );
+				feature.setStyle(this.borderStyles.highlight);
 				break;
 			case 'hover':
-				feature.setStyle( this._borderStyles.hover );
+				feature.setStyle(this.borderStyles.hover);
 				break;
 			case 'focus':
-				feature.setStyle( this._borderStyles.focus );
+				feature.setStyle(this.borderStyles.focus);
 				break;
 		}
 
 	}
 
-	_searchHandler = () => {
+	/**
+	 * Event handler for the search input.
+	 */
+	searchHandler = () => {
 
-		const autocomplete = document.getElementById( this._searchInput.getAttribute('list') );
+		const autocomplete = document.getElementById(this.searchInput.getAttribute('list'));
 
-		this._searchInput.addEventListener( 'keyup', debounce(() => {
+		this.searchInput.addEventListener('keyup', debounce(() => {
 
 			// get posible locations from nominatim api
-			fetch(`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this._searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=json&addressdetails=1&limit=10`)
+			fetch(`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this.searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=json&addressdetails=1&limit=10`)
 				.then(response => response.json())
 				.then(data => {
 
@@ -455,85 +503,94 @@ class Draad_Map {
 					});
 				});
 
-		}, 750) );
+		}, 750));
 
-		this._searchSubmit.addEventListener( 'click', (e) => {
+		this.searchSubmit.addEventListener('click', (e) => {
 			e.preventDefault();
 
-			this._removeSearchMarker();
+			this.removeSearchMarker();
 
 			// get posible locations from nominatim api
-			fetch(`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this._searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&limit=1`)
+			fetch(`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this.searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&limit=1`)
 				.then(response => response.json())
 				.then(data => {
 
-					if ( data.features.length === 0 ) {
+					if (data.features.length === 0) {
 						return;
 					}
 
-					this._addSearchMarker( data );
-				}).then(() => {
-					this._sortLocations();
-				});
+					this.addSearchMarker(data);
+				}).then(() => this.sortLocations());
 
-		} );
+		});
 
 	}
 
-	_addSearchMarker = ( geojson ) => {
+	/**
+	 * Adds a search marker to the map.
+	 * 
+	 * @param {object} geojson The GeoJSON data.
+	 */
+	addSearchMarker = (geojson) => {
 
 		// add new layer group top map with search marker
 		const searchLayer = L.layerGroup();
 
 		// add geojson layer to layer group
-		searchLayer.addLayer( L.geoJson(geojson, {
+		searchLayer.addLayer(L.geoJson(geojson, {
 			style: {
-				color: "#1261A3",
+				color: this.colors.accent,
 				weight: 3,
-				fillColor: "#1261A3",
+				fillColor: this.colors.accent,
 				fillOpacity: .3,
 			},
 			onEachFeature: (feature, layer) => {
 
-				if ( typeof layer.setIcon === 'function' ) {
-					layer.setIcon( this._markerStyles.search );
-				} else if ( typeof layer.setStyle === 'function' ) {
-					layer.setStyle( this._borderStyles.search );
+				if (typeof layer.setIcon === 'function') {
+					layer.setIcon(this.markerStyles.search);
+				} else if (typeof layer.setStyle === 'function') {
+					layer.setStyle(this.borderStyles.search);
 				}
 			}
-		}) );
+		}));
 		// zoom to search marker
-		this._map.flyToBounds(L.geoJson(geojson).getBounds(), {padding: [50, 50]});
+		this.map.flyToBounds(L.geoJson(geojson).getBounds(), { padding: [50, 50] });
 
-		searchLayer.addTo(this._map);
-		this._layers['search'] = searchLayer;
+		searchLayer.addTo(this.map);
+		this.layers['search'] = searchLayer;
 
 	}
 
-	_removeSearchMarker = () => {
+	/**
+	 * Removes the search marker from the map.
+	 */
+	removeSearchMarker = () => {
 
-		if ( !this._layers['search'] ) {
+		if (!this.layers['search']) {
 			return;
 		}
 
-		this._map.removeLayer(this._layers['search']);
+		this.map.removeLayer(this.layers['search']);
 
 		// remove search marker from layers
-		delete this._layers['search'];
+		delete this.layers['search'];
 
 	}
 
-	_sortLocations = () => {
+	/**
+	 * Sorts locations by distance to search marker.
+	 */
+	sortLocations = () => {
 
-		const wrapper = this._node.closest('.draad-maps__wrapper');
+		const wrapper = this.mapNode.closest('.draad-maps__wrapper');
 		const list = wrapper.querySelector('.draad-grid');
-		const locations = wrapper.querySelectorAll('.draad-card');
+		const locations = wrapper.querySelectorAll('.draad-card:not(.draad-card--infowindow)');
 
-		if ( !this._layers['search'] ) {
+		if (!this.layers['search']) {
 			return;
 		}
-		
-		const center = this._layers['search'].getLayers()[0].getBounds().getCenter();
+
+		const center = this.layers['search'].getLayers()[0].getBounds().getCenter();
 
 		// sort locations by distance to search marker
 		const sortedLocations = [...locations].sort((a, b) => {
@@ -541,8 +598,8 @@ class Draad_Map {
 			const aCenter = a.getAttribute('data-draad-center').split('/').map(Number);
 			const bCenter = b.getAttribute('data-draad-center').split('/').map(Number);
 
-			const aDistance = this._map.distance(center, aCenter);
-			const bDistance = this._map.distance(center, bCenter);
+			const aDistance = this.map.distance(center, aCenter);
+			const bDistance = this.map.distance(center, bCenter);
 
 			return aDistance - bDistance;
 
@@ -552,72 +609,83 @@ class Draad_Map {
 		list.innerHTML = '';
 
 		// add sorted locations to dom
-		sortedLocations.forEach((location) => {
-			list.appendChild(location);
-		});
+		sortedLocations.forEach((location) => list.appendChild(location));
 
 	}
 
-	_node = null;
+	node = null;
 
-	_map = null;
+	map = null;
 
-	_center = null;
+	center = null;
 
-	_zoom = null;
+	zoom = null;
 
-	_outerWrapper = null;
+	outerWrapper = null;
 
-	_layers = [];
+	layers = [];
 
-	_getLeafletIcon = (config) => L.icon({
+	/**
+	 * Sets Leaflet icon options.
+	 * 
+	 * @param {object} config The Leaflet icon options.
+	 */
+	getLeafletIcon = (config) => L.icon({
 		iconUrl: '',
-		iconSize:	 [39.2, 51.2],
+		iconSize: [39.2, 51.2],
 		iconAnchor: [19.6, 51.2],
-		popupAnchor:  [-3, -76]
-	, ...config});
+		popupAnchor: [-3, -76]
+		, ...config
+	});
 
-	_markerStyles = {
-		"primary": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker.png'}),
-		"hover": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png'}),
-		"active": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png'}),
-		"search": this._getLeafletIcon({iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png'}),
+	markerStyles = {
+		"primary": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker.png' }),
+		"hover": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png' }),
+		"active": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png' }),
+		"search": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png' }),
 	};
 
-	_borderStyles = {
+	documentComputedStyles = getComputedStyle(document.documentElement);
+	colors = {
+		"primary": this.documentComputedStyles.getPropertyValue('--dk__clr-primary') || "#248641",
+		"secondary": this.documentComputedStyles.getPropertyValue('--dk__clr-secondary') || "#7D6200",
+		"accent": this.documentComputedStyles.getPropertyValue('--dk__clr-accent') || "#1261A3",
+	};
+
+	borderStyles = {
 		"default": {
-			"color": "#248641",
+			"color": this.colors.primary,
 			"weight": 4,
 			"dashArray": "8, 8",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0
 		},
 		"focus": {
-			"color": "#7D6200",
+			"color": this.colors.secondary,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0.15
 		},
 		"hover": {
-			"color": "#248641",
+			"color": this.colors.primary,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0.15
 		},
 		"highlight": {
-			"color": "#248641",
+			"color": this.colors.primary,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#248641",
+			"fillColor": this.colors.primary,
 			"fillOpacity": 0.3
 		},
 		"search": {
-			"color": "#1261A3",
+			"color": this.colors.accent,
 			"weight": 4,
 			"dashArray": "0, 0",
-			"fillColor": "#1261A3",
+			"fillColor": this.colors.accent,
 			"fillOpacity": 0.3
 		}
 	};
@@ -625,10 +693,16 @@ class Draad_Map {
 
 }
 
-function debounce( callback, wait ) {
+/**
+ * Limits the number of times the callback can be called.
+ * 
+ * @param {function} callback The function to debounce.
+ * @param {number} wait The time to wait.
+ */
+function debounce(callback, wait) {
 	let timeout;
 	return (...args) => {
 		clearTimeout(timeout);
-		timeout = setTimeout(function () { callback.apply(this, args); }, wait);
+		timeout = setTimeout(() => { callback.apply(this, args); }, wait);
 	};
 }

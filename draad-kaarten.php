@@ -2,7 +2,9 @@
 
 /**
  * Plugin Name: Draad Kaarten
+ * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad
+ * Version: 1.0.0
  */
 	
 function draad_maps_allow_json_upload($mimes) {
@@ -175,14 +177,18 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
 							<button class="draad-tabs__tab button button--secondary" id="tab-'. $firstTabId .'" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-'. $firstTabId .'">
 								'. draad_maps_icon( 'map' ) .'
-								<span class="desktop-only">'. __('Kaart bekijken', 'draad') .'</span>
-								<span class="mobile-only">'. __('Kaart', 'draad') .'</span>
+								<span class="button__title">
+									<span>'. __('Kaart', 'draad') .'</span>
+									<span>'. __('bekijken', 'draad') .'</span>
+								</span>
 							</button>
 
 							<button class="draad-tabs__tab button button--secondary" id="tab-'. $secondTabId .'" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-'. $secondTabId .'">
 								'. draad_maps_icon( 'list' ) .'
-								<span class="desktop-only">'. __('Lijst bekijken', 'draad') .'</span>
-								<span class="mobile-only">'. __('Lijst', 'draad') .'</span>
+								<span class="button__title">
+									<span>'. __('Lijst', 'draad') .'</span>
+									<span>'. __('bekijken', 'draad') .'</span>
+								</span>
 							</button>
 
 						</div>
@@ -192,7 +198,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
 								<div class="draad-maps__map" id="draad-maps-'. $mapId .'-map"></div>
 								
-								<div class="draad-maps__instructions mobile-only"> 
+								<div class="draad-maps__instructions"> 
 									<p>'. __('Sleep met twee vingers om de kaart te bewegen.', 'draad') .'</p>
 								</div>
 
@@ -208,22 +214,22 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 										$content = get_sub_field( 'content' );
 										$coordinates = get_sub_field( 'coordinates' );
 										
-										$card = '<div class="draad-maps__item draad-infowindow" data-draad-center="'. $coordinates['lat'] .'/'. $coordinates['lng'] .'" aria-hidden="true" hidden>';
-										$card .= ( $button ) ? '<a class="draad-infowindow__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-infowindow__wrapper">';
+										$card = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $coordinates['lat'] .'/'. $coordinates['lng'] .'" aria-hidden="true" hidden>';
+										$card .= ( $button ) ? '<a class="draad-card__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-card__wrapper">';
 
-										$card .= '<div class="draad-infowindow__content">';
+										$card .= '<div class="draad-card__content">';
 
-										$card .= ( $title ) ? '<h3 class="draad-infowindow__title">'. $title .'</h3>' : '';
-										$card .= ( $content ) ? '<div class="draad-infowindow__description">'. $content .'</div>' : '';
+										$card .= ( $title ) ? '<h3 class="draad-card__title">'. $title .'</h3>' : '';
+										$card .= ( $content ) ? '<div class="draad-card__description">'. $content .'</div>' : '';
 
-										$card .= ( $button ) ? '<span class="draad-infowindow__button button button--primary">'. draad_maps_icon( 'arrow-right' ) .' '. $button['title'] .'</span>' : '';
+										$card .= ( $button ) ? '<span class="draad-card__button button button--primary">'. draad_maps_icon( 'arrow-right' ) .' '. $button['title'] .'</span>' : '';
 
 										$card .= '</div>';
 
 										$card .= wp_get_attachment_image( get_sub_field( 'thumbnail' ), 'draad-card', false, ['class' => 'draad-card__image'] );
 
 										$card .= ( $button ) ? '</a>' : '</div>';
-										$card .= '<button class="draad-infowindow__close button button--secondary button--icon-only" aria-label="'. __('Popup sluiten', 'draad') .'">
+										$card .= '<button class="draad-card__close button button--secondary button--icon-only" aria-label="'. __('Popup sluiten', 'draad') .'">
 													'. draad_maps_icon( 'close' ) .'
 												</button>';
 										$card .= '</div>';
@@ -289,7 +295,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 									$card .= '<div class="draad-card__content">';
 
 									$card .= ( $title ) ? '<h3 class="draad-card__title">'. get_sub_field( 'title' ) .'</h3>' : '';
-									$card .= ( $content ) ? '<div class="draad-infowindow__description">'. $content .'</div>' : '';
+									$card .= ( $content ) ? '<div class="draad-card__description">'. $content .'</div>' : '';
 
 									$card .= ( $button ) ? '<span class="draad-card__button button button--primary">'. draad_maps_icon( 'arrow-right' ) .' '. $button['title'] .'</span>' : '';
 

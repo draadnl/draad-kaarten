@@ -29,26 +29,26 @@
 	}
 
 	&--primary {
-		--dk__button-background: var(--dk__button-primary-background, var(--dk__clr-primary));
+		--dk__button-background: var(--dk__button-primary-background, var(--dk__clr-primary, #248641));
 		--dk__button-border: var(--dk__button-primary-border);
 		--dk__button-color: var(--dk__button-primary-color, var(--dk__clr-text--light));
 
 		&:hover,
 		&:focus-visible {
-			--dk__button-background: var(--dk__buttton-primary-background--hover, var(--dk__clr-primary--dark));
+			--dk__button-background: var(--dk__buttton-primary-background--hover, var(--dk__button-primary-background, var(--dk__clr-primary--dark, #00300F)));
 		}
 	}
 
 	&--secondary {
 		--dk__button-background: var(--dk__button-secondary-background, #ffffff);
-		--dk__button-border: var(--dk__button-secondary-border, 0.0625em solid var(--dk__button-secondary-border-color, var(--dk__button-border-color)));
+		--dk__button-border: var(--dk__button-secondary-border, 0.0625em solid var(--dk__button-secondary-border-color, var(--dk__button-border-color, #248641)));
 		--dk__button-border-color: var(--dk__button-secondary-border-color, var(--dk__clr-primary, #248641));
 		--dk__button-color: var(--dk__button-secondary-color, var(--dk__clr-primary, #248641));
 
 		&:hover,
 		&:focus-visible {
-			--dk__button-border-color: var(--dk__button-secondary-border-color--hover, var(--dk__clr-primary--dark));
-			--dk__button-color: var(--dk__button-secondary-color--hover, var(--dk__clr-primary--dark));
+			--dk__button-border-color: var(--dk__button-secondary-border-color--hover, var(--dk__button-secondary-border-color, var(--dk__clr-primary--dark, #00300F)));
+			--dk__button-color: var(--dk__button-secondary-color--hover, var(--dk__button-secondary-color, var(--dk__clr-primary--dark, #00300F)));
 		}
 	}
 

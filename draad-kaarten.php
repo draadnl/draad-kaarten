@@ -118,11 +118,11 @@ if ( ! function_exists( 'draad_maps_register_assets' ) ) {
 		wp_register_script( 'leaflet-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.js', [], '1.0.0', true);
 		wp_register_script( 'leaflet-markercluster-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.markercluster.js', ['leaflet-script'], '1.0.0', true);
 		wp_register_script( 'leaflet-markercluster-src-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.markercluster-src.js', ['leaflet-script'], '1.0.0', true);
-		wp_register_script( 'draad-tabs-script', plugin_dir_url( __FILE__ ) . 'dist/js/draad-tabs.js', [], '1.0.0', true);
-		wp_register_script( 'draad-focus-trap-script', plugin_dir_url( __FILE__ ) . 'dist/js/focusTrap.js', [], '1.0.0', true);
-		wp_register_script( 'draad-maps-module', plugin_dir_url( __FILE__ ) . 'dist/js/draad-maps.js', ['leaflet-script', 'draad-focus-trap-script'], '1.0.0', true);
-		wp_register_style( 'draad-maps-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.0' );
-		wp_register_style( 'draad-tabs-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.0' );
+		wp_register_script( 'draad-maps-tabs-script', plugin_dir_url( __FILE__ ) . 'dist/js/draad-tabs.js', [], '1.0.0', true);
+		wp_register_script( 'draad-maps-focus-trap-script', plugin_dir_url( __FILE__ ) . 'dist/js/focusTrap.js', [], '1.0.0', true);
+		wp_register_script( 'draad-maps-maps-module', plugin_dir_url( __FILE__ ) . 'dist/js/draad-maps.js', ['leaflet-script', 'draad-maps-focus-trap-script'], '1.0.0', true);
+		wp_register_style( 'draad-maps-maps-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.0' );
+		wp_register_style( 'draad-maps-tabs-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.0' );
 
 	}
 }
@@ -335,10 +335,10 @@ if ( ! function_exists( 'draad_maps_shortcode' ) ) {
 		wp_enqueue_script( 'leaflet-script' );
 		wp_enqueue_script( 'leaflet-markercluster-script' );
 		wp_enqueue_script( 'leaflet-markercluster-src-script' );
-		wp_enqueue_script( 'draad-tabs-script' );
-		wp_enqueue_script( 'draad-focus-trap-script' );
-		wp_enqueue_script( 'draad-maps-module' );
-		wp_enqueue_style( 'draad-maps-style' );
+		wp_enqueue_script( 'draad-maps-tabs-script' );
+		wp_enqueue_script( 'draad-maps-focus-trap-script' );
+		wp_enqueue_script( 'draad-maps-maps-module' );
+		wp_enqueue_style( 'draad-maps-maps-style' );
 
 		return $output;
 

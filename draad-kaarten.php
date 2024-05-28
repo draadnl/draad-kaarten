@@ -6,7 +6,7 @@
  * text-domain: draad
  * Version: 1.0.1
  */
-	
+
 function draad_maps_allow_json_upload($mimes) {
 	$mimes['json'] = 'text/plain';
 	return $mimes;
@@ -22,7 +22,7 @@ add_filter('acf/settings/save_json/key=group_651d4c3b5e5b4', 'draad_acf_set_save
 add_filter('acf/settings/save_json/key=group_65080689915de', 'draad_acf_set_save_path', 99);
 
 add_filter('acf/settings/load_json', function( $paths ) {
-	
+
 	$paths[] = plugin_dir_path( __FILE__ ) . 'acf-json';
 
 	return $paths;
@@ -136,7 +136,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
 		$post_id = $args['map'];
 		$post = get_post( $post_id );
-		
+
 		$tabsId = wp_unique_id();
 		$firstTabId = wp_unique_id();
 		$secondTabId = wp_unique_id();
@@ -192,18 +192,18 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 							</button>
 
 						</div>
-				
+
 						<div class="draad-tabs__panel" id="tabpanel-'. $firstTabId .'" role="tabpanel" aria-labelledby="tab-'. $firstTabId .'">
 							<div class="draad-maps" id="draad-maps-'. $mapId .'" '. $attributes .'>
 
 								<div class="draad-maps__map" id="draad-maps-'. $mapId .'-map"></div>
-								
-								<div class="draad-maps__instructions"> 
+
+								<div class="draad-maps__instructions">
 									<p>'. __('Sleep met twee vingers om de kaart te bewegen.', 'draad') .'</p>
 								</div>
 
 								<div class="draad-maps__list" id="draad-maps-'. $mapId .'-list">';
-						
+
 								if ( have_rows( 'locations', $post_id ) ) {
 									$values = get_field( 'locations', $post_id );
 									while ( have_rows( 'locations', $post_id ) ) {
@@ -223,6 +223,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 										$lng = $coordinates['markers'][0]['lng'];
 										
 										$card = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $lat .'/'. $lng .'" aria-hidden="true" hidden>';
+                    
 										$card .= ( $button ) ? '<a class="draad-card__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-card__wrapper">';
 
 										$card .= '<div class="draad-card__content">';
@@ -245,7 +246,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 										$output .= apply_filters( 'draad_maps_infowindow', $card, $values[ get_row_index() - 1 ] );
 									}
 								}
-						
+
 		$output .= '			</div>';
 
 								// Start GeoJSON
@@ -277,7 +278,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 									$markerSrc = ( $marker ) ? wp_get_attachment_image_url( $marker, 'draad-marker', true ) : '';
 									$markerActive = get_field( 'marker_hover', $post_id );
 									$markerActiveSrc = ( $markerActive ) ? wp_get_attachment_image_url( $markerActive, 'draad-marker', true ) : '';
-									
+
 									$output .= '<div class="draad-maps__layer" id="draad-maps-'. $mapId . '-geojson" data-draad-geojson="'. $geoJsonSrc .'" data-draad-marker="'. $markerSrc .'" data-draad-marker-active="'. $markerActiveSrc .'"></div>';
 								}
 								// End GeoJSON
@@ -286,7 +287,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 						</div>
 						<div class="draad-tabs__panel" id="tabpanel-'. $secondTabId .'" role="tabpanel" aria-labelledby="tab-'. $secondTabId .'">
 							<div class="draad-grid">';
-						
+
 							if ( have_rows( 'locations', $post_id ) ) {
 								$values = get_field( 'locations', $post_id );
 								while ( have_rows( 'locations', $post_id ) ) {
@@ -328,7 +329,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
 		$output .= '		</div>
 						</div>
-					
+
 					</div>
 
 				</div>';
@@ -344,6 +345,9 @@ if ( ! function_exists( 'draad_maps_shortcode' ) ) {
 	 * Render the map.
 	 */
 	function draad_maps_shortcode ( $args ) {
+		$args = shortcode_atts( array(
+			'map' => 0,
+		), $args, 'draad_maps' );
 
 		$output = draad_maps_renderer( '', $args );
 		wp_enqueue_style( 'leaflet-style' );
@@ -365,11 +369,11 @@ add_shortcode( 'draad_maps', 'draad_maps_shortcode' );
 if ( ! function_exists( 'draad_maps_icon' ) ) {
 	/**
 	 * Returns an SVG icon from the icons folder
-	 * 
+	 *
 	 * @since 1.0.0
 	 */
 	function draad_maps_icon( $icon ) {
-		
+
 		$iconPath = plugin_dir_path( __FILE__ ) .'template-parts/icons/'. $icon .'.svg';
 
 		if ( ! file_exists( $iconPath ) ) {

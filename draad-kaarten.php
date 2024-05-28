@@ -213,8 +213,16 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 										$title = get_sub_field( 'title' );
 										$content = get_sub_field( 'content' );
 										$coordinates = get_sub_field( 'coordinates' );
+
+										if ( empty( $coordinates['markers'] ) ) {
+											// skip locations without markers
+											continue;
+										}
+
+										$lat = $coordinates['markers'][0]['lat'];
+										$lng = $coordinates['markers'][0]['lng'];
 										
-										$card = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $coordinates['lat'] .'/'. $coordinates['lng'] .'" aria-hidden="true" hidden>';
+										$card = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $lat .'/'. $lng .'" aria-hidden="true" hidden>';
 										$card .= ( $button ) ? '<a class="draad-card__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-card__wrapper">';
 
 										$card .= '<div class="draad-card__content">';
@@ -289,7 +297,15 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 									$content = get_sub_field( 'content' );
 									$coordinates = get_sub_field( 'coordinates' );
 
-									$card = '<div class="draad-grid__item draad-card" data-draad-center="'. $coordinates['lat'] .'/'. $coordinates['lng'] .'">';
+									if ( empty( $coordinates['markers'] ) ) {
+										// skip locations without markers
+										continue;
+									}
+
+									$lat = $coordinates['markers'][0]['lat'];
+									$lng = $coordinates['markers'][0]['lng'];
+
+									$card = '<div class="draad-grid__item draad-card" data-draad-center="'. $lat .'/'. $lng .'">';
 									$card .= ( $button ) ? '<a class="draad-card__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-card__wrapper">';
 
 									$card .= '<div class="draad-card__content">';

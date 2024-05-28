@@ -4,7 +4,7 @@
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 	
 function draad_maps_allow_json_upload($mimes) {
@@ -113,16 +113,16 @@ if ( ! function_exists( 'draad_maps_register_assets' ) ) {
 	 */
 	function draad_maps_register_assets () {
 
-		wp_register_style( 'leaflet-style', plugin_dir_url( __FILE__ ) . 'dist/css/leaflet.css', [], '1.0.0');
-		wp_register_style( 'leaflet-markercluster-style', plugin_dir_url( __FILE__ ) . 'dist/css/MarkerCluster.css', [], '1.0.0' );
-		wp_register_script( 'leaflet-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.js', [], '1.0.0', true);
-		wp_register_script( 'leaflet-markercluster-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.markercluster.js', ['leaflet-script'], '1.0.0', true);
-		wp_register_script( 'leaflet-markercluster-src-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.markercluster-src.js', ['leaflet-script'], '1.0.0', true);
-		wp_register_script( 'draad-maps-tabs-script', plugin_dir_url( __FILE__ ) . 'dist/js/draad-tabs.js', [], '1.0.0', true);
-		wp_register_script( 'draad-maps-focus-trap-script', plugin_dir_url( __FILE__ ) . 'dist/js/focusTrap.js', [], '1.0.0', true);
-		wp_register_script( 'draad-maps-maps-module', plugin_dir_url( __FILE__ ) . 'dist/js/draad-maps.js', ['leaflet-script', 'draad-maps-focus-trap-script'], '1.0.0', true);
-		wp_register_style( 'draad-maps-maps-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.0' );
-		wp_register_style( 'draad-maps-tabs-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.0' );
+		wp_register_style( 'leaflet-style', plugin_dir_url( __FILE__ ) . 'dist/css/leaflet.css', [], '1.0.1');
+		wp_register_style( 'leaflet-markercluster-style', plugin_dir_url( __FILE__ ) . 'dist/css/MarkerCluster.css', [], '1.0.1' );
+		wp_register_script( 'leaflet-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.js', [], '1.0.1', true);
+		wp_register_script( 'leaflet-markercluster-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.markercluster.js', ['leaflet-script'], '1.0.1', true);
+		wp_register_script( 'leaflet-markercluster-src-script', plugin_dir_url( __FILE__ ) . 'dist/js/leaflet.markercluster-src.js', ['leaflet-script'], '1.0.1', true);
+		wp_register_script( 'draad-maps-tabs-script', plugin_dir_url( __FILE__ ) . 'dist/js/draad-tabs.js', [], '1.0.1', true);
+		wp_register_script( 'draad-maps-focus-trap-script', plugin_dir_url( __FILE__ ) . 'dist/js/focusTrap.js', [], '1.0.1', true);
+		wp_register_script( 'draad-maps-maps-module', plugin_dir_url( __FILE__ ) . 'dist/js/draad-maps.js', ['leaflet-script', 'draad-maps-focus-trap-script'], '1.0.1', true);
+		wp_register_style( 'draad-maps-maps-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.1' );
+		wp_register_style( 'draad-maps-tabs-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.1' );
 
 	}
 }

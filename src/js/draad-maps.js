@@ -116,6 +116,42 @@ class Draad_Map {
 				});
 		}
 
+		if (document.getElementById(node.id + '-gps')) {
+			console.log('Show GPS location');
+
+			const options = {
+				enableHighAccuracy: true,
+				timeout: 5000,
+				maximumAge: 0,
+			};
+
+			var success = pos => {
+				const crd = pos.coords;
+				const userLocation = L.layerGroup();
+				const marker = L.marker(
+					[
+						parseFloat(crd.latitude),
+						parseFloat(crd.longitude)
+					],
+					{
+						icon: this.markerStyles.gps,
+						riseOnHover: false,
+						alt: 'Your location',
+					}
+				);
+				marker.addTo(userLocation);
+	
+				this.layers['userLocation'] = userLocation;
+				this.layers['userLocation'].addTo(cluster);
+			}
+			  
+			function error(err) {
+				console.warn(`ERROR(${err.code}): ${err.message}`);
+			}
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
+		}
+
 		// Add support to open infowindows with enter key
 		this.outerWrapper.addEventListener('keypress', (e) => {
 

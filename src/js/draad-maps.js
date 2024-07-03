@@ -117,8 +117,6 @@ class Draad_Map {
 		}
 
 		if (document.getElementById(node.id + '-gps')) {
-			console.log('Show GPS location');
-
 			const options = {
 				enableHighAccuracy: true,
 				timeout: 5000,

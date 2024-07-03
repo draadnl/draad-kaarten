@@ -643,6 +643,7 @@ class Draad_Map {
 		"hover": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png' }),
 		"active": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png' }),
 		"search": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png' }),
+		"gps": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-gps.png', iconSize: [48, 48], iconAnchor: [24, 24], }),
 	};
 
 	documentComputedStyles = getComputedStyle(document.documentElement);

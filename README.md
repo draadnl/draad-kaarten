@@ -10,3 +10,6 @@ Of voeg een dataset toe met grenzen of markers.
 
 ### 1.0.0
 - Initial release of the plugin.
+
+### 1.0.2
+- Added new functionality to show user location on the map.

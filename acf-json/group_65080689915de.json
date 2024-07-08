@@ -1,341 +1,364 @@
-{
-    "key": "group_65080689915de",
-    "title": "Post type - Kaarten",
-    "fields": [
-        {
-            "key": "field_65080689a3501",
-            "label": "Midden van de kaart",
-            "name": "center",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_651bff3065353",
-                    "label": "Zoom",
-                    "name": "zoom",
-                    "aria-label": "",
-                    "type": "number",
-                    "instructions": "Dit cijfer bepaalt hoeveel je van de kaart kan zien. Hoe hoger het cijfer, hoe verder de kaart is ingezoomd waarbij 10 het minimale, en 16 het maximale is.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "35",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 12,
-                    "min": 10,
-                    "max": 16,
-                    "placeholder": "",
-                    "step": 1,
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "center_lat": 52.3655376,
-                    "center_lng": 5.4327393,
-                    "zoom": 8,
-                    "height": 250,
-                    "return_format": "raw",
-                    "allow_map_layers": 0,
-                    "max_markers": 1,
-                    "layers": [
-                        "OpenStreetMap.Mapnik"
-                    ],
-                    "key": "field_651d2889ea0e1",
-                    "label": "Middelpunt",
-                    "name": "coordinates",
-                    "aria-label": "",
-                    "type": "open_street_map",
-                    "instructions": "Hier kan je het middelpunt van de kaart aangeven.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "65",
-                        "class": "",
-                        "id": ""
-                    }
-                }
-            ]
-        },
-        {
-            "key": "field_650807c6e9891",
-            "label": "Locaties",
-            "name": "locations",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "pagination": 1,
-            "rows_per_page": 10,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_65080b28e4643",
-            "button_label": "Locatie toevoegen",
-            "sub_fields": [
-                {
-                    "center_lat": 52.3655376,
-                    "center_lng": 5.4327393,
-                    "zoom": 8,
-                    "height": 250,
-                    "return_format": "raw",
-                    "allow_map_layers": 0,
-                    "max_markers": 1,
-                    "layers": [
-                        "OpenStreetMap.Mapnik"
-                    ],
-                    "key": "field_651d2966971e0",
-                    "label": "Locatie",
-                    "name": "coordinates",
-                    "aria-label": "",
-                    "type": "open_street_map",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "parent_repeater": "field_650807c6e9891"
-                },
-                {
-                    "key": "field_65080b28e4643",
-                    "label": "Titel",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_650807c6e9891"
-                },
-                {
-                    "key": "field_650ae2ef2905d",
-                    "label": "Content",
-                    "name": "content",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 0,
-                    "parent_repeater": "field_650807c6e9891"
-                },
-                {
-                    "key": "field_650ae30c2905e",
-                    "label": "Locatie doorlinken",
-                    "name": "button",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "Link deze locatie naar een pagina of een externe url.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "parent_repeater": "field_650807c6e9891"
-                },
-                {
-                    "key": "field_65140cba644ed",
-                    "label": "Afbeelding",
-                    "name": "thumbnail",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "thumbnail",
-                    "parent_repeater": "field_650807c6e9891"
-                }
-            ]
-        },
-        {
-            "key": "field_65098d47b052d",
-            "label": "Grenzen tonen",
-            "name": "borders",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "Selecteer hier welke stadsgrenzen je wilt toevoegen aan de kaart.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "none": "Selecteren",
-                "wijken": "Wijken",
-                "buurten": "Buurten",
-                "stadsdelen": "Stadsdelen"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_651d282a2a98f",
-            "label": "Extra dataset toevoegen",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 1,
-            "endpoint": 0
-        },
-        {
-            "key": "field_650807dbe9892",
-            "label": "Dataset",
-            "name": "geojson",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "Hier kan je een data set uploaden die ingeladen wordt in de kaart, deze data kan je downloaden van <a href=\"https:\/\/denhaag.dataplatform.nl\/\" target=\"_blank\">Dataplatform Den Haag<\/a>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "json"
-        },
-        {
-            "key": "field_6512e1419ec2b",
-            "label": "Marker",
-            "name": "marker",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Upload hier de marker voor je dataset",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_6512e1559ec2c",
-            "label": "Marker - Actief",
-            "name": "marker_hover",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Upload hier een actieve marker voor de dataset",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        }
-    ],
-    "location": [
-        [
+[
+    {
+        "key": "group_65080689915de",
+        "title": "Post type - Kaarten",
+        "fields": [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "draad_maps"
+                "key": "field_66850a92b5549",
+                "label": "GPS",
+                "name": "show_location",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Huidige locatie gebruiker tonen",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_65080689a3501",
+                "label": "Midden van de kaart",
+                "name": "center",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_651bff3065353",
+                        "label": "Zoom",
+                        "name": "zoom",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "De zoom hoogte bepaalt hoeveel je op de kaart kan zien, hoe hoger het cijfer hoe verder de kaart is ingezoomd.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "35",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": 12,
+                        "min": 10,
+                        "max": 16,
+                        "placeholder": "",
+                        "step": 1,
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "center_lat": 52.3655376,
+                        "center_lng": 5.4327393,
+                        "zoom": 8,
+                        "height": 250,
+                        "return_format": "raw",
+                        "allow_map_layers": 0,
+                        "max_markers": 1,
+                        "layers": [
+                            "OpenStreetMap.Mapnik"
+                        ],
+                        "key": "field_651d2889ea0e1",
+                        "label": "Middelpunt",
+                        "name": "coordinates",
+                        "aria-label": "",
+                        "type": "open_street_map",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "65",
+                            "class": "",
+                            "id": ""
+                        },
+                        "leaflet_map": "{\"lat\":52.3655376,\"lng\":5.4327393,\"zoom\":8,\"layers\":[\"OpenStreetMap.Mapnik\"],\"markers\":[]}"
+                    }
+                ]
+            },
+            {
+                "key": "field_650807c6e9891",
+                "label": "Locaties",
+                "name": "locations",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "pagination": 1,
+                "rows_per_page": 10,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_65080b28e4643",
+                "button_label": "Locatie toevoegen",
+                "sub_fields": [
+                    {
+                        "center_lat": 52.3655376,
+                        "center_lng": 5.4327393,
+                        "zoom": 8,
+                        "height": 250,
+                        "return_format": "raw",
+                        "allow_map_layers": 0,
+                        "max_markers": 1,
+                        "layers": [
+                            "OpenStreetMap.Mapnik"
+                        ],
+                        "key": "field_651d2966971e0",
+                        "label": "Locatie",
+                        "name": "coordinates",
+                        "aria-label": "",
+                        "type": "open_street_map",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "leaflet_map": "{\"lat\":52.3655376,\"lng\":5.4327393,\"zoom\":8,\"layers\":[\"OpenStreetMap.Mapnik\"],\"markers\":[]}",
+                        "parent_repeater": "field_650807c6e9891"
+                    },
+                    {
+                        "key": "field_65080b28e4643",
+                        "label": "Titel",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_650807c6e9891"
+                    },
+                    {
+                        "key": "field_650ae2ef2905d",
+                        "label": "Content",
+                        "name": "content",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "delay": 0,
+                        "parent_repeater": "field_650807c6e9891"
+                    },
+                    {
+                        "key": "field_650ae30c2905e",
+                        "label": "Pagina link",
+                        "name": "button",
+                        "aria-label": "",
+                        "type": "link",
+                        "instructions": "Link deze locatie naar een pagina of een externe url.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "parent_repeater": "field_650807c6e9891"
+                    },
+                    {
+                        "key": "field_65140cba644ed",
+                        "label": "Afbeelding",
+                        "name": "thumbnail",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "thumbnail",
+                        "parent_repeater": "field_650807c6e9891"
+                    }
+                ]
+            },
+            {
+                "key": "field_65098d47b052d",
+                "label": "Grenzen tonen",
+                "name": "borders",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Selecteer hier welke stadsgrenzen je wilt toevoegen aan de kaart.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "none": "Selecteren",
+                    "wijken": "Wijken",
+                    "buurten": "Buurten",
+                    "stadsdelen": "Stadsdelen"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_651d282a2a98f",
+                "label": "Extra dataset toevoegen",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 0,
+                "multi_expand": 1,
+                "endpoint": 0
+            },
+            {
+                "key": "field_650807dbe9892",
+                "label": "Dataset",
+                "name": "geojson",
+                "aria-label": "",
+                "type": "file",
+                "instructions": "Hier kan je een data set uploaden die ingeladen wordt in de kaart, deze data kan je downloaden van <a href=\"https:\/\/denhaag.dataplatform.nl\/\" target=\"_blank\">Dataplatform Den Haag<\/a>",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_size": "",
+                "max_size": "",
+                "mime_types": "json"
+            },
+            {
+                "key": "field_6512e1419ec2b",
+                "label": "Marker",
+                "name": "marker",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Upload hier de marker voor je dataset",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_6512e1559ec2c",
+                "label": "Marker - Actief",
+                "name": "marker_hover",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Upload hier een actieve marker voor de dataset",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
             }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1696936596
-}
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "draad_maps"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]

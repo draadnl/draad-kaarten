@@ -4,7 +4,7 @@
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 
 function draad_maps_allow_json_upload($mimes) {
@@ -142,6 +142,8 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 		$secondTabId = wp_unique_id();
 		$mapId = wp_unique_id();
 
+		$gps = get_field( 'show_location', $post_id );
+
 		$center = get_field( 'center', $post_id );
 		$args['center'] = $center['zoom'] .'/'. $center['coordinates']['lat'] .'/'. $center['coordinates']['lng'];
 		$args['aria-label'] = $post->post_title;
@@ -247,7 +249,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 									}
 								}
 
-		$output .= '			</div>';
+		$output .= '			</div>'; 
 
 								// Start GeoJSON
 								$borders = get_field( 'borders', $post_id );
@@ -268,6 +270,10 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
 								if ( $bordersSrc ) {
 									$output .= '<div class="draad-maps__layer" id="draad-maps-'. $mapId . '-borders" data-draad-geojson="'. $bordersSrc .'"></div>';
+								}
+
+								if ( $gps ) {
+									$output .= '<div class="draad-maps__layer" id="draad-maps-'. $mapId . '-gps"></div>';
 								}
 
 								$geoJson = get_field( 'geojson', $post_id );

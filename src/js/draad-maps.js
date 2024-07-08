@@ -116,6 +116,40 @@ class Draad_Map {
 				});
 		}
 
+		if (document.getElementById(node.id + '-gps')) {
+			const options = {
+				enableHighAccuracy: true,
+				timeout: 5000,
+				maximumAge: 0,
+			};
+
+			var success = pos => {
+				const crd = pos.coords;
+				const userLocation = L.layerGroup();
+				const marker = L.marker(
+					[
+						parseFloat(crd.latitude),
+						parseFloat(crd.longitude)
+					],
+					{
+						icon: this.markerStyles.gps,
+						riseOnHover: false,
+						alt: 'Your location',
+					}
+				);
+				marker.addTo(userLocation);
+	
+				this.layers['userLocation'] = userLocation;
+				this.layers['userLocation'].addTo(cluster);
+			}
+			  
+			function error(err) {
+				console.warn(`ERROR(${err.code}): ${err.message}`);
+			}
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
+		}
+
 		// Add support to open infowindows with enter key
 		this.outerWrapper.addEventListener('keypress', (e) => {
 
@@ -643,6 +677,7 @@ class Draad_Map {
 		"hover": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png' }),
 		"active": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png' }),
 		"search": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-search.png' }),
+		"gps": this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-gps.png', iconSize: [48, 48], iconAnchor: [24, 24], }),
 	};
 
 	documentComputedStyles = getComputedStyle(document.documentElement);

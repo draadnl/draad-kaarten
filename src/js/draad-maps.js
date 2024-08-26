@@ -241,15 +241,22 @@ class Draad_Map {
 		const marker = L.marker(
 			center,
 			{
-				icon: this.markerStyles.primary,
 				riseOnHover: true,
 				alt: location.querySelector('.draad-card__title').textContent,
 			}
 		);
 
+		marker._styles = {
+			default: location.dataset.marker !== '' ? this.getLeafletIcon({ iconUrl: location.dataset.marker }) : this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker.png' }),
+			hover: location.dataset.markerHover !== '' ? this.getLeafletIcon({ iconUrl: location.dataset.markerHover }) : this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png' }),
+			active: location.dataset.markerActive !== '' ? this.getLeafletIcon({ iconUrl: location.dataset.markerActive }) : this.getLeafletIcon({ iconUrl: '/wp-content/plugins/draad-kaarten/dist/images/marker-active.png' }),
+		};
+
+		marker.setIcon(marker._styles.default);
+
 		// set aria-selected
 		marker.selected = false;
-
+		
 		marker.locationTrap = new Draad_Focus_Trap(location);
 
 		this.markerHandler(marker, location);
@@ -386,7 +393,7 @@ class Draad_Map {
 						iconUrl: markerSrc,
 					}));
 				} else {
-					marker.setIcon(this.markerStyles.primary);
+					marker.setIcon(marker._styles.default);
 				}
 				break;
 
@@ -396,7 +403,7 @@ class Draad_Map {
 						iconUrl: markerActiveSrc,
 					}));
 				} else {
-					marker.setIcon(this.markerStyles.active);
+					marker.setIcon(marker._styles.active);
 				}
 				break;
 
@@ -406,7 +413,7 @@ class Draad_Map {
 						iconUrl: markerActiveSrc,
 					}));
 				} else {
-					marker.setIcon(this.markerStyles.hover);
+					marker.setIcon(marker._styles.hover);
 				}
 				break;
 
@@ -416,7 +423,7 @@ class Draad_Map {
 						iconUrl: markerActiveSrc,
 					}));
 				} else {
-					marker.setIcon(this.markerStyles.focus);
+					marker.setIcon(marker._styles.active);
 				}
 				break;
 
@@ -455,7 +462,7 @@ class Draad_Map {
 						iconUrl: markerSrc,
 					}));
 				} else {
-					feature.setIcon(this.markerStyles.primary);
+					feature.setIcon(marker._styles.default);
 				}
 
 				feature.options.alt = feature.feature.properties.name;

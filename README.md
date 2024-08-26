@@ -13,3 +13,6 @@ Of voeg een dataset toe met grenzen of markers.
 
 ### 1.0.2
 - Added new functionality to show user location on the map.
+
+### 1.0.3
+- Added new functionality to choose custom icons for each marker.

@@ -4,7 +4,7 @@
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad
- * Version: 1.0.2
+ * Version: 1.0.3
  */
 
 function draad_maps_allow_json_upload($mimes) {
@@ -216,6 +216,10 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 										$content = get_sub_field( 'content' );
 										$coordinates = get_sub_field( 'coordinates' );
 
+										$marker = get_sub_field( 'marker' );
+										$markerHover = get_sub_field( 'marker_hover' );
+										$markerActive = get_sub_field( 'marker_active' );
+
 										if ( empty( $coordinates['markers'] ) ) {
 											// skip locations without markers
 											continue;
@@ -224,7 +228,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 										$lat = $coordinates['markers'][0]['lat'];
 										$lng = $coordinates['markers'][0]['lng'];
 										
-										$card = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $lat .'/'. $lng .'" aria-hidden="true" hidden>';
+										$card = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $lat .'/'. $lng .'" data-marker="'. ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : '' ) .'" data-marker-hover="'. ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : '' ) .'" data-marker-active="'. ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : '' ) .'" aria-hidden="true" hidden>';
                     
 										$card .= ( $button ) ? '<a class="draad-card__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-card__wrapper">';
 

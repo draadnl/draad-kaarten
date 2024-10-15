@@ -84,6 +84,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "allow_in_bindings": 1,
                     "leaflet_map": "{\"lat\":52.3655376,\"lng\":5.4327393,\"zoom\":8,\"layers\":[\"OpenStreetMap.Mapnik\"],\"markers\":[]}"
                 }
             ]
@@ -212,6 +213,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "allow_in_bindings": 1,
                     "leaflet_map": "{\"lat\":52.3655376,\"lng\":5.4327393,\"zoom\":8,\"layers\":[\"OpenStreetMap.Mapnik\"],\"markers\":[]}",
                     "parent_repeater": "field_650807c6e9891"
                 },
@@ -323,9 +325,10 @@
                 "stadsdelen": "Stadsdelen"
             },
             "default_value": false,
-            "return_format": "value",
+            "return_format": "array",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -349,74 +352,388 @@
             "endpoint": 0
         },
         {
-            "key": "field_650807dbe9892",
-            "label": "Dataset",
-            "name": "geojson",
+            "key": "field_66e289800b7ab",
+            "label": "Datasets",
+            "name": "datasets",
             "aria-label": "",
-            "type": "file",
-            "instructions": "Hier kan je een data set uploaden die ingeladen wordt in de kaart, deze data kan je downloaden van <a href=\"https:\/\/denhaag.dataplatform.nl\/\" target=\"_blank\">Dataplatform Den Haag<\/a>",
+            "type": "repeater",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "json"
-        },
-        {
-            "key": "field_6512e1419ec2b",
-            "label": "Marker",
-            "name": "marker",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Upload hier de marker voor je dataset",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_6512e1559ec2c",
-            "label": "Marker - Actief",
-            "name": "marker_hover",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Upload hier een actieve marker voor de dataset",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Nieuwe regel",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67061df1674a0",
+                    "label": "Data",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0,
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2d36c1c6d1",
+                    "label": "Laag icoon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2d33e1c6cf",
+                    "label": "Laag naam",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2d3541c6d0",
+                    "label": "Laag Beschrijving",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b29a0b2cb",
+                    "label": "Type dataset",
+                    "name": "type_dataset",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "api": "API",
+                        "file": "Bestand"
+                    },
+                    "default_value": "api",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "vertical",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2899f0b7ac",
+                    "label": "API endpoint",
+                    "name": "api_endpoint",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_66e2b29a0b2cb",
+                                "operator": "==",
+                                "value": "api"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "https:\/\/ckan.dataplatform.nl\/api\/3\/action\/datastore_search?resource_id=#",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b4230b2cc",
+                    "label": "Bestand",
+                    "name": "file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_66e2b29a0b2cb",
+                                "operator": "==",
+                                "value": "file"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b70c81de2",
+                    "label": "Marker",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0,
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2a3df66761",
+                    "label": "Marker",
+                    "name": "marker",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload hier de marker",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 1,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2a3e566763",
+                    "label": "Marker - Hover",
+                    "name": "marker_hover",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload hier een hover marker",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 1,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2a3e266762",
+                    "label": "Marker - Actief",
+                    "name": "marker_active",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload hier een actieve marker",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 1,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b71881de3",
+                    "label": "Lijnen",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0,
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b4780b2cf",
+                    "label": "Lijn kleur",
+                    "name": "shape_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#248641",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b60d0b2d0",
+                    "label": "Lijn dikte",
+                    "name": "shape_width",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 4,
+                    "min": 2,
+                    "max": 8,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66e289800b7ab"
+                },
+                {
+                    "key": "field_66e2b65a0b2d1",
+                    "label": "Lijn stijl",
+                    "name": "shape_style",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "solid": "Doorlopend",
+                        "dash": "Gestreept"
+                    },
+                    "default_value": "solid",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "vertical",
+                    "parent_repeater": "field_66e289800b7ab"
+                }
+            ]
         }
     ],
     "location": [
@@ -437,5 +754,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724232893
+    "modified": 1728910502
 }

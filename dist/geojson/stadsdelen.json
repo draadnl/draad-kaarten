@@ -5395,7 +5395,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>1</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0AE-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>1</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Loosduinen</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>14134646.8962125</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>17808.8888769624</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>1</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0AE-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>1</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Loosduinen</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>14134646.8962125</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>17808.8888769624</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -5408,7 +5408,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0AE-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 1,
-        "STADSDEELNAAM": "Loosduinen",
+        "titel": "Loosduinen",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 14134646.8962125,
         "OMTREK": 17808.8888769624
@@ -12519,7 +12519,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>2</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B5-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>2</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Escamp</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>14439113.6738155</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>24141.5909180693</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>2</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B5-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>2</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Escamp</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>14439113.6738155</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>24141.5909180693</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -12532,7 +12532,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0B5-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 2,
-        "STADSDEELNAAM": "Escamp",
+        "titel": "Escamp",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 14439113.6738155,
         "OMTREK": 24141.5909180693
@@ -18813,7 +18813,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>3</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0AF-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>3</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Segbroek</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>7189871.3461925</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>14562.6759525548</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>3</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0AF-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>3</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Segbroek</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>7189871.3461925</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>14562.6759525548</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -18826,7 +18826,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0AF-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 3,
-        "STADSDEELNAAM": "Segbroek",
+        "titel": "Segbroek",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 7189871.3461925,
         "OMTREK": 14562.6759525548
@@ -24292,7 +24292,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>4</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B4-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Scheveningen</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>13186095.298142</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>20133.0496393124</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>4</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B4-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Scheveningen</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>13186095.298142</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>20133.0496393124</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -24305,7 +24305,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0B4-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 4,
-        "STADSDEELNAAM": "Scheveningen",
+        "titel": "Scheveningen",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 13186095.298142,
         "OMTREK": 20133.0496393124
@@ -30521,7 +30521,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>5</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B2-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>5</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Centrum</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>7792662.203595</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>14544.3243352256</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>5</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B2-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>5</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Centrum</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>7792662.203595</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>14544.3243352256</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -30534,7 +30534,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0B2-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 5,
-        "STADSDEELNAAM": "Centrum",
+        "titel": "Centrum",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 7792662.203595,
         "OMTREK": 14544.3243352256
@@ -34185,7 +34185,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>6</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B0-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>6</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Laak</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>4262199.2989535</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>10103.0276868473</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>6</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B0-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>6</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Laak</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>4262199.2989535</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>10103.0276868473</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -34198,7 +34198,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0B0-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 6,
-        "STADSDEELNAAM": "Laak",
+        "titel": "Laak",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 4262199.2989535,
         "OMTREK": 10103.0276868473
@@ -37834,7 +37834,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>7</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B3-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Haagse Hout</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>9039508.0104835</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>16474.174398018</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>7</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B3-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Haagse Hout</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>9039508.0104835</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>16474.174398018</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -37847,7 +37847,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0B3-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 7,
-        "STADSDEELNAAM": "Haagse Hout",
+        "titel": "Haagse Hout",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 9039508.0104835,
         "OMTREK": 16474.174398018
@@ -42648,7 +42648,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>8</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B1-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>8</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>STADSDEELNAAM</th>\n<td>Leidschenveen-Ypenburg</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>15575354.7828495</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>26415.730138666</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>ID</th>\n<td>8</td>\n</tr><tr bgcolor=\"\">\n<th>OCE_ID</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>GUID</th>\n<td>{75418CAB-A0B1-2406-E040-13ACC6FD5F8B}</td>\n</tr><tr bgcolor=\"\">\n<th>STADSDEELCODE</th>\n<td>8</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Leidschenveen-Ypenburg</td>\n</tr><tr bgcolor=\"\">\n<th>GEMEENTECODE</th>\n<td>518</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OPPERVLAKTE</th>\n<td>15575354.7828495</td>\n</tr><tr bgcolor=\"\">\n<th>OMTREK</th>\n<td>26415.730138666</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffaa00",
@@ -42661,7 +42661,7 @@
         "OCE_ID": 103,
         "GUID": "{75418CAB-A0B1-2406-E040-13ACC6FD5F8B}",
         "STADSDEELCODE": 8,
-        "STADSDEELNAAM": "Leidschenveen-Ypenburg",
+        "titel": "Leidschenveen-Ypenburg",
         "GEMEENTECODE": 518,
         "OPPERVLAKTE": 15575354.7828495,
         "OMTREK": 26415.730138666

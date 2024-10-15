@@ -37,6 +37,10 @@
 		}
 	}
 
+	&:has(.draad-tabs__panel .draad-grid.--empty) .draad-tabs__list {
+		display: none;
+	}
+
 	&__tab {
 
 		&[aria-selected="true"] {

@@ -76,13 +76,11 @@ class Draad_Map {
 			showCoverageOnHover: false,
 			iconCreateFunction: (cluster) => {
 				const childCount = cluster.getChildCount();
-				let c = " marker-cluster-";
+				let c = " marker-cluster-large";
 				if (childCount < 10) {
-					c += "small";
+					c = "marker-cluster-small";
 				} else if (childCount < 100) {
-					c += "medium";
-				} else {
-					c += "large";
+					c += "marker-cluster-medium";
 				}
 
 				return new L.DivIcon({
@@ -712,14 +710,12 @@ class Draad_Map {
 						fetch(endpoint)
 							.then((response) => response.json())
 							.then((data) => {
-								let geoJSON = null;
+								let geoJSON = data;
 								if (
 									typeof data.type === "undefined" ||
 									data.type !== "FeatureCollection"
 								) {
 									geoJSON = this.jsonToGeoJSON(data);
-								} else {
-									geoJSON = data;
 								}
 
 								const markerSrc = dataset.dataset.draadMarker;

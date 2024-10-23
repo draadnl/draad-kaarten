@@ -505,20 +505,17 @@ class Draad_Map {
 		state,
 	) => {
 		switch (state) {
-			case "default":
-				marker.setIcon(marker._styles.default);
-				break;
-
 			case "active":
+			case "focus":
 				marker.setIcon(marker._styles.active);
 				break;
 
 			case "hover":
 				marker.setIcon(marker._styles.hover);
 				break;
-
-			case "focus":
-				marker.setIcon(marker._styles.active);
+				
+			default:
+				marker.setIcon(marker._styles.default);
 				break;
 		}
 	};
@@ -637,11 +634,6 @@ class Draad_Map {
 	 */
 	dataSetState = (feature, state) => {
 		switch (state) {
-			case "default":
-				const styleDefault = feature._style;
-				styleDefault.fillOpacity = 0;
-				feature.setStyle(styleDefault);
-				break;
 			case "active":
 				const styleActive = feature._style;
 				styleActive.fillOpacity = 0.15;
@@ -656,6 +648,11 @@ class Draad_Map {
 				const styleFocus = feature._style;
 				styleFocus.fillOpacity = 0.15;
 				feature.setStyle(styleFocus);
+				break;
+			default:
+				const styleDefault = feature._style;
+				styleDefault.fillOpacity = 0;
+				feature.setStyle(styleDefault);
 				break;
 		}
 	};

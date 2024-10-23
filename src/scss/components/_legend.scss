@@ -1,48 +1,46 @@
-.draad-maps__legend {}
+.draad-maps__legend {
+}
 
 .draad-maps__dataset {
+  label {
+    display: flex;
+    align-items: start;
+    gap: 1ch;
+  }
 
-	label {
-		display: flex;
-		align-items: start;
-		gap: 1ch;
-	}
+  input {
+    margin-block: 4px;
+  }
 
-	input {
-		margin-block: 4px;
-	}
+  .label {
+    display: grid;
+    grid-template-columns: 1.2em 1fr;
+    gap: 0 1ch;
+    align-items: start;
 
-	.label {
-		display: grid;
-		grid-template-columns: 1.2em 1fr;
-		gap: 0 1ch;
-		align-items: start;
+    img {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      width: 1.2em;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+    }
 
-		img {
-			grid-column: 1 / 2;
-			grid-row: 1 / 2;
-			width: 1.2em;
-			height: auto;
-			aspect-ratio: 1;
-			object-fit: contain;
-			object-position: center;
-		}
+    details {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
 
-		details {
-			grid-column: 2 / 3;
-			grid-row: 1 / 2;
+      p {
+        margin: 0;
+        font-style: italic;
+      }
+    }
 
-
-			p {
-				margin: 0;
-				font-style: italic;
-			}
-		}
-
-		.label-text,
-		summary {
-			font-weight: bold;
-		}
-	}
-
+    .label-text,
+    summary {
+      font-weight: bold;
+    }
+  }
 }

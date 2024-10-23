@@ -1,69 +1,72 @@
 .draad-search {
-	grid-column: 1 / -1;
-	grid-row: 1;
-	position: relative;
-	isolation: isolate;
-	z-index: 1;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
 
-	@media (min-width: 29.9376rem) {
-		grid-column: 1;
-	}
+  @media (min-width: 29.9376rem) {
+    grid-column: 1;
+  }
 
-	@supports not (grid-template-columns: subgrid) {
-		display: block;
-		min-width: var(--dk__search-min-width, 14rem);
-		max-width: var(--dk__search-max-width, 29.5rem);
+  @supports not (grid-template-columns: subgrid) {
+    display: block;
+    min-width: var(--dk__search-min-width, 14rem);
+    max-width: var(--dk__search-max-width, 29.5rem);
 
-		@media (min-width: 37.4375rem) {
-			margin-bottom: var(--dk__search-margin-bottom, -3.85rem);
-		}
-	}
+    @media (min-width: 37.4375rem) {
+      margin-bottom: var(--dk__search-margin-bottom, -3.85rem);
+    }
+  }
 
-	&__form {
-		display: grid;
-		grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
-		grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
-	}
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
+    grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
+  }
 
-	&__field {
-		grid-column: 1 / -1;
-		grid-row: 1 / -1;
-		display: grid;
-		grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
-		grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
+  &__field {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
+    grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
 
-		@supports (grid-template-columns: subgrid) {
-			grid-template-columns: subgrid;
-			grid-template-rows: subgrid;
-		}
-	}
+    @supports (grid-template-columns: subgrid) {
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+    }
+  }
 
-	&__label {
-		color: var(--dk__search-label-color, var(--dk__clr-text, hsl(0deg 0% 18%)));
-		font-weight: var(--dk__search-label-font-weight, 500);
-		font-size: var(--dk__search-label-font-size, 1.125rem);
-		line-height: var(--dk__search-label-line-height, 1.5);
-	}
+  &__label {
+    color: var(--dk__search-label-color, var(--dk__clr-text, hsl(0deg 0% 18%)));
+    font-weight: var(--dk__search-label-font-weight, 500);
+    font-size: var(--dk__search-label-font-size, 1.125rem);
+    line-height: var(--dk__search-label-line-height, 1.5);
+  }
 
-	&__input {
-		grid-column: 1 / -1;
-		grid-row: 2 / -1;
-		padding: var(--dk__search-input-padding, .667em 2.889em .667em .889em);
-		appearance: textfield;
-		background: var(--dk__search-input-backround, hsl(0deg 0% 100%));
-		border: var(--dk__search-input-border, .0625rem solid var(--dk__search-input-border-color, hsl(0deg 0% 48%)));
-		border-radius: var(--dk__search-input-border-radius, 0.1875rem);
-		box-shadow: var(--dk__search-input-box-shadow, none);
-		color: var(--dk__search-input-color, var(--dk__clr-text, hsl(0deg 0% 29%)));
-		font-size: var(--dk__search-input-font-size, 1.125rem);
-		font-weight: var(--dk__search-input-font-weight, 400);
-		line-height: var(--dk__search-input-line-height, 1.5);
-	}
+  &__input {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    padding: var(--dk__search-input-padding, 0.667em 2.889em 0.667em 0.889em);
+    appearance: textfield;
+    background: var(--dk__search-input-backround, hsl(0deg 0% 100%));
+    border: var(
+      --dk__search-input-border,
+      0.0625rem solid var(--dk__search-input-border-color, hsl(0deg 0% 48%))
+    );
+    border-radius: var(--dk__search-input-border-radius, 0.1875rem);
+    box-shadow: var(--dk__search-input-box-shadow, none);
+    color: var(--dk__search-input-color, var(--dk__clr-text, hsl(0deg 0% 29%)));
+    font-size: var(--dk__search-input-font-size, 1.125rem);
+    font-weight: var(--dk__search-input-font-weight, 400);
+    line-height: var(--dk__search-input-line-height, 1.5);
+  }
 
-	&__submit {
-		grid-column: 2;
-		grid-row: 2;
-		width: 100%;
-		height: 100%;
-	}
+  &__submit {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+  }
 }

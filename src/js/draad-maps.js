@@ -245,7 +245,7 @@ class Draad_Map {
 		}
 
 		/**
-		 * Remove touch instructions ofter interaction
+		 * Remove touch instructions after interaction
 		 */
 		const instructions = this.outerWrapper.querySelector('.draad-maps__instructions');
 		if (instructions) {

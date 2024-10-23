@@ -189,14 +189,12 @@ class Draad_Map {
 							.text
 					);
 
-					let geoJSON = null;
+					let geoJSON = data;
 					if (
 						typeof data.type === "undefined" ||
 						data.type !== "FeatureCollection"
 					) {
 						geoJSON = this.jsonToGeoJSON(data);
-					} else {
-						geoJSON = data;
 					}
 
 					const geojsonLayer = this.addData(geoJSON, node);
@@ -208,14 +206,12 @@ class Draad_Map {
 					fetch(endpoint)
 						.then((response) => response.json())
 						.then((data) => {
-							let geoJSON = null;
+							let geoJSON = data;
 							if (
 								typeof data.type === "undefined" ||
 								data.type !== "FeatureCollection"
 							) {
 								geoJSON = this.jsonToGeoJSON(data);
-							} else {
-								geoJSON = data;
 							}
 							
 							const geojsonLayer = this.addData(geoJSON, node);

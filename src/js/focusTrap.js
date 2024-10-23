@@ -1,102 +1,105 @@
 `use strict`;
 
 class Draad_Focus_Trap {
+  /**
+   * Constructor
+   *
+   * @param {HTMLElement} node HTML element to trap focus in
+   */
+  constructor(node) {
+    this.rootEl = node;
+  }
 
-	/**
-	 * Constructor
-	 * 
-	 * @param {HTMLElement} node HTML element to trap focus in
-	 */
-	constructor(node) {
+  rootEl = null;
 
-		this.rootEl = node;
+  _active = false;
 
-	}
+  firstFocusableElement = null;
 
-	rootEl = null;
+  lastFocusableElement = null;
 
-	_active = false;
+  get active() {
+    return this._active;
+  }
 
-	firstFocusableElement = null;
+  set active(value) {
+    if (typeof value !== "boolean") {
+      return;
+    }
 
-	lastFocusableElement = null;
+    this._active = value;
 
-	get active() {
-		return this._active;
-	}
+    if (this._active) {
+      this.activate();
+    } else {
+      this.deactivate();
+    }
+  }
 
-	set active(value) {
+  /**
+   * Activate focus trap
+   */
+  activate() {
+    if (!this._active) {
+      return;
+    }
 
-		if (typeof value !== 'boolean') {
-			return;
-		}
+    // get all focusable children
+    const focusableElements = Array.from(
+      this.rootEl.querySelectorAll(
+        "a[href], button, textarea, input, select, summary, [tabindex]",
+      ),
+    );
+    // filter out elements with tabindex="-1"
+    focusableElements.filter(
+      (element) => element.getAttribute("tabindex") !== "-1",
+    );
 
-		this._active = value;
+    if (focusableElements.length === 0) {
+      return;
+    }
 
-		if (this._active) {
-			this.activate();
-		} else {
-			this.deactivate();
-		}
+    // filter out elements that are not visible
+    const visibleFocusableElements = focusableElements.filter(
+      (element) => element.offsetParent !== null,
+    );
 
-	}
+    this.firstFocusableElement = visibleFocusableElements[0];
 
-	/**
-	 * Activate focus trap
-	 */
-	activate() {
+    this.lastFocusableElement =
+      visibleFocusableElements[visibleFocusableElements.length - 1];
 
-		if (!this._active) {
-			return;
-		}
+    this.rootEl.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") {
+        return;
+      }
 
-		// get all focusable children
-		const focusableElements = Array.from(this.rootEl.querySelectorAll('a[href], button, textarea, input, select, summary, [tabindex]'));
-		// filter out elements with tabindex="-1"
-		focusableElements.filter((element) => element.getAttribute('tabindex') !== '-1');
+      if (
+        !event.shiftKey &&
+        document.activeElement === this.lastFocusableElement
+      ) {
+        event.preventDefault();
+        this.firstFocusableElement.focus();
+      } else if (
+        event.shiftKey &&
+        document.activeElement === this.firstFocusableElement
+      ) {
+        event.preventDefault();
+        this.lastFocusableElement.focus();
+      }
+    });
+  }
 
-		if (focusableElements.length === 0) {
-			return;
-		}
+  /**
+   * Deactivate focus trap
+   */
+  deactivate() {
+    this.rootEl.removeEventListener("keydown", () => {});
 
-		// filter out elements that are not visible
-		const visibleFocusableElements = focusableElements.filter((element) => element.offsetParent !== null);
+    this.firstFocusableElement = null;
 
-		this.firstFocusableElement = visibleFocusableElements[0];
-
-		this.lastFocusableElement = visibleFocusableElements[visibleFocusableElements.length - 1];
-
-		this.rootEl.addEventListener('keydown', (event) => {
-
-			if (event.key !== 'Tab') {
-				return;
-			}
-
-			if (!event.shiftKey && document.activeElement === this.lastFocusableElement) {
-				event.preventDefault();
-				this.firstFocusableElement.focus();
-			} else if (event.shiftKey && document.activeElement === this.firstFocusableElement) {
-				event.preventDefault();
-				this.lastFocusableElement.focus();
-			}
-
-		});
-
-	}
-
-	/**
-	 * Deactivate focus trap
-	 */
-	deactivate() {
-
-		this.rootEl.removeEventListener('keydown', () => { });
-
-		this.firstFocusableElement = null;
-
-		this.lastFocusableElement = null;
-
-	}
-
+    this.lastFocusableElement = null;
+  }
 }
 
 export default Draad_Focus_Trap;

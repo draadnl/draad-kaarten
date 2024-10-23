@@ -1095,7 +1095,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>30034</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Transvaalkwartier-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>361133.496174999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2516.25622886095</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>30034</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Transvaalkwartier-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>361133.496174999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2516.25622886095</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -1106,7 +1106,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 30034,
         "BUURTCODE": 34,
-        "BUURTNAAM": "Transvaalkwartier-Zuid",
+        "titel": "Transvaalkwartier-Zuid",
         "WIJKCODE": 30,
         "OCE_ID": 105,
         "OPPERVLAKTE": 361133.496174999,
@@ -3148,7 +3148,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>31035</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>35</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Oostbroek-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>376743.804899495</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2838.36306044057</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>31035</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>35</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Oostbroek-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>376743.804899495</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2838.36306044057</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -3159,7 +3159,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 31035,
         "BUURTCODE": 35,
-        "BUURTNAAM": "Oostbroek-Zuid",
+        "titel": "Oostbroek-Zuid",
         "WIJKCODE": 31,
         "OCE_ID": 105,
         "OPPERVLAKTE": 376743.804899495,
@@ -5266,7 +5266,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>35036</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Zuiderpark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>35</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1082118.90877551</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4439.09832029525</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>35036</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Zuiderpark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>35</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1082118.90877551</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4439.09832029525</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -5277,7 +5277,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 35036,
         "BUURTCODE": 36,
-        "BUURTNAAM": "Zuiderpark",
+        "titel": "Zuiderpark",
         "WIJKCODE": 35,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1082118.90877551,
@@ -7489,7 +7489,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36037</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>37</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Moerwijk-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>508980.969691502</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3087.58932717267</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36037</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>37</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Moerwijk-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>508980.969691502</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3087.58932717267</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -7500,7 +7500,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 36037,
         "BUURTCODE": 37,
-        "BUURTNAAM": "Moerwijk-West",
+        "titel": "Moerwijk-West",
         "WIJKCODE": 36,
         "OCE_ID": 105,
         "OPPERVLAKTE": 508980.969691502,
@@ -9532,7 +9532,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36038</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Moerwijk-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>474346.049528496</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3796.12397969174</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36038</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Moerwijk-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>474346.049528496</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3796.12397969174</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -9543,7 +9543,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 36038,
         "BUURTCODE": 38,
-        "BUURTNAAM": "Moerwijk-Noord",
+        "titel": "Moerwijk-Noord",
         "WIJKCODE": 36,
         "OCE_ID": 105,
         "OPPERVLAKTE": 474346.049528496,
@@ -11125,7 +11125,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36039</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>39</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Moerwijk-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>433184.457947002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3187.64594330748</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36039</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>39</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Moerwijk-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>433184.457947002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3187.64594330748</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -11136,7 +11136,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 36039,
         "BUURTCODE": 39,
-        "BUURTNAAM": "Moerwijk-Zuid",
+        "titel": "Moerwijk-Zuid",
         "WIJKCODE": 36,
         "OCE_ID": 105,
         "OPPERVLAKTE": 433184.457947002,
@@ -13393,7 +13393,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18040</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Nieuw Waldeck</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>645661.1795565</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3399.2625808102</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18040</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Nieuw Waldeck</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>645661.1795565</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3399.2625808102</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -13404,7 +13404,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 18040,
         "BUURTCODE": 40,
-        "BUURTNAAM": "Nieuw Waldeck",
+        "titel": "Nieuw Waldeck",
         "WIJKCODE": 18,
         "OCE_ID": 105,
         "OPPERVLAKTE": 645661.1795565,
@@ -15161,7 +15161,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>10041</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Zorgvliet</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>10</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>875515.807255995</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3864.54018600658</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>10041</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Zorgvliet</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>10</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>875515.807255995</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3864.54018600658</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -15172,7 +15172,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 10041,
         "BUURTCODE": 41,
-        "BUURTNAAM": "Zorgvliet",
+        "titel": "Zorgvliet",
         "WIJKCODE": 10,
         "OCE_ID": 105,
         "OPPERVLAKTE": 875515.807255995,
@@ -16934,7 +16934,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>11042</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Stadhoudersplantsoen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>11</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>233286.1097325</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2223.00845263429</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>11042</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Stadhoudersplantsoen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>11</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>233286.1097325</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2223.00845263429</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -16945,7 +16945,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 11042,
         "BUURTCODE": 42,
-        "BUURTNAAM": "Stadhoudersplantsoen",
+        "titel": "Stadhoudersplantsoen",
         "WIJKCODE": 11,
         "OCE_ID": 105,
         "OPPERVLAKTE": 233286.1097325,
@@ -19027,7 +19027,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>11043</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>43</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Sweelinckplein e.o.</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>11</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>444780.699812501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3162.97016324172</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>11043</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>43</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Sweelinckplein e.o.</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>11</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>444780.699812501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3162.97016324172</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -19038,7 +19038,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 11043,
         "BUURTCODE": 43,
-        "BUURTNAAM": "Sweelinckplein e.o.",
+        "titel": "Sweelinckplein e.o.",
         "WIJKCODE": 11,
         "OCE_ID": 105,
         "OPPERVLAKTE": 444780.699812501,
@@ -20615,7 +20615,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>21044</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Koningsplein e.o.</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>21</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>427338.972905503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2923.83424481956</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>21044</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Koningsplein e.o.</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>21</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>427338.972905503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2923.83424481956</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -20626,7 +20626,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 21044,
         "BUURTCODE": 44,
-        "BUURTNAAM": "Koningsplein e.o.",
+        "titel": "Koningsplein e.o.",
         "WIJKCODE": 21,
         "OCE_ID": 105,
         "OPPERVLAKTE": 427338.972905503,
@@ -22708,7 +22708,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>22045</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>45</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Zeeheldenkwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>22</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>812819.274363999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4064.41320389597</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>22045</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>45</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Zeeheldenkwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>22</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>812819.274363999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4064.41320389597</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -22719,7 +22719,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 22045,
         "BUURTCODE": 45,
-        "BUURTNAAM": "Zeeheldenkwartier",
+        "titel": "Zeeheldenkwartier",
         "WIJKCODE": 22,
         "OCE_ID": 105,
         "OPPERVLAKTE": 812819.274363999,
@@ -24996,7 +24996,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>5046</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>46</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Archipelbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>5</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>871291.140658007</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4071.4640963648</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>5046</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>46</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Archipelbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>5</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>871291.140658007</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4071.4640963648</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -25007,7 +25007,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 5046,
         "BUURTCODE": 46,
-        "BUURTNAAM": "Archipelbuurt",
+        "titel": "Archipelbuurt",
         "WIJKCODE": 5,
         "OCE_ID": 105,
         "OPPERVLAKTE": 871291.140658007,
@@ -26654,7 +26654,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>23047</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>47</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Willemspark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>23</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>345817.002710499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2880.53001194999</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>23047</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>47</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Willemspark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>23</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>345817.002710499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2880.53001194999</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -26665,7 +26665,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 23047,
         "BUURTCODE": 47,
-        "BUURTNAAM": "Willemspark",
+        "titel": "Willemspark",
         "WIJKCODE": 23,
         "OCE_ID": 105,
         "OPPERVLAKTE": 345817.002710499,
@@ -27672,7 +27672,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>21010</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>10</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rond de Energiecentrale</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>21</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>515060.283945502</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3105.39470284319</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>21010</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>10</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rond de Energiecentrale</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>21</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>515060.283945502</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3105.39470284319</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -27683,7 +27683,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 21010,
         "BUURTCODE": 10,
-        "BUURTNAAM": "Rond de Energiecentrale",
+        "titel": "Rond de Energiecentrale",
         "WIJKCODE": 21,
         "OCE_ID": 105,
         "OPPERVLAKTE": 515060.283945502,
@@ -30920,7 +30920,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28011</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>11</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Kortenbos</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>630544.602044503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3935.67979079726</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28011</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>11</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Kortenbos</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>630544.602044503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3935.67979079726</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -30931,7 +30931,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 28011,
         "BUURTCODE": 11,
-        "BUURTNAAM": "Kortenbos",
+        "titel": "Kortenbos",
         "WIJKCODE": 28,
         "OCE_ID": 105,
         "OPPERVLAKTE": 630544.602044503,
@@ -33713,7 +33713,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28012</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Voorhout</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>621221.587538495</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3434.8846010559</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28012</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Voorhout</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>621221.587538495</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3434.8846010559</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -33724,7 +33724,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 28012,
         "BUURTCODE": 12,
-        "BUURTNAAM": "Voorhout",
+        "titel": "Voorhout",
         "WIJKCODE": 28,
         "OCE_ID": 105,
         "OPPERVLAKTE": 621221.587538495,
@@ -35446,7 +35446,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28013</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>13</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Uilebomen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>286998.757090503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2193.49201813115</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28013</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>13</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Uilebomen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>286998.757090503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2193.49201813115</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -35457,7 +35457,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 28013,
         "BUURTCODE": 13,
-        "BUURTNAAM": "Uilebomen",
+        "titel": "Uilebomen",
         "WIJKCODE": 28,
         "OCE_ID": 105,
         "OPPERVLAKTE": 286998.757090503,
@@ -38434,7 +38434,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28014</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>14</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Zuidwal</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>507329.290958493</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4051.75516035122</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>28014</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>14</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Zuidwal</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>28</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>507329.290958493</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4051.75516035122</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -38445,7 +38445,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 28014,
         "BUURTCODE": 14,
-        "BUURTNAAM": "Zuidwal",
+        "titel": "Zuidwal",
         "WIJKCODE": 28,
         "OCE_ID": 105,
         "OPPERVLAKTE": 507329.290958493,
@@ -40352,7 +40352,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>29015</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>15</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Schildersbuurt-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>29</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>643673.992733997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4191.90571927651</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>29015</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>15</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Schildersbuurt-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>29</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>643673.992733997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4191.90571927651</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -40363,7 +40363,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 29015,
         "BUURTCODE": 15,
-        "BUURTNAAM": "Schildersbuurt-West",
+        "titel": "Schildersbuurt-West",
         "WIJKCODE": 29,
         "OCE_ID": 105,
         "OPPERVLAKTE": 643673.992733997,
@@ -41805,7 +41805,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>29016</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>16</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Schildersbuurt-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>29</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>472416.529241496</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3175.10759652504</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>29016</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>16</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Schildersbuurt-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>29</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>472416.529241496</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3175.10759652504</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -41816,7 +41816,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 29016,
         "BUURTCODE": 16,
-        "BUURTNAAM": "Schildersbuurt-Noord",
+        "titel": "Schildersbuurt-Noord",
         "WIJKCODE": 29,
         "OCE_ID": 105,
         "OPPERVLAKTE": 472416.529241496,
@@ -43513,7 +43513,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>29017</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Schildersbuurt-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>29</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>348508.461435506</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3028.29076534153</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>29017</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Schildersbuurt-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>29</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>348508.461435506</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3028.29076534153</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -43524,7 +43524,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 29017,
         "BUURTCODE": 17,
-        "BUURTNAAM": "Schildersbuurt-Oost",
+        "titel": "Schildersbuurt-Oost",
         "WIJKCODE": 29,
         "OCE_ID": 105,
         "OPPERVLAKTE": 348508.461435506,
@@ -45316,7 +45316,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>27018</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Huygenspark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>27</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>465587.136282505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3782.23932458381</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>27018</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Huygenspark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>27</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>465587.136282505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3782.23932458381</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -45327,7 +45327,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 27018,
         "BUURTCODE": 18,
-        "BUURTNAAM": "Huygenspark",
+        "titel": "Huygenspark",
         "WIJKCODE": 27,
         "OCE_ID": 105,
         "OPPERVLAKTE": 465587.136282505,
@@ -46604,7 +46604,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>17085</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>85</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Kerketuinen en Zichtenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>817793.162954503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4490.02800875681</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>17085</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>85</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Kerketuinen en Zichtenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>817793.162954503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4490.02800875681</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -46615,7 +46615,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 17085,
         "BUURTCODE": 85,
-        "BUURTNAAM": "Kerketuinen en Zichtenburg",
+        "titel": "Kerketuinen en Zichtenburg",
         "WIJKCODE": 17,
         "OCE_ID": 105,
         "OPPERVLAKTE": 817793.162954503,
@@ -49042,7 +49042,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>17086</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>86</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Houtwijk</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1457137.19197799</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6163.49008827772</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>17086</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>86</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Houtwijk</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1457137.19197799</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6163.49008827772</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -49053,7 +49053,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 17086,
         "BUURTCODE": 86,
-        "BUURTNAAM": "Houtwijk",
+        "titel": "Houtwijk",
         "WIJKCODE": 17,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1457137.19197799,
@@ -50670,7 +50670,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33087</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>87</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Venen, Oorden en Raden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>811685.857905002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4485.80827591634</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33087</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>87</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Venen, Oorden en Raden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>811685.857905002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4485.80827591634</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -50681,7 +50681,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 33087,
         "BUURTCODE": 87,
-        "BUURTNAAM": "Venen, Oorden en Raden",
+        "titel": "Venen, Oorden en Raden",
         "WIJKCODE": 33,
         "OCE_ID": 105,
         "OPPERVLAKTE": 811685.857905002,
@@ -51963,7 +51963,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>15091</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>91</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Kijkduin</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>15</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1447217.29134401</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5879.74323307524</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>15091</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>91</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Kijkduin</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>15</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1447217.29134401</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5879.74323307524</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -51974,7 +51974,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 15091,
         "BUURTCODE": 91,
-        "BUURTNAAM": "Kijkduin",
+        "titel": "Kijkduin",
         "WIJKCODE": 15,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1447217.29134401,
@@ -53511,7 +53511,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>14092</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>92</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bohemen en Meer en Bos</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>14</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>805149.861382999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3996.36970735482</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>14092</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>92</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bohemen en Meer en Bos</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>14</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>805149.861382999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3996.36970735482</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -53522,7 +53522,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 14092,
         "BUURTCODE": 92,
-        "BUURTNAAM": "Bohemen en Meer en Bos",
+        "titel": "Bohemen en Meer en Bos",
         "WIJKCODE": 14,
         "OCE_ID": 105,
         "OPPERVLAKTE": 805149.861382999,
@@ -54929,7 +54929,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>34088</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>88</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Morgenstond-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>608082.339351507</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3676.5269906734</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>34088</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>88</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Morgenstond-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>608082.339351507</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3676.5269906734</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -54940,7 +54940,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 34088,
         "BUURTCODE": 88,
-        "BUURTNAAM": "Morgenstond-West",
+        "titel": "Morgenstond-West",
         "WIJKCODE": 34,
         "OCE_ID": 105,
         "OPPERVLAKTE": 608082.339351507,
@@ -56857,7 +56857,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>34089</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>89</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Morgenstond-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>600236.368251499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3593.03721631057</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>34089</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>89</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Morgenstond-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>600236.368251499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3593.03721631057</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -56868,7 +56868,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 34089,
         "BUURTCODE": 89,
-        "BUURTNAAM": "Morgenstond-Oost",
+        "titel": "Morgenstond-Oost",
         "WIJKCODE": 34,
         "OCE_ID": 105,
         "OPPERVLAKTE": 600236.368251499,
@@ -58695,7 +58695,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>15090</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>90</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Ockenburgh</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>15</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>3462067.130526</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7983.3940979925</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>15090</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>90</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Ockenburgh</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>15</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>3462067.130526</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7983.3940979925</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -58706,7 +58706,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 15090,
         "BUURTCODE": 90,
-        "BUURTNAAM": "Ockenburgh",
+        "titel": "Ockenburgh",
         "WIJKCODE": 15,
         "OCE_ID": 105,
         "OPPERVLAKTE": 3462067.130526,
@@ -59963,7 +59963,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18093</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>93</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Componistenbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>146683.352631505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1849.37120251326</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18093</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>93</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Componistenbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>146683.352631505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1849.37120251326</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -59974,7 +59974,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 18093,
         "BUURTCODE": 93,
-        "BUURTNAAM": "Componistenbuurt",
+        "titel": "Componistenbuurt",
         "WIJKCODE": 18,
         "OCE_ID": 105,
         "OPPERVLAKTE": 146683.352631505,
@@ -61181,7 +61181,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18094</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>94</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Waldeck-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>336069.231815992</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2608.41014597619</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18094</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>94</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Waldeck-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>336069.231815992</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2608.41014597619</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -61192,7 +61192,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 18094,
         "BUURTCODE": 94,
-        "BUURTNAAM": "Waldeck-Noord",
+        "titel": "Waldeck-Noord",
         "WIJKCODE": 18,
         "OCE_ID": 105,
         "OPPERVLAKTE": 336069.231815992,
@@ -63684,7 +63684,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>17095</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>95</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Kom Loosduinen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>466894.933161501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3730.30354063515</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>17095</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>95</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Kom Loosduinen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>17</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>466894.933161501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3730.30354063515</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -63695,7 +63695,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 17095,
         "BUURTCODE": 95,
-        "BUURTNAAM": "Kom Loosduinen",
+        "titel": "Kom Loosduinen",
         "WIJKCODE": 17,
         "OCE_ID": 105,
         "OPPERVLAKTE": 466894.933161501,
@@ -64897,7 +64897,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4079</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>79</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Van Hoytemastraat e.o.</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>258752.178036996</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2168.08489349622</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4079</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>79</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Van Hoytemastraat e.o.</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>258752.178036996</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2168.08489349622</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -64908,7 +64908,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 4079,
         "BUURTCODE": 79,
-        "BUURTNAAM": "Van Hoytemastraat e.o.",
+        "titel": "Van Hoytemastraat e.o.",
         "WIJKCODE": 4,
         "OCE_ID": 105,
         "OPPERVLAKTE": 258752.178036996,
@@ -65960,7 +65960,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>34080</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>80</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Morgenstond-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>485521.923445991</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3031.25674057947</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>34080</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>80</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Morgenstond-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>34</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>485521.923445991</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3031.25674057947</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -65971,7 +65971,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 34080,
         "BUURTCODE": 80,
-        "BUURTNAAM": "Morgenstond-Zuid",
+        "titel": "Morgenstond-Zuid",
         "WIJKCODE": 34,
         "OCE_ID": 105,
         "OPPERVLAKTE": 485521.923445991,
@@ -68008,7 +68008,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>14081</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>81</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bosjes van Pex</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>14</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>463566.817264499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3142.5343969899</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>14081</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>81</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bosjes van Pex</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>14</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>463566.817264499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3142.5343969899</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -68019,7 +68019,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 14081,
         "BUURTCODE": 81,
-        "BUURTNAAM": "Bosjes van Pex",
+        "titel": "Bosjes van Pex",
         "WIJKCODE": 14,
         "OCE_ID": 105,
         "OPPERVLAKTE": 463566.817264499,
@@ -70126,7 +70126,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18082</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>82</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rosenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>516877.313037998</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3326.06309338036</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18082</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>82</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rosenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>516877.313037998</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3326.06309338036</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -70137,7 +70137,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 18082,
         "BUURTCODE": 82,
-        "BUURTNAAM": "Rosenburg",
+        "titel": "Rosenburg",
         "WIJKCODE": 18,
         "OCE_ID": 105,
         "OPPERVLAKTE": 516877.313037998,
@@ -71829,7 +71829,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>19083</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>83</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Eykenduinen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>19</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>501321.365660997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3220.72941853531</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>19083</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>83</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Eykenduinen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>19</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>501321.365660997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3220.72941853531</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -71840,7 +71840,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 19083,
         "BUURTCODE": 83,
-        "BUURTNAAM": "Eykenduinen",
+        "titel": "Eykenduinen",
         "WIJKCODE": 19,
         "OCE_ID": 105,
         "OPPERVLAKTE": 501321.365660997,
@@ -74932,7 +74932,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>32084</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>84</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Leyenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>32</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1353530.213744</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5999.13340095227</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>32084</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>84</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Leyenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>32</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1353530.213744</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5999.13340095227</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -74943,7 +74943,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 32084,
         "BUURTCODE": 84,
-        "BUURTNAAM": "Leyenburg",
+        "titel": "Leyenburg",
         "WIJKCODE": 32,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1353530.213744,
@@ -76200,7 +76200,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4048</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>48</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Nassaubuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>287009.435492999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2172.60090458937</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4048</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>48</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Nassaubuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>287009.435492999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2172.60090458937</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -76211,7 +76211,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 4048,
         "BUURTCODE": 48,
-        "BUURTNAAM": "Nassaubuurt",
+        "titel": "Nassaubuurt",
         "WIJKCODE": 4,
         "OCE_ID": 105,
         "OPPERVLAKTE": 287009.435492999,
@@ -78888,7 +78888,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>24049</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>49</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Haagse Bos</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>24</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1277111.93394951</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6098.92145324858</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>24049</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>49</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Haagse Bos</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>24</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1277111.93394951</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6098.92145324858</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -78899,7 +78899,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 24049,
         "BUURTCODE": 49,
-        "BUURTNAAM": "Haagse Bos",
+        "titel": "Haagse Bos",
         "WIJKCODE": 24,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1277111.93394951,
@@ -82406,7 +82406,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>12050</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>50</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bloemenbuurt-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>282151.1897315</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2945.99553121741</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>12050</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>50</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bloemenbuurt-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>282151.1897315</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2945.99553121741</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -82417,7 +82417,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 12050,
         "BUURTCODE": 50,
-        "BUURTNAAM": "Bloemenbuurt-West",
+        "titel": "Bloemenbuurt-West",
         "WIJKCODE": 12,
         "OCE_ID": 105,
         "OPPERVLAKTE": 282151.1897315,
@@ -84474,7 +84474,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>12051</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>51</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bloemenbuurt-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>611403.049706997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3533.66918252617</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>12051</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>51</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bloemenbuurt-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>611403.049706997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3533.66918252617</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -84485,7 +84485,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 12051,
         "BUURTCODE": 51,
-        "BUURTNAAM": "Bloemenbuurt-Oost",
+        "titel": "Bloemenbuurt-Oost",
         "WIJKCODE": 12,
         "OCE_ID": 105,
         "OPPERVLAKTE": 611403.049706997,
@@ -86107,7 +86107,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>12052</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>52</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bomenbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>530968.416521997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3257.44657200319</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>12052</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>52</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bomenbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>12</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>530968.416521997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3257.44657200319</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -86118,7 +86118,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 12052,
         "BUURTCODE": 52,
-        "BUURTNAAM": "Bomenbuurt",
+        "titel": "Bomenbuurt",
         "WIJKCODE": 12,
         "OCE_ID": 105,
         "OPPERVLAKTE": 530968.416521997,
@@ -90170,7 +90170,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>19053</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>53</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Vruchtenbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>19</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>535093.375323007</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3449.3221884953</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>19053</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>53</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Vruchtenbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>19</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>535093.375323007</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3449.3221884953</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -90181,7 +90181,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 19053,
         "BUURTCODE": 53,
-        "BUURTNAAM": "Vruchtenbuurt",
+        "titel": "Vruchtenbuurt",
         "WIJKCODE": 19,
         "OCE_ID": 105,
         "OPPERVLAKTE": 535093.375323007,
@@ -92103,7 +92103,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>20054</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>54</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Heesterbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>20</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>410936.951073999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3204.66670520638</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>20054</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>54</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Heesterbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>20</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>410936.951073999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3204.66670520638</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -92114,7 +92114,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 20054,
         "BUURTCODE": 54,
-        "BUURTNAAM": "Heesterbuurt",
+        "titel": "Heesterbuurt",
         "WIJKCODE": 20,
         "OCE_ID": 105,
         "OPPERVLAKTE": 410936.951073999,
@@ -93996,7 +93996,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>20055</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>55</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Valkenboskwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>20</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>658992.125116505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3405.77525578313</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>20055</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>55</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Valkenboskwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>20</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>658992.125116505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3405.77525578313</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -94007,7 +94007,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 20055,
         "BUURTCODE": 55,
-        "BUURTNAAM": "Valkenboskwartier",
+        "titel": "Valkenboskwartier",
         "WIJKCODE": 20,
         "OCE_ID": 105,
         "OPPERVLAKTE": 658992.125116505,
@@ -95674,7 +95674,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>39060</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>60</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Binckhorst</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>39</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1455619.749033</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5332.20944262746</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>39060</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>60</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Binckhorst</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>39</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1455619.749033</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5332.20944262746</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -95685,7 +95685,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 39060,
         "BUURTCODE": 60,
-        "BUURTNAAM": "Binckhorst",
+        "titel": "Binckhorst",
         "WIJKCODE": 39,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1455619.749033,
@@ -96452,7 +96452,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25061</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>61</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Landen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>625090.930442003</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3613.89123213515</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25061</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>61</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Landen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>625090.930442003</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3613.89123213515</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -96463,7 +96463,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 25061,
         "BUURTCODE": 61,
-        "BUURTNAAM": "Landen",
+        "titel": "Landen",
         "WIJKCODE": 25,
         "OCE_ID": 105,
         "OPPERVLAKTE": 625090.930442003,
@@ -97130,7 +97130,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>27062</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>62</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rivierenbuurt-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>27</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>101768.630917503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1673.68852906162</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>27062</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>62</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rivierenbuurt-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>27</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>101768.630917503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1673.68852906162</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -97141,7 +97141,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 27062,
         "BUURTCODE": 62,
-        "BUURTNAAM": "Rivierenbuurt-Zuid",
+        "titel": "Rivierenbuurt-Zuid",
         "WIJKCODE": 27,
         "OCE_ID": 105,
         "OPPERVLAKTE": 101768.630917503,
@@ -98548,7 +98548,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>27063</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>63</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rivierenbuurt-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>27</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>369956.229647499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3744.22972661309</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>27063</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>63</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rivierenbuurt-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>27</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>369956.229647499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3744.22972661309</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -98559,7 +98559,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 27063,
         "BUURTCODE": 63,
-        "BUURTNAAM": "Rivierenbuurt-Noord",
+        "titel": "Rivierenbuurt-Noord",
         "WIJKCODE": 27,
         "OCE_ID": 105,
         "OPPERVLAKTE": 369956.229647499,
@@ -100006,7 +100006,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>26064</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>64</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bezuidenhout-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>538776.817977499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3487.28321933259</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>26064</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>64</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bezuidenhout-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>538776.817977499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3487.28321933259</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -100017,7 +100017,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 26064,
         "BUURTCODE": 64,
-        "BUURTNAAM": "Bezuidenhout-West",
+        "titel": "Bezuidenhout-West",
         "WIJKCODE": 26,
         "OCE_ID": 105,
         "OPPERVLAKTE": 538776.817977499,
@@ -102224,7 +102224,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>26065</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>65</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bezuidenhout-Midden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>619019.556893499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3503.8529198058</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>26065</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>65</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bezuidenhout-Midden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>619019.556893499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3503.8529198058</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -102235,7 +102235,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 26065,
         "BUURTCODE": 65,
-        "BUURTNAAM": "Bezuidenhout-Midden",
+        "titel": "Bezuidenhout-Midden",
         "WIJKCODE": 26,
         "OCE_ID": 105,
         "OPPERVLAKTE": 619019.556893499,
@@ -104127,7 +104127,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>26066</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>66</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bezuidenhout-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>769144.643961499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3884.31187088516</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>26066</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>66</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bezuidenhout-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>769144.643961499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3884.31187088516</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -104138,7 +104138,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 26066,
         "BUURTCODE": 66,
-        "BUURTNAAM": "Bezuidenhout-Oost",
+        "titel": "Bezuidenhout-Oost",
         "WIJKCODE": 26,
         "OCE_ID": 105,
         "OPPERVLAKTE": 769144.643961499,
@@ -105590,7 +105590,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25067</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>67</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Kampen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>608665.538597498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3462.67955950308</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25067</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>67</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Kampen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>608665.538597498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3462.67955950308</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -105601,7 +105601,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 25067,
         "BUURTCODE": 67,
-        "BUURTNAAM": "Kampen",
+        "titel": "Kampen",
         "WIJKCODE": 25,
         "OCE_ID": 105,
         "OPPERVLAKTE": 608665.538597498,
@@ -106958,7 +106958,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25068</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>68</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Marlot</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>922032.020048996</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4827.34935810228</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25068</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>68</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Marlot</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>922032.020048996</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4827.34935810228</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -106969,7 +106969,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 25068,
         "BUURTCODE": 68,
-        "BUURTNAAM": "Marlot",
+        "titel": "Marlot",
         "WIJKCODE": 25,
         "OCE_ID": 105,
         "OPPERVLAKTE": 922032.020048996,
@@ -108476,7 +108476,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25069</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>69</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Burgen en Horsten</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>935367.6305805</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4062.10531264058</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>25069</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>69</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Burgen en Horsten</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>935367.6305805</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4062.10531264058</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -108487,7 +108487,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 25069,
         "BUURTCODE": 69,
-        "BUURTNAAM": "Burgen en Horsten",
+        "titel": "Burgen en Horsten",
         "WIJKCODE": 25,
         "OCE_ID": 105,
         "OPPERVLAKTE": 935367.6305805,
@@ -109264,7 +109264,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>1070</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>70</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Oostduinen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>1</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>3085059.8822985</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7599.03950931897</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>1070</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>70</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Oostduinen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>1</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>3085059.8822985</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7599.03950931897</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -109275,7 +109275,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 1070,
         "BUURTCODE": 70,
-        "BUURTNAAM": "Oostduinen",
+        "titel": "Oostduinen",
         "WIJKCODE": 1,
         "OCE_ID": 105,
         "OPPERVLAKTE": 3085059.8822985,
@@ -110607,7 +110607,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>2071</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>71</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Belgisch Park</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>2</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>972968.488827988</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4611.33048521801</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>2071</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>71</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Belgisch Park</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>2</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>972968.488827988</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4611.33048521801</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -110618,7 +110618,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 2071,
         "BUURTCODE": 71,
-        "BUURTNAAM": "Belgisch Park",
+        "titel": "Belgisch Park",
         "WIJKCODE": 2,
         "OCE_ID": 105,
         "OPPERVLAKTE": 972968.488827988,
@@ -112470,7 +112470,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7072</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>72</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rijslag</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>257376.246340999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2386.95929256746</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7072</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>72</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rijslag</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>257376.246340999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2386.95929256746</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -112481,7 +112481,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 7072,
         "BUURTCODE": 72,
-        "BUURTNAAM": "Rijslag",
+        "titel": "Rijslag",
         "WIJKCODE": 7,
         "OCE_ID": 105,
         "OPPERVLAKTE": 257376.246340999,
@@ -114108,7 +114108,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>3073</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>73</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Westbroekpark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>3</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>460933.796319504</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3177.91328274843</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>3073</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>73</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Westbroekpark</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>3</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>460933.796319504</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3177.91328274843</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -114119,7 +114119,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 3073,
         "BUURTCODE": 73,
-        "BUURTNAAM": "Westbroekpark",
+        "titel": "Westbroekpark",
         "WIJKCODE": 3,
         "OCE_ID": 105,
         "OPPERVLAKTE": 460933.796319504,
@@ -116626,7 +116626,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>3074</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>74</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Duttendel</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>3</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1330447.99305751</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6453.77858265379</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>3074</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>74</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Duttendel</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>3</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1330447.99305751</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6453.77858265379</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -116637,7 +116637,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 3074,
         "BUURTCODE": 74,
-        "BUURTNAAM": "Duttendel",
+        "titel": "Duttendel",
         "WIJKCODE": 3,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1330447.99305751,
@@ -117194,7 +117194,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42111</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>111</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Venen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>353617.1245395</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3563.03418990295</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42111</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>111</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Venen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>353617.1245395</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3563.03418990295</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -117205,7 +117205,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42111,
         "BUURTCODE": 111,
-        "BUURTNAAM": "De Venen",
+        "titel": "De Venen",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 353617.1245395,
@@ -118052,7 +118052,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42112</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>112</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Morgenweide</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>881712.769208498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4398.71614285807</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42112</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>112</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Morgenweide</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>881712.769208498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4398.71614285807</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -118063,7 +118063,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42112,
         "BUURTCODE": 112,
-        "BUURTNAAM": "Morgenweide",
+        "titel": "Morgenweide",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 881712.769208498,
@@ -118880,7 +118880,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42113</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>113</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Singels</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>571474.7124695</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3308.29649261904</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42113</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>113</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Singels</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>571474.7124695</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3308.29649261904</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -118891,7 +118891,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42113,
         "BUURTCODE": 113,
-        "BUURTNAAM": "Singels",
+        "titel": "Singels",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 571474.7124695,
@@ -119678,7 +119678,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42115</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>115</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Bras</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>952133.800831001</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3988.59818173837</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42115</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>115</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Bras</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>952133.800831001</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3988.59818173837</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -119689,7 +119689,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42115,
         "BUURTCODE": 115,
-        "BUURTNAAM": "De Bras",
+        "titel": "De Bras",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 952133.800831001,
@@ -120656,7 +120656,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>43116</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>116</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Vlietzoom-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>43</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1329101.71118249</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6243.11720624151</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>43116</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>116</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Vlietzoom-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>43</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1329101.71118249</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6243.11720624151</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -120667,7 +120667,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 43116,
         "BUURTCODE": 116,
-        "BUURTNAAM": "Vlietzoom-Oost",
+        "titel": "Vlietzoom-Oost",
         "WIJKCODE": 43,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1329101.71118249,
@@ -121364,7 +121364,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42114</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>114</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Waterbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1065329.01435799</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4683.31666695417</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42114</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>114</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Waterbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1065329.01435799</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4683.31666695417</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -121375,7 +121375,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42114,
         "BUURTCODE": 114,
-        "BUURTNAAM": "Waterbuurt",
+        "titel": "Waterbuurt",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1065329.01435799,
@@ -122637,7 +122637,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18006</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>06</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Waldeck-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>208190.934638003</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1921.72801765183</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>18006</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>06</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Waldeck-Zuid</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>18</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>208190.934638003</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1921.72801765183</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -122648,7 +122648,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 18006,
         "BUURTCODE": "06",
-        "BUURTNAAM": "Waldeck-Zuid",
+        "titel": "Waldeck-Zuid",
         "WIJKCODE": 18,
         "OCE_ID": 105,
         "OPPERVLAKTE": 208190.934638003,
@@ -125690,7 +125690,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>9007</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>07</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Statenkwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>9</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1012292.6122955</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4815.50111174733</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>9007</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>07</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Statenkwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>9</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1012292.6122955</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4815.50111174733</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -125701,7 +125701,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 9007,
         "BUURTCODE": "07",
-        "BUURTNAAM": "Statenkwartier",
+        "titel": "Statenkwartier",
         "WIJKCODE": 9,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1012292.6122955,
@@ -127178,7 +127178,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7001</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>01</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Oud Scheveningen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>256741.411347499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2516.83362343915</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7001</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>01</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Oud Scheveningen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>256741.411347499</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2516.83362343915</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -127189,7 +127189,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 7001,
         "BUURTCODE": "01",
-        "BUURTNAAM": "Oud Scheveningen",
+        "titel": "Oud Scheveningen",
         "WIJKCODE": 7,
         "OCE_ID": 105,
         "OPPERVLAKTE": 256741.411347499,
@@ -129291,7 +129291,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7002</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>02</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Vissershaven</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1179183.039647</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5708.94908336997</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7002</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>02</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Vissershaven</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1179183.039647</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5708.94908336997</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -129302,7 +129302,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 7002,
         "BUURTCODE": "02",
-        "BUURTNAAM": "Vissershaven",
+        "titel": "Vissershaven",
         "WIJKCODE": 7,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1179183.039647,
@@ -131209,7 +131209,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7003</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>03</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Scheveningen Badplaats</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>505183.105374507</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3283.39235138294</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7003</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>03</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Scheveningen Badplaats</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>505183.105374507</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3283.39235138294</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -131220,7 +131220,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 7003,
         "BUURTCODE": "03",
-        "BUURTNAAM": "Scheveningen Badplaats",
+        "titel": "Scheveningen Badplaats",
         "WIJKCODE": 7,
         "OCE_ID": 105,
         "OPPERVLAKTE": 505183.105374507,
@@ -133067,7 +133067,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7004</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>04</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Visserijbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>271382.954183501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2217.50731716939</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>7004</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>04</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Visserijbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>7</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>271382.954183501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2217.50731716939</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -133078,7 +133078,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 7004,
         "BUURTCODE": "04",
-        "BUURTNAAM": "Visserijbuurt",
+        "titel": "Visserijbuurt",
         "WIJKCODE": 7,
         "OCE_ID": 105,
         "OPPERVLAKTE": 271382.954183501,
@@ -135120,7 +135120,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>6005</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>05</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Van Stolkpark en Scheveningse Bosjes</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>6</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1114378.6709</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4468.1974343793</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>6005</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>05</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Van Stolkpark en Scheveningse Bosjes</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>6</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1114378.6709</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4468.1974343793</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -135131,7 +135131,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 6005,
         "BUURTCODE": "05",
-        "BUURTNAAM": "Van Stolkpark en Scheveningse Bosjes",
+        "titel": "Van Stolkpark en Scheveningse Bosjes",
         "WIJKCODE": 6,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1114378.6709,
@@ -138023,7 +138023,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>9008</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>08</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Geuzenkwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>9</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>339317.867998501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4640.06607479743</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>9008</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>08</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Geuzenkwartier</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>9</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>339317.867998501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4640.06607479743</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -138034,7 +138034,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 9008,
         "BUURTCODE": "08",
-        "BUURTNAAM": "Geuzenkwartier",
+        "titel": "Geuzenkwartier",
         "WIJKCODE": 9,
         "OCE_ID": 105,
         "OPPERVLAKTE": 339317.867998501,
@@ -141311,7 +141311,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>13009</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>09</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Vogelwijk</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>13</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>2716605.6162065</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7919.60994189835</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>13009</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>09</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Vogelwijk</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>13</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>2716605.6162065</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7919.60994189835</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -141322,7 +141322,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 13009,
         "BUURTCODE": "09",
-        "BUURTNAAM": "Vogelwijk",
+        "titel": "Vogelwijk",
         "WIJKCODE": 13,
         "OCE_ID": 105,
         "OPPERVLAKTE": 2716605.6162065,
@@ -142764,7 +142764,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>30033</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Transvaalkwartier-Midden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>273281.788098498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2198.73616570121</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>30033</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Transvaalkwartier-Midden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>273281.788098498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2198.73616570121</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -142775,7 +142775,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 30033,
         "BUURTCODE": 33,
-        "BUURTNAAM": "Transvaalkwartier-Midden",
+        "titel": "Transvaalkwartier-Midden",
         "WIJKCODE": 30,
         "OCE_ID": 105,
         "OPPERVLAKTE": 273281.788098498,
@@ -143512,7 +143512,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4075</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>75</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Uilennest</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>301796.462744999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2805.83007673356</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4075</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>75</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Uilennest</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>301796.462744999</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2805.83007673356</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -143523,7 +143523,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 4075,
         "BUURTCODE": 75,
-        "BUURTNAAM": "Uilennest",
+        "titel": "Uilennest",
         "WIJKCODE": 4,
         "OCE_ID": 105,
         "OPPERVLAKTE": 301796.462744999,
@@ -144305,7 +144305,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>43117</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>117</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Rivieren</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>43</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1706348.78674201</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7841.2233152827</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>43117</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>117</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Rivieren</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>43</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1706348.78674201</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>7841.2233152827</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -144316,7 +144316,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 43117,
         "BUURTCODE": 117,
-        "BUURTNAAM": "De Rivieren",
+        "titel": "De Rivieren",
         "WIJKCODE": 43,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1706348.78674201,
@@ -144698,7 +144698,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44118</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>118</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Lanen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>698637.406699996</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3330.92189730595</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44118</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>118</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Lanen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>698637.406699996</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3330.92189730595</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -144709,7 +144709,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 44118,
         "BUURTCODE": 118,
-        "BUURTNAAM": "De Lanen",
+        "titel": "De Lanen",
         "WIJKCODE": 44,
         "OCE_ID": 105,
         "OPPERVLAKTE": 698637.406699996,
@@ -145191,7 +145191,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44119</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>119</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Velden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>751997.914311011</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3715.39836504039</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44119</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>119</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Velden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>751997.914311011</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3715.39836504039</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -145202,7 +145202,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 44119,
         "BUURTCODE": 119,
-        "BUURTNAAM": "De Velden",
+        "titel": "De Velden",
         "WIJKCODE": 44,
         "OCE_ID": 105,
         "OPPERVLAKTE": 751997.914311011,
@@ -145949,7 +145949,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44120</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>120</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Vissen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1293634.774145</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4752.10426193722</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44120</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>120</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Vissen</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1293634.774145</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4752.10426193722</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -145960,7 +145960,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 44120,
         "BUURTCODE": 120,
-        "BUURTNAAM": "De Vissen",
+        "titel": "De Vissen",
         "WIJKCODE": 44,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1293634.774145,
@@ -147367,7 +147367,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33096</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>96</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Zijden, Steden en Zichten</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>983599.916551997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4487.61970438702</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33096</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>96</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Zijden, Steden en Zichten</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>983599.916551997</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4487.61970438702</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -147378,7 +147378,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 33096,
         "BUURTCODE": 96,
-        "BUURTNAAM": "Zijden, Steden en Zichten",
+        "titel": "Zijden, Steden en Zichten",
         "WIJKCODE": 33,
         "OCE_ID": 105,
         "OPPERVLAKTE": 983599.916551997,
@@ -148410,7 +148410,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4076</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>76</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Duinzigt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>697440.499512509</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3544.18278944574</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4076</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>76</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Duinzigt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>697440.499512509</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3544.18278944574</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -148421,7 +148421,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 4076,
         "BUURTCODE": 76,
-        "BUURTNAAM": "Duinzigt",
+        "titel": "Duinzigt",
         "WIJKCODE": 4,
         "OCE_ID": 105,
         "OPPERVLAKTE": 697440.499512509,
@@ -150568,7 +150568,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4077</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>77</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Waalsdorp</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>646065.904868493</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3639.42966127436</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4077</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>77</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Waalsdorp</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>646065.904868493</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3639.42966127436</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -150579,7 +150579,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 4077,
         "BUURTCODE": 77,
-        "BUURTNAAM": "Waalsdorp",
+        "titel": "Waalsdorp",
         "WIJKCODE": 4,
         "OCE_ID": 105,
         "OPPERVLAKTE": 646065.904868493,
@@ -152506,7 +152506,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4078</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>78</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Arendsdorp</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>553234.457376498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3553.1222164474</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>4078</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>78</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Arendsdorp</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>4</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>553234.457376498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3553.1222164474</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -152517,7 +152517,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 4078,
         "BUURTCODE": 78,
-        "BUURTNAAM": "Arendsdorp",
+        "titel": "Arendsdorp",
         "WIJKCODE": 4,
         "OCE_ID": 105,
         "OPPERVLAKTE": 553234.457376498,
@@ -153764,7 +153764,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33098</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>98</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Dreven en Gaarden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>995512.080411498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4726.53378860294</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33098</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>98</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Dreven en Gaarden</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>995512.080411498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4726.53378860294</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -153775,7 +153775,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 33098,
         "BUURTCODE": 98,
-        "BUURTNAAM": "Dreven en Gaarden",
+        "titel": "Dreven en Gaarden",
         "WIJKCODE": 33,
         "OCE_ID": 105,
         "OPPERVLAKTE": 995512.080411498,
@@ -155822,7 +155822,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33099</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>99</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Uithof</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1492672.12834051</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5232.65045048504</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>33099</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>99</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Uithof</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>33</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1492672.12834051</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>5232.65045048504</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -155833,7 +155833,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 33099,
         "BUURTCODE": 99,
-        "BUURTNAAM": "De Uithof",
+        "titel": "De Uithof",
         "WIJKCODE": 33,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1492672.12834051,
@@ -158270,7 +158270,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>16097</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>97</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Kraayenstein en Vroondaal</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>16</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>3361338.495921</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>8060.16559693493</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>16097</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>97</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Kraayenstein en Vroondaal</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>16</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>3361338.495921</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>8060.16559693493</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -158281,7 +158281,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 16097,
         "BUURTCODE": 97,
-        "BUURTNAAM": "Kraayenstein en Vroondaal",
+        "titel": "Kraayenstein en Vroondaal",
         "WIJKCODE": 16,
         "OCE_ID": 105,
         "OPPERVLAKTE": 3361338.495921,
@@ -159608,7 +159608,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>8100</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>100</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Duindorp</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>8</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>847246.612750009</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4043.47439230113</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>8100</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>100</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Duindorp</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>8</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>847246.612750009</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4043.47439230113</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -159619,7 +159619,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 8100,
         "BUURTCODE": 100,
-        "BUURTNAAM": "Duindorp",
+        "titel": "Duindorp",
         "WIJKCODE": 8,
         "OCE_ID": 105,
         "OPPERVLAKTE": 847246.612750009,
@@ -160331,7 +160331,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40101</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>101</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Erasmus Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>762539.771918497</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4130.23141616595</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40101</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>101</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Erasmus Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>762539.771918497</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4130.23141616595</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -160342,7 +160342,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 40101,
         "BUURTCODE": 101,
-        "BUURTNAAM": "Erasmus Veld",
+        "titel": "Erasmus Veld",
         "WIJKCODE": 40,
         "OCE_ID": 105,
         "OPPERVLAKTE": 762539.771918497,
@@ -161419,7 +161419,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40102</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>102</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Hoge Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1093566.243481</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4613.28915864415</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40102</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>102</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Hoge Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1093566.243481</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4613.28915864415</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -161430,7 +161430,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 40102,
         "BUURTCODE": 102,
-        "BUURTNAAM": "Hoge Veld",
+        "titel": "Hoge Veld",
         "WIJKCODE": 40,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1093566.243481,
@@ -162437,7 +162437,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40103</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Parkbuurt Oosteinde</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>460515.586082505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3820.42463258725</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40103</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>103</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Parkbuurt Oosteinde</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>460515.586082505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3820.42463258725</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -162448,7 +162448,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 40103,
         "BUURTCODE": 103,
-        "BUURTNAAM": "Parkbuurt Oosteinde",
+        "titel": "Parkbuurt Oosteinde",
         "WIJKCODE": 40,
         "OCE_ID": 105,
         "OPPERVLAKTE": 460515.586082505,
@@ -162955,7 +162955,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42108</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>108</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Bosweide</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>736672.013302006</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3506.11019326841</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42108</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>108</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Bosweide</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>736672.013302006</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3506.11019326841</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -162966,7 +162966,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42108,
         "BUURTCODE": 108,
-        "BUURTNAAM": "Bosweide",
+        "titel": "Bosweide",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 736672.013302006,
@@ -163248,7 +163248,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42109</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>109</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Tedingerbroek</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>495276.737414986</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2896.85161052783</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>42109</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>109</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Tedingerbroek</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>42</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>495276.737414986</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2896.85161052783</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -163259,7 +163259,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 42109,
         "BUURTCODE": 109,
-        "BUURTNAAM": "Tedingerbroek",
+        "titel": "Tedingerbroek",
         "WIJKCODE": 42,
         "OCE_ID": 105,
         "OPPERVLAKTE": 495276.737414986,
@@ -163631,7 +163631,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>41110</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>110</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>De Reef</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>620926.078147016</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3397.5980991803</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>41110</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>110</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>De Reef</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>620926.078147016</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3397.5980991803</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -163642,7 +163642,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 41110,
         "BUURTCODE": 110,
-        "BUURTNAAM": "De Reef",
+        "titel": "De Reef",
         "WIJKCODE": 41,
         "OCE_ID": 105,
         "OPPERVLAKTE": 620926.078147016,
@@ -164199,7 +164199,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40104</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>104</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Lage Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>461201.355400497</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3052.16162897291</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40104</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>104</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Lage Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>461201.355400497</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3052.16162897291</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -164210,7 +164210,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 40104,
         "BUURTCODE": 104,
-        "BUURTNAAM": "Lage Veld",
+        "titel": "Lage Veld",
         "WIJKCODE": 40,
         "OCE_ID": 105,
         "OPPERVLAKTE": 461201.355400497,
@@ -164577,7 +164577,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40105</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>105</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Zonne Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>499679.713329003</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3298.68923780466</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>40105</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>105</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Zonne Veld</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>40</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>499679.713329003</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3298.68923780466</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -164588,7 +164588,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 40105,
         "BUURTCODE": 105,
-        "BUURTNAAM": "Zonne Veld",
+        "titel": "Zonne Veld",
         "WIJKCODE": 40,
         "OCE_ID": 105,
         "OPPERVLAKTE": 499679.713329003,
@@ -166455,7 +166455,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>41106</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>106</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Vlietzoom-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1921883.50688749</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>8802.67098088611</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>41106</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>106</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Vlietzoom-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1921883.50688749</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>8802.67098088611</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -166466,7 +166466,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 41106,
         "BUURTCODE": 106,
-        "BUURTNAAM": "Vlietzoom-West",
+        "titel": "Vlietzoom-West",
         "WIJKCODE": 41,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1921883.50688749,
@@ -168143,7 +168143,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>41107</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>107</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Vliegeniersbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1181211.5411875</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6491.39972497271</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>41107</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>107</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Vliegeniersbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>41</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1181211.5411875</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>6491.39972497271</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -168154,7 +168154,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 41107,
         "BUURTCODE": 107,
-        "BUURTNAAM": "Vliegeniersbuurt",
+        "titel": "Vliegeniersbuurt",
         "WIJKCODE": 41,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1181211.5411875,
@@ -168961,7 +168961,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44121</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>121</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rietbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1015396.89142348</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4965.69531054106</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>44121</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>121</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rietbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>44</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>1015396.89142348</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>4965.69531054106</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -168972,7 +168972,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 44121,
         "BUURTCODE": 121,
-        "BUURTNAAM": "Rietbuurt",
+        "titel": "Rietbuurt",
         "WIJKCODE": 44,
         "OCE_ID": 105,
         "OPPERVLAKTE": 1015396.89142348,
@@ -170104,7 +170104,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38019</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>19</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Laakhaven-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>337671.062986002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2741.95855394495</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38019</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>19</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Laakhaven-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>337671.062986002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2741.95855394495</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -170115,7 +170115,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 38019,
         "BUURTCODE": 19,
-        "BUURTNAAM": "Laakhaven-Oost",
+        "titel": "Laakhaven-Oost",
         "WIJKCODE": 38,
         "OCE_ID": 105,
         "OPPERVLAKTE": 337671.062986002,
@@ -171827,7 +171827,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36020</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>20</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Moerwijk-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>385900.036625501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2988.96276213949</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>36020</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>20</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Moerwijk-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>36</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>385900.036625501</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2988.96276213949</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -171838,7 +171838,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 36020,
         "BUURTCODE": 20,
-        "BUURTNAAM": "Moerwijk-Oost",
+        "titel": "Moerwijk-Oost",
         "WIJKCODE": 36,
         "OCE_ID": 105,
         "OPPERVLAKTE": 385900.036625501,
@@ -173455,7 +173455,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>37021</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>21</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Groente- en Fruitmarkt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>37</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>495611.624631001</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3484.85830382087</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>37021</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>21</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Groente- en Fruitmarkt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>37</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>495611.624631001</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3484.85830382087</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -173466,7 +173466,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 37021,
         "BUURTCODE": 21,
-        "BUURTNAAM": "Groente- en Fruitmarkt",
+        "titel": "Groente- en Fruitmarkt",
         "WIJKCODE": 37,
         "OCE_ID": 105,
         "OPPERVLAKTE": 495611.624631001,
@@ -175383,7 +175383,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38022</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>22</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Laakhaven-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>615537.753537502</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3997.86810946144</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38022</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>22</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Laakhaven-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>615537.753537502</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3997.86810946144</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -175394,7 +175394,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 38022,
         "BUURTCODE": 22,
-        "BUURTNAAM": "Laakhaven-West",
+        "titel": "Laakhaven-West",
         "WIJKCODE": 38,
         "OCE_ID": 105,
         "OPPERVLAKTE": 615537.753537502,
@@ -176956,7 +176956,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38023</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>23</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Spoorwijk</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>332665.3558865</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2644.80603239818</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38023</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>23</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Spoorwijk</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>332665.3558865</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2644.80603239818</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -176967,7 +176967,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 38023,
         "BUURTCODE": 23,
-        "BUURTNAAM": "Spoorwijk",
+        "titel": "Spoorwijk",
         "WIJKCODE": 38,
         "OCE_ID": 105,
         "OPPERVLAKTE": 332665.3558865,
@@ -178759,7 +178759,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38024</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>24</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Laakkwartier-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>467295.606869002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3251.90842086055</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38024</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>24</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Laakkwartier-West</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>467295.606869002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3251.90842086055</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -178770,7 +178770,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 38024,
         "BUURTCODE": 24,
-        "BUURTNAAM": "Laakkwartier-West",
+        "titel": "Laakkwartier-West",
         "WIJKCODE": 38,
         "OCE_ID": 105,
         "OPPERVLAKTE": 467295.606869002,
@@ -180942,7 +180942,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38025</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Laakkwartier-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>558978.384178498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3977.18112677456</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38025</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>25</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Laakkwartier-Oost</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>558978.384178498</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>3977.18112677456</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -180953,7 +180953,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 38025,
         "BUURTCODE": 25,
-        "BUURTNAAM": "Laakkwartier-Oost",
+        "titel": "Laakkwartier-Oost",
         "WIJKCODE": 38,
         "OCE_ID": 105,
         "OPPERVLAKTE": 558978.384178498,
@@ -182755,7 +182755,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38026</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Noordpolderbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>494431.386463002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2926.02351294941</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>38026</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>26</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Noordpolderbuurt</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>38</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>494431.386463002</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2926.02351294941</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -182766,7 +182766,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 38026,
         "BUURTCODE": 26,
-        "BUURTNAAM": "Noordpolderbuurt",
+        "titel": "Noordpolderbuurt",
         "WIJKCODE": 38,
         "OCE_ID": 105,
         "OPPERVLAKTE": 494431.386463002,
@@ -183743,7 +183743,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>31030</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Rustenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>344177.924629504</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2529.13099678054</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>31030</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Rustenburg</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>344177.924629504</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2529.13099678054</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -183754,7 +183754,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 31030,
         "BUURTCODE": 30,
-        "BUURTNAAM": "Rustenburg",
+        "titel": "Rustenburg",
         "WIJKCODE": 31,
         "OCE_ID": 105,
         "OPPERVLAKTE": 344177.924629504,
@@ -184536,7 +184536,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>31031</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Oostbroek-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>225318.023505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2061.10323793648</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>31031</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Oostbroek-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>31</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>225318.023505</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>2061.10323793648</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -184547,7 +184547,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 31031,
         "BUURTCODE": 31,
-        "BUURTNAAM": "Oostbroek-Noord",
+        "titel": "Oostbroek-Noord",
         "WIJKCODE": 31,
         "OCE_ID": 105,
         "OPPERVLAKTE": 225318.023505,
@@ -185209,7 +185209,7 @@
         "visibility": true,
         "description": {
           "@type": "html",
-          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>30032</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>32</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>BUURTNAAM</th>\n<td>Transvaalkwartier-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>184702.659067503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1905.58931348612</td>\n</tr></table></center>"
+          "value": "<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor=\"#E3E3F3\">\n<th>WIJKBUURTCODE</th>\n<td>30032</td>\n</tr><tr bgcolor=\"\">\n<th>BUURTCODE</th>\n<td>32</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>titel</th>\n<td>Transvaalkwartier-Noord</td>\n</tr><tr bgcolor=\"\">\n<th>WIJKCODE</th>\n<td>30</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OCE_ID</th>\n<td>105</td>\n</tr><tr bgcolor=\"\">\n<th>OPPERVLAKTE</th>\n<td>184702.659067503</td>\n</tr><tr bgcolor=\"#E3E3F3\">\n<th>OMTREK</th>\n<td>1905.58931348612</td>\n</tr></table></center>"
         },
         "fill-opacity": 0,
         "fill": "#ffff7e",
@@ -185220,7 +185220,7 @@
         "icon-scale": 0.8,
         "WIJKBUURTCODE": 30032,
         "BUURTCODE": 32,
-        "BUURTNAAM": "Transvaalkwartier-Noord",
+        "titel": "Transvaalkwartier-Noord",
         "WIJKCODE": 30,
         "OCE_ID": 105,
         "OPPERVLAKTE": 184702.659067503,

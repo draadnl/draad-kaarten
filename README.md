@@ -16,3 +16,8 @@ Of voeg een dataset toe met grenzen of markers.
 
 ### 1.0.3
 - Added new functionality to choose custom icons for each marker.
+
+### 1.1.0
+- Added the option to add multiple datasets and style them.
+- Removed old dataset fields.
+- Added a legend with the map to toggle datasets.

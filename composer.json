@@ -14,5 +14,14 @@
   "require": {
     "composer/installers": "~1.0",
     "wpackagist-plugin/acf-openstreetmap-field":"*"
+  },
+  "require-dev": {
+    "tareq1988/wp-php-cs-fixer": "^1.0",
+    "friendsofphp/php-cs-fixer": "^3.64"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }

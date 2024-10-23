@@ -116,7 +116,7 @@ class Draad_Map {
 		const baseFontSize = parseInt(
 			getComputedStyle(document.documentElement).fontSize
 		);
-		node.style.minHeight = minHeight / baseFontSize + 3 + "rem";
+		node.style.minHeight = Math.round(minHeight / baseFontSize) + 3 + "rem";
 
 		/**
 		 * Add support to open infowindows with enter key

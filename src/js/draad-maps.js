@@ -148,7 +148,7 @@ class Draad_Map {
 				maximumAge: 0,
 			};
 
-			var success = (pos) => {
+			const success = (pos) => {
 				const crd = pos.coords;
 				const userLocation = L.layerGroup();
 				const marker = L.marker(

@@ -130,8 +130,8 @@ class Draad_Map {
 						cancelable: true,
 						view: window,
 					});
-					// If cancelled, don't dispatch our event
-					const canceled = !elem.dispatchEvent(evt);
+
+					elem.dispatchEvent(evt);
 				};
 
 				simulateClick(e.target);
@@ -217,10 +217,7 @@ class Draad_Map {
 							} else {
 								geoJSON = data;
 							}
-
-							const markerSrc = node.dataset.draadMarker;
-							const markerActiveSrc =
-								node.dataset.draadMarkerActive;
+							
 							const geojsonLayer = this.addData(geoJSON, node);
 							this.layers[name] = geojsonLayer;
 							this.layers[name].addTo(this.cluster);

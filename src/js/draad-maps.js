@@ -156,7 +156,7 @@ class Draad_Map {
 					{
 						icon: this.getLeafletIcon({
 							iconUrl:
-								"/wp-content/plugins/draad-kaarten/dist/images/marker-gps.png",
+								`${draadMapsConfig.pluginDir}/dist/images/marker-gps.png`,
 							iconSize: [48, 48],
 							iconAnchor: [24, 24],
 						}),
@@ -353,7 +353,7 @@ class Draad_Map {
 					? this.getLeafletIcon({ iconUrl: location.dataset.marker })
 					: this.getLeafletIcon({
 							iconUrl:
-								"/wp-content/plugins/draad-kaarten/dist/images/marker.png",
+								`${draadMapsConfig.pluginDir}/dist/images/marker.png`,
 					  }),
 			hover:
 				location.dataset.markerHover !== ""
@@ -362,7 +362,7 @@ class Draad_Map {
 					  })
 					: this.getLeafletIcon({
 							iconUrl:
-								"/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png",
+								`${draadMapsConfig.pluginDir}/dist/images/marker-hover.png`,
 					  }),
 			active:
 				location.dataset.markerActive !== ""
@@ -371,7 +371,7 @@ class Draad_Map {
 					  })
 					: this.getLeafletIcon({
 							iconUrl:
-								"/wp-content/plugins/draad-kaarten/dist/images/marker-active.png",
+								`${draadMapsConfig.pluginDir}/dist/images/marker-active.png`,
 					  }),
 		};
 
@@ -538,7 +538,7 @@ class Draad_Map {
 						? this.getLeafletIcon({ iconUrl: node.dataset.marker })
 						: this.getLeafletIcon({
 								iconUrl:
-									"/wp-content/plugins/draad-kaarten/dist/images/marker.png",
+									`${draadMapsConfig.pluginDir}/dist/images/marker.png`,
 						  }),
 				hover:
 					typeof node !== "undefined" &&
@@ -548,7 +548,7 @@ class Draad_Map {
 						  })
 						: this.getLeafletIcon({
 								iconUrl:
-									"/wp-content/plugins/draad-kaarten/dist/images/marker-hover.png",
+									`${draadMapsConfig.pluginDir}/dist/images/marker-hover.png`,
 						  }),
 				active:
 					typeof node !== "undefined" &&
@@ -558,7 +558,7 @@ class Draad_Map {
 						  })
 						: this.getLeafletIcon({
 								iconUrl:
-									"/wp-content/plugins/draad-kaarten/dist/images/marker-active.png",
+									`${draadMapsConfig.pluginDir}/dist/images/marker-active.png`,
 						  }),
 			};
 
@@ -809,7 +809,7 @@ class Draad_Map {
 						layer.setIcon(
 							this.getLeafletIcon({
 								iconUrl:
-									"/wp-content/plugins/draad-kaarten/dist/images/marker-search.png",
+									`${draadMapsConfig.pluginDir}/dist/images/marker-search.png`,
 							})
 						);
 					} else if (typeof layer.setStyle === "function") {

@@ -121,6 +121,7 @@ if ( ! function_exists( 'draad_maps_register_assets' ) ) {
 		wp_register_script( 'draad-maps-tabs-script', plugin_dir_url( __FILE__ ) . 'dist/js/draad-tabs.js', [], '1.0.1', true);
 		wp_register_script( 'draad-maps-focus-trap-script', plugin_dir_url( __FILE__ ) . 'dist/js/focusTrap.js', [], '1.0.1', true);
 		wp_register_script( 'draad-maps-maps-module', plugin_dir_url( __FILE__ ) . 'dist/js/draad-maps.js', ['leaflet-script', 'draad-maps-focus-trap-script'], '1.0.1', true);
+        wp_localize_script( 'draad-maps-maps-module', 'draadMapsConfig', ['pluginDir' => plugin_dir_url( __FILE__ )] );
 		wp_register_style( 'draad-maps-maps-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.1' );
 		wp_register_style( 'draad-maps-tabs-style', plugin_dir_url( __FILE__ ) . 'dist/css/style.css', [], '1.0.1' );
 
@@ -179,7 +180,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
 				$lat = $coordinates['markers'][0]['lat'];
 				$lng = $coordinates['markers'][0]['lng'];
-				
+
 				$infowindow = '<div class="draad-maps__item draad-card draad-card--infowindow" data-draad-center="'. $lat .'/'. $lng .'" data-marker="'. ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : '' ) .'" data-marker-hover="'. ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : '' ) .'" data-marker-active="'. ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : '' ) .'" aria-hidden="true" hidden>';
 				$infowindow .= ( $button ) ? '<a class="draad-card__link" href="'. $button['url'] .'" target="'. $button['target'] .'">' : '<div class="draad-card__wrapper">';
 				$infowindow .= '<div class="draad-card__content">';
@@ -218,15 +219,15 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 			case 'wijken':
 				$borderPath = plugin_dir_url( __FILE__ ) . 'dist/geojson/wijken.json';
 				break;
-			
+
 			case 'stadsdelen':
 				$borderPath = plugin_dir_url( __FILE__ ) . 'dist/geojson/stadsdelen.json';
 				break;
-			
+
 			case 'buurten':
 				$borderPath = plugin_dir_url( __FILE__ ) . 'dist/geojson/buurten.json';
 				break;
-			
+
 			default:
 				$borderPath = false;
 				break;
@@ -419,7 +420,7 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
 	 * @return void
 	 */
 	function draad_maps_get_data ( $endpoint ) {
-		
+
 		if ( !$endpoint ) {
 			return false;
 		}
@@ -437,7 +438,7 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
 			));
 		}
 
-		
+
 		if (!is_wp_error($response)) {
 			return wp_remote_retrieve_body($response);
 		} else {

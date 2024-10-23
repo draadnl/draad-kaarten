@@ -1,4 +1,4 @@
-@use '../includes/' as *;
+@use "../includes/" as *;
 
 @include font-face("TheSans", "../fonts/sans/TheSansPlain", 400, normal);
 @include font-face("TheSans", "../fonts/sans/TheSansBold", 700, normal);

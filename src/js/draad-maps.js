@@ -592,7 +592,7 @@ class Draad_Map {
 			if (typeof feature.setStyle === "function") {
 				feature.setStyle(feature._style);
 				feature.options.alt = feature.feature.properties?.name;
-				feature.options.title = feature.feature.properties?.title;
+				feature.options.title = feature.feature.properties?.titel;
 				feature.selected = false;
 				this.dataHandler(feature);
 			}

@@ -279,7 +279,6 @@ class Draad_Map {
 
 	isRdCoordinates(x, y) {
 		if (typeof x !== "number" || typeof y !== "number") {
-			console.log(x, y);
 			console.error("Draad_Map.isRdCoordinates(): coordinates not valid");
 			return false;
 		}
@@ -419,7 +418,7 @@ class Draad_Map {
 				break;
 
 			default:
-				console.log("Not a valid geometry type", geometry);
+				console.error("Not a valid geometry type", geometry);
 
 				break;
 		}
@@ -449,8 +448,6 @@ class Draad_Map {
 				};
 			})
 		};
-
-		console.log(geoJson);
 
 		return geoJson;
 	};

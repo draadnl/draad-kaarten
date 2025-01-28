@@ -238,7 +238,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
         $legend = '';
 
         if ( $borderPath || have_rows( 'datasets', $post_id ) ) {
-            $legend .= '<div class="draad-maps__legend">';
+            $legend .= '<details class="draad-maps__legend"><summary>'. __( 'Legenda', 'draad' ) .'</summary>';
 
             if ( $borderPath ) {
                 // Fetch borders data
@@ -259,12 +259,14 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 							data-dataset-name="' . esc_attr( $bordersValue ) . '">
 							<label>
 								<input type="checkbox" name="draad-maps-datalayers[]" id="draad-maps-datalayer-' . $bordersValue . '" checked>
-								<span class="label">
-									<svg viewBox="0 0 100 131" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect width="100" height="131" fill="white"/>
-										<path d="M10 62H90" stroke="#248641" stroke-width="10"/>
-									</svg>
-									<span class="label-text">' . $bordersLabel . '</span>
+									<span class="label">
+										<span class="label-text">
+										<svg viewBox="0 0 100 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="100" height="131" fill="white"/>
+											<path d="M10 62H90" stroke="#248641" stroke-width="10"/>
+										</svg>
+										' . $bordersLabel . '
+									</span>
 								</span>
 							</label>
 							<script id="draad-map-data-' . $bordersValue . '" type="application/json">
@@ -307,17 +309,24 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 								data-dataset-name="' . sanitize_title( get_sub_field( 'name' ) ) . '">
 								<label>
 									<input type="checkbox" name="draad-maps-datalayers[]" id="draad-maps-datalayer-' . sanitize_title( get_sub_field( 'name' ) ) . '" checked>
-									<span class="label">
-										' . wp_get_attachment_image( get_sub_field( 'icon' ) ) . '';
+									<span class="label">';
 
                         if ( get_sub_field( 'description' ) ) {
                             $legend .= '
 										<details>
-											<summary>' . get_sub_field( 'name' ) . '</summary>
+											<summary>
+												<span class="label-text">
+													' . wp_get_attachment_image( get_sub_field( 'icon' ) ) . '
+													<svg width="24" height="24" class="summary-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z" fill="black"/>
+													</svg>
+													' . get_sub_field( 'name' ) . '
+												</span>
+											</summary>
 											<div><p>' . get_sub_field( 'description' ) . '</p></div>
 										</details>';
                         } else {
-                            $legend .= '<span class="label-text">' . get_sub_field( 'name' ) . '</span>';
+                            $legend .= '<span class="label-text">' . wp_get_attachment_image( get_sub_field( 'icon' ) ) . get_sub_field( 'name' ) . '</span>';
                         }
 
                         $legend .= '
@@ -331,7 +340,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                 }
             }
 
-            $legend .= '</div>';
+            $legend .= '</details>';
         }
 
         $output = '
@@ -389,10 +398,10 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 							</div>
 
 							' . ( $gps ? '<div class="draad-maps__layer" id="draad-maps-' . $mapId . '-gps"></div>' : '' ) . '
+	
+							' . ( !empty( $legend ) ? $legend : '' ) . '
 							
 						</div>
-
-						' . ( !empty( $legend ) ? $legend : '' ) . '
 
 					</div>
 

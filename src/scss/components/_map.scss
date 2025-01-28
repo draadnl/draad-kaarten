@@ -1,6 +1,7 @@
 .draad-maps__wrapper {
 	.leaflet {
 		&-container {
+
 			.marker-cluster {
 				background: var(--dk__map-cluster-background,
 						var(--dk__clr-accent, hsl(207deg 80% 35%)));
@@ -22,6 +23,13 @@
 			grid-row: -1;
 			inset: auto;
 			z-index: 400;
+		}
+
+		&-bottom.leaflet-left {
+			@media (max-width: 33.9375rem) {
+				top: 0;
+				bottom: unset;
+			}
 		}
 
 		&-control-zoom {

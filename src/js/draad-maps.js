@@ -77,10 +77,13 @@ class Draad_Map {
 			iconCreateFunction: (cluster) => {
 				const childCount = cluster.getChildCount();
 				let c = " marker-cluster-large";
+				let size = 56;
 				if (childCount < 10) {
 					c = "marker-cluster-small";
+					size = 40;
 				} else if (childCount < 100) {
 					c += "marker-cluster-medium";
+					size = 48;
 				}
 
 				return new L.DivIcon({
@@ -90,7 +93,7 @@ class Draad_Map {
 						' <span aria-label="markers"></span>' +
 						"</span></div>",
 					className: c,
-					iconSize: new L.Point(40, 40)
+					iconSize: new L.Point(size, size)
 				});
 			}
 		});
@@ -279,7 +282,11 @@ class Draad_Map {
 
 	isRdCoordinates(x, y) {
 		if (typeof x !== "number" || typeof y !== "number") {
-			console.error("Draad_Map.isRdCoordinates(): coordinates not valid");
+			console.error(
+				"Draad_Map.isRdCoordinates(): coordinates not valid",
+				x,
+				y
+			);
 			return false;
 		}
 
@@ -376,18 +383,22 @@ class Draad_Map {
 		};
 	};
 
-	parseGeometry = (geometry) => {
-		let coordinates;
+	parseGeometry = (geometry, feature) => {
+		let coordinates, coordinatesObj, x, y;
+
+		if (typeof feature.properties.wkb_geometry !== "undefined") {
+			return feature.properties.wkb_geometry;
+		}
 
 		switch (geometry.type) {
 			case "Point":
-				const x = geometry.coordinates[0];
-				const y = geometry.coordinates[1];
+				x = geometry.coordinates[0];
+				y = geometry.coordinates[1];
 				coordinates = [x, y];
 
 				if (this.isRdCoordinates(x, y)) {
-					const coordinatesObj = this.rdToWgs84(x, y);
-					coordinates = [coordinatesObj.lat, coordinatesObj.lon];
+					coordinatesObj = this.rdToWgs84(x, y);
+					coordinates = [coordinatesObj.lon, coordinatesObj.lat];
 				}
 
 				return {
@@ -398,16 +409,18 @@ class Draad_Map {
 				break;
 
 			case "MultiPoint":
-				coordinates = geometry.coordinates.map((coords) => {
-					if (this.isRdCoordinates(coords[0], coords[1])) {
-						const coordinatesObj = this.rdToWgs84(
-							coords[0],
-							coords[1]
-						);
-						coordinates = [coordinatesObj.lon, coordinatesObj.lat];
-					}
+				coordinates = geometry.coordinates.map((coordinate) => {
+					x = coordinate[0];
+					y = coordinate[1];
+					coordinates = [x, y];
 
-					return coordinates;
+					if (this.isRdCoordinates(x, y)) {
+						coordinatesObj = this.rdToWgs84(x, y);
+						coordinates = [coordinatesObj.lon, coordinatesObj.lat];
+						return coordinates;
+					} else {
+						return coordinates;
+					}
 				});
 
 				return {
@@ -417,8 +430,29 @@ class Draad_Map {
 
 				break;
 
+			case "Polygon":
+				coordinates = geometry.coordinates[0].map((coordinate) => {
+					x = coordinate[0];
+					y = coordinate[1];
+					coordinates = [x, y];
+
+					if (this.isRdCoordinates(x, y)) {
+						coordinatesObj = this.rdToWgs84(x, y);
+						return [coordinatesObj.lat, coordinatesObj.lon];
+					} else {
+						return coordinates;
+					}
+				});
+
+				return {
+					type: "Polygon",
+					coordinates: [coordinates]
+				};
+
+				break;
+
 			default:
-				console.error("Not a valid geometry type", geometry);
+				console.error("Not a valid geometry type", geometry, feature);
 
 				break;
 		}
@@ -431,25 +465,42 @@ class Draad_Map {
 	 * @returns object
 	 */
 	jsonToGeoJSON = (json) => {
-		const features =
-			typeof json.result === "object"
-				? json.result.records
-				: json.features;
+		let geoJSON;
 
-		const geoJson = {
-			type: "FeatureCollection",
-			features: features.map((feature) => {
-				return {
-					type: "Feature",
-					geometry:
-						feature.wkb_geometry ||
-						this.parseGeometry(feature.geometry),
-					properties: { ...feature.properties }
+		if (typeof json.result === "object") {
+			if (
+				typeof json.result.records[0].properties.wkb_geometry !==
+				"undefined"
+			) {
+				return json;
+			} else {
+				geoJSON = {
+					type: "FeatureCollection",
+					features: json.result.records.map((record) => ({
+						type: "Feature",
+						geometry: this.parseGeometry(record.geometry, record),
+						properties: { ...record.properties }
+					}))
 				};
-			})
-		};
+			}
+		} else if (typeof json.features === "object") {
+			if (
+				typeof json.features[0].properties.wkb_geometry !== "undefined"
+			) {
+				return json;
+			} else {
+				geoJSON = {
+					type: "FeatureCollection",
+					features: json.features.map((record) => ({
+						type: "Feature",
+						geometry: this.parseGeometry(record.geometry, record),
+						properties: { ...record.properties }
+					}))
+				};
+			}
+		}
 
-		return geoJson;
+		return geoJSON;
 	};
 
 	/**

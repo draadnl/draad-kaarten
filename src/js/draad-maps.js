@@ -197,11 +197,6 @@ class Draad_Map {
 					);
 
 					let geoJSON = data;
-					// if (
-					// 	typeof data.type === "undefined" ||
-					// 	data.type !== "FeatureCollection"
-					// ) {
-					// }
 					geoJSON = this.jsonToGeoJSON(data);
 
 					const geojsonLayer = this.addData(geoJSON, node);
@@ -214,11 +209,6 @@ class Draad_Map {
 						.then((response) => response.json())
 						.then((data) => {
 							let geoJSON = data;
-							// if (
-							// 	typeof data.type === "undefined" ||
-							// 	data.type !== "FeatureCollection"
-							// ) {
-							// }
 							geoJSON = this.jsonToGeoJSON(data);
 
 							const geojsonLayer = this.addData(geoJSON, node);
@@ -386,8 +376,17 @@ class Draad_Map {
 	parseGeometry = (geometry, feature) => {
 		let coordinates, coordinatesObj, x, y;
 
-		if (typeof feature.properties.wkb_geometry !== "undefined") {
+		if (
+			typeof feature.properties !== "undefined" &&
+			typeof feature.properties.wkb_geometry !== "undefined"
+		) {
 			return feature.properties.wkb_geometry;
+		} else if (typeof feature.wkb_geometry !== "undefined") {
+			return feature.wkb_geometry;
+		}
+
+		if (typeof geometry === "undefined") {
+			return;
 		}
 
 		switch (geometry.type) {
@@ -467,10 +466,13 @@ class Draad_Map {
 	jsonToGeoJSON = (json) => {
 		let geoJSON;
 
+		console.log(json);
+
 		if (typeof json.result === "object") {
 			if (
+				typeof json.result.records[0].properties !== "undefined" &&
 				typeof json.result.records[0].properties.wkb_geometry !==
-				"undefined"
+					"undefined"
 			) {
 				return json;
 			} else {
@@ -479,7 +481,10 @@ class Draad_Map {
 					features: json.result.records.map((record) => ({
 						type: "Feature",
 						geometry: this.parseGeometry(record.geometry, record),
-						properties: { ...record.properties }
+						properties:
+							typeof record.properties !== "undefined"
+								? { ...record.properties }
+								: { ...record }
 					}))
 				};
 			}
@@ -494,7 +499,10 @@ class Draad_Map {
 					features: json.features.map((record) => ({
 						type: "Feature",
 						geometry: this.parseGeometry(record.geometry, record),
-						properties: { ...record.properties }
+						properties:
+							typeof record.properties !== "undefined"
+								? { ...record.properties }
+								: { ...record }
 					}))
 				};
 			}
@@ -897,11 +905,6 @@ class Draad_Map {
 							.then((response) => response.json())
 							.then((data) => {
 								let geoJSON = data;
-								// if (
-								// 	typeof data.type === "undefined" ||
-								// 	data.type !== "FeatureCollection"
-								// ) {
-								// }
 								geoJSON = this.jsonToGeoJSON(data);
 
 								const markerSrc = dataset.dataset.draadMarker;
@@ -965,13 +968,21 @@ class Draad_Map {
 
 			// get posible locations from nominatim api
 			fetch(
-				`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this.searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&limit=1`
+				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent(this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&limit=100`
 			)
 				.then((response) => response.json())
 				.then((data) => {
 					if (data.features.length === 0) {
+						console.error("Failed search");
 						return;
 					}
+
+					data.features = data.features.filter((feature) => {
+						return (
+							feature.properties.address.municipality ===
+							"Den Haag"
+						);
+					});
 
 					this.addSearchMarker(data);
 				})

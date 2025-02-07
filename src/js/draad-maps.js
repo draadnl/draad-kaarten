@@ -947,7 +947,7 @@ class Draad_Map {
 			debounce(() => {
 				// get posible locations from nominatim api
 				fetch(
-					`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this.searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=json&addressdetails=1&limit=10`
+					`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this.searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=json&addressdetails=1&accept-language=nl-NL&limit=10`
 				)
 					.then((response) => response.json())
 					.then((data) => {
@@ -968,7 +968,7 @@ class Draad_Map {
 
 			// get posible locations from nominatim api
 			fetch(
-				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent(this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&limit=100`
+				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent(this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&accept-language=nl-NL&limit=50`
 			)
 				.then((response) => response.json())
 				.then((data) => {
@@ -983,8 +983,7 @@ class Draad_Map {
 							"Den Haag"
 						);
 					});
-
-					this.addSearchMarker(data);
+					this.addSearchMarker(data.features);
 				})
 				.then(() => this.sortLocations());
 		});

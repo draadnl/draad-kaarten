@@ -1,72 +1,89 @@
 .draad-search {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  position: relative;
-  isolation: isolate;
-  z-index: 1;
+	grid-column: 1 / -1;
+	grid-row: 1;
+	position: relative;
+	isolation: isolate;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 
-  @media (min-width: 29.9376rem) {
-    grid-column: 1;
-  }
+	output {
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.--%3E%3Cpath d='M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM208 352c-8.8 0-16 7.2-16 16s7.2 16 16 16l96 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0 0-112c0-8.8-7.2-16-16-16l-40 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l24 0 0 96-32 0zm48-168a24 24 0 1 0 0-48 24 24 0 1 0 0 48z' fill='%23757575'/%3E%3C/svg%3E");
+		background-size: 1em;
+		background-position: left center;
+		background-repeat: no-repeat;
+		padding-inline-start: 1.3em;
+		color: var(--dk__search-notice-color, var(--dk__clr-text, hsl(0deg 0% 46%)));
+		font-weight: var(--dk__search-label-font-weight, 400);
+		font-size: var(--dk__search-label-font-size, 0.875rem);
+		line-height: var(--dk__search-label-line-height, 1.2);
 
-  @supports not (grid-template-columns: subgrid) {
-    display: block;
-    min-width: var(--dk__search-min-width, 14rem);
-    max-width: var(--dk__search-max-width, 29.5rem);
+		&:empty {
+			display: none;
+		}
+	}
 
-    @media (min-width: 37.4375rem) {
-      margin-bottom: var(--dk__search-margin-bottom, -3.85rem);
-    }
-  }
+	@media (min-width: 29.9376rem) {
+		grid-column: 1;
+	}
 
-  &__form {
-    display: grid;
-    grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
-    grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
-  }
+	@supports not (grid-template-columns: subgrid) {
+		display: block;
+		min-width: var(--dk__search-min-width, 14rem);
+		max-width: var(--dk__search-max-width, 29.5rem);
 
-  &__field {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
-    grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
+		@media (min-width: 37.4375rem) {
+			margin-bottom: var(--dk__search-margin-bottom, -3.85rem);
+		}
+	}
 
-    @supports (grid-template-columns: subgrid) {
-      grid-template-columns: subgrid;
-      grid-template-rows: subgrid;
-    }
-  }
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
+		grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
+	}
 
-  &__label {
-    color: var(--dk__search-label-color, var(--dk__clr-text, hsl(0deg 0% 18%)));
-    font-weight: var(--dk__search-label-font-weight, 500);
-    font-size: var(--dk__search-label-font-size, 1.125rem);
-    line-height: var(--dk__search-label-line-height, 1.5);
-  }
+	&__field {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		display: grid;
+		grid-template-columns: 1fr var(--dk__search-submit-width, 3.25rem);
+		grid-template-rows: 1fr var(--dk__search-submit-height, 3.25rem);
 
-  &__input {
-    grid-column: 1 / -1;
-    grid-row: 2 / -1;
-    padding: var(--dk__search-input-padding, 0.667em 2.889em 0.667em 0.889em);
-    appearance: textfield;
-    background: var(--dk__search-input-backround, hsl(0deg 0% 100%));
-    border: var(
-      --dk__search-input-border,
-      0.0625rem solid var(--dk__search-input-border-color, hsl(0deg 0% 48%))
-    );
-    border-radius: var(--dk__search-input-border-radius, 0.1875rem);
-    box-shadow: var(--dk__search-input-box-shadow, none);
-    color: var(--dk__search-input-color, var(--dk__clr-text, hsl(0deg 0% 29%)));
-    font-size: var(--dk__search-input-font-size, 1.125rem);
-    font-weight: var(--dk__search-input-font-weight, 400);
-    line-height: var(--dk__search-input-line-height, 1.5);
-  }
+		@supports (grid-template-columns: subgrid) {
+			grid-template-columns: subgrid;
+			grid-template-rows: subgrid;
+		}
+	}
 
-  &__submit {
-    grid-column: 2;
-    grid-row: 2;
-    width: 100%;
-    height: 100%;
-  }
+	&__label {
+		color: var(--dk__search-label-color, var(--dk__clr-text, hsl(0deg 0% 18%)));
+		font-weight: var(--dk__search-label-font-weight, 500);
+		font-size: var(--dk__search-label-font-size, 1.125rem);
+		line-height: var(--dk__search-label-line-height, 1.5);
+	}
+
+	&__input {
+		grid-column: 1 / -1;
+		grid-row: 2 / -1;
+		padding: var(--dk__search-input-padding, 0.667em 2.889em 0.667em 0.889em);
+		appearance: textfield;
+		background: var(--dk__search-input-backround, hsl(0deg 0% 100%));
+		border: var(--dk__search-input-border,
+				0.0625rem solid var(--dk__search-input-border-color, hsl(0deg 0% 48%)));
+		border-radius: var(--dk__search-input-border-radius, 0.1875rem);
+		box-shadow: var(--dk__search-input-box-shadow, none);
+		color: var(--dk__search-input-color, var(--dk__clr-text, hsl(0deg 0% 29%)));
+		font-size: var(--dk__search-input-font-size, 1.125rem);
+		font-weight: var(--dk__search-input-font-weight, 400);
+		line-height: var(--dk__search-input-line-height, 1.5);
+	}
+
+	&__submit {
+		grid-column: 2;
+		grid-row: 2;
+		width: 100%;
+		height: 100%;
+	}
 }

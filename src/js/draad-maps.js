@@ -949,9 +949,13 @@ class Draad_Map {
 			)
 				.then((response) => response.json())
 				.then((data) => {
-					if (data.features.length === 0) {
-						console.error("Failed search");
-						return;
+					console.log(data.features);
+					const noticeNode = document.getElementById(
+						"draad-search-notice"
+					);
+
+					if (noticeNode) {
+						noticeNode.innerHTML = "";
 					}
 
 					data.features = data.features.filter((feature) => {
@@ -960,6 +964,17 @@ class Draad_Map {
 							"Den Haag"
 						);
 					});
+
+					if (data.features.length === 0) {
+						if (noticeNode) {
+							noticeNode.innerHTML =
+								"<p>Geen resultaten gevonden</p>";
+						}
+
+						console.log("Failed search");
+						return;
+					}
+
 					this.addSearchMarker(data.features);
 				})
 				.then(() => this.sortLocations());

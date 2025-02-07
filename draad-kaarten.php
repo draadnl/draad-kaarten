@@ -359,6 +359,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 							' . draad_maps_icon( 'search' ) . '
 						</button>
 
+						<output id="draad-search-notice" for="draad-maps-' . $mapId . '-search" aria-live="polite"></output>
 					</form>
 				</search>
 

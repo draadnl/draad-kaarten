@@ -464,51 +464,28 @@ class Draad_Map {
 	 * @returns object
 	 */
 	jsonToGeoJSON = (json) => {
-		let geoJSON;
-
-		console.log(json);
-
-		if (typeof json.result === "object") {
-			if (
-				typeof json.result.records[0].properties !== "undefined" &&
-				typeof json.result.records[0].properties.wkb_geometry !==
-					"undefined"
-			) {
-				return json;
-			} else {
-				geoJSON = {
-					type: "FeatureCollection",
-					features: json.result.records.map((record) => ({
-						type: "Feature",
-						geometry: this.parseGeometry(record.geometry, record),
-						properties:
-							typeof record.properties !== "undefined"
-								? { ...record.properties }
-								: { ...record }
-					}))
-				};
-			}
-		} else if (typeof json.features === "object") {
-			if (
-				typeof json.features[0].properties.wkb_geometry !== "undefined"
-			) {
-				return json;
-			} else {
-				geoJSON = {
-					type: "FeatureCollection",
-					features: json.features.map((record) => ({
-						type: "Feature",
-						geometry: this.parseGeometry(record.geometry, record),
-						properties:
-							typeof record.properties !== "undefined"
-								? { ...record.properties }
-								: { ...record }
-					}))
-				};
-			}
+		const data =
+			typeof json.result === "object"
+				? json.result.records
+				: json.features;
+		if (
+			typeof data[0].properties !== "undefined" &&
+			typeof data[0].properties.wkb_geometry !== "undefined"
+		) {
+			return json;
 		}
 
-		return geoJSON;
+		return {
+			type: "FeatureCollection",
+			features: data.map((record) => ({
+				type: "Feature",
+				geometry: this.parseGeometry(record.geometry, record),
+				properties:
+					typeof record.properties !== "undefined"
+						? { ...record.properties }
+						: { ...record }
+			}))
+		};
 	};
 
 	/**

@@ -851,17 +851,7 @@ class Draad_Map {
 							).text
 						);
 
-						let geoJSON = null;
-						if (
-							typeof data.type === "undefined" ||
-							data.type !== "FeatureCollection"
-						) {
-							geoJSON = this.jsonToGeoJSON(data);
-						} else {
-							geoJSON = this.jsonToGeoJSON(data);
-							// geoJSON = data;
-						}
-
+						const geoJSON = this.jsonToGeoJSON(data);
 						const geojsonLayer = this.addData(geoJSON, dataset);
 						this.layers[name] = geojsonLayer;
 						this.layers[name].addTo(this.cluster);
@@ -943,8 +933,8 @@ class Draad_Map {
 						"draad-search-notice"
 					);
 
-					if (noticeNode) {
-						noticeNode.innerHTML = "";
+					if (!noticeNode) {
+						return;
 					}
 
 					data.features = data.features.filter((feature) => {
@@ -962,6 +952,8 @@ class Draad_Map {
 
 						return;
 					}
+
+					noticeNode.innerHTML = "";
 
 					this.addSearchMarker(data.features);
 				})

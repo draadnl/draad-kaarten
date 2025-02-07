@@ -29,3 +29,4 @@ Of voeg een dataset toe met grenzen of markers.
 ### 1.1.1
 
 -   Added compatibility with the RDnew format for coordinates.
+-   Added legend styles.

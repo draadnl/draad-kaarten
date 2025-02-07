@@ -813,28 +813,18 @@ class Draad_Map {
 	 * @param {string} state The state of the feature.
 	 */
 	dataSetState = (feature, state) => {
+		const style = feature._style;
 		switch (state) {
 			case "active":
-				const styleActive = feature._style;
-				styleActive.fillOpacity = 0.15;
-				feature.setStyle(styleActive);
-				break;
 			case "hover":
-				const styleHover = feature._style;
-				styleHover.fillOpacity = 0.15;
-				feature.setStyle(styleHover);
-				break;
 			case "focus":
-				const styleFocus = feature._style;
-				styleFocus.fillOpacity = 0.15;
-				feature.setStyle(styleFocus);
+				style.fillOpacity = 0.15;
 				break;
 			default:
-				const styleDefault = feature._style;
-				styleDefault.fillOpacity = 0;
-				feature.setStyle(styleDefault);
+				style.fillOpacity = 0;
 				break;
 		}
+		feature.setStyle(style);
 	};
 
 	/**

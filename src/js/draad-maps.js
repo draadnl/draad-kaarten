@@ -949,7 +949,6 @@ class Draad_Map {
 			)
 				.then((response) => response.json())
 				.then((data) => {
-					console.log(data.features);
 					const noticeNode = document.getElementById(
 						"draad-search-notice"
 					);
@@ -971,7 +970,6 @@ class Draad_Map {
 								"<p>Geen resultaten gevonden</p>";
 						}
 
-						console.log("Failed search");
 						return;
 					}
 

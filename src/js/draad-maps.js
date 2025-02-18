@@ -191,29 +191,16 @@ class Draad_Map {
 				const name = node.dataset.datasetName;
 
 				if (document.getElementById(node.dataset.draadGeojsonTarget)) {
-					const data = JSON.parse(
-						document.getElementById(node.dataset.draadGeojsonTarget)
-							.text
-					);
+					const data = JSON.parse( document.getElementById(node.dataset.draadGeojsonTarget).text );
 
-					let geoJSON = data;
-					geoJSON = this.jsonToGeoJSON(data);
-
-					const geojsonLayer = this.addData(geoJSON, node);
-					this.layers[name] = geojsonLayer;
-					this.layers[name].addTo(this.cluster);
+					this.loadGeoJson( data, name, node );
+					return;
 				} else if (endpoint) {
-					const checkbox = node.querySelector("input");
-
 					fetch(endpoint)
 						.then((response) => response.json())
 						.then((data) => {
-							let geoJSON = data;
-							geoJSON = this.jsonToGeoJSON(data);
-
-							const geojsonLayer = this.addData(geoJSON, node);
-							this.layers[name] = geojsonLayer;
-							this.layers[name].addTo(this.cluster);
+							this.loadGeoJson( data, name, node );
+							return;
 						});
 				}
 			});
@@ -258,8 +245,9 @@ class Draad_Map {
 	/**
 	 * Returns default marker styles
 	 *
-	 * @param object config
-	 * @returns object
+	 * @param {object} config
+	 * 
+	 * @returns {object}
 	 */
 	getLeafletIcon = (config) =>
 		L.icon({
@@ -268,9 +256,17 @@ class Draad_Map {
 			iconAnchor: [19.6, 51.2],
 			popupAnchor: [-3, -76],
 			...config
-		});
+	});
 
-	isRdCoordinates(x, y) {
+	/**
+	 * Checks if coordinates are in the RDnew format
+	 * 
+	 * @param {number} x 
+	 * @param {number} y 
+	 * 
+	 * @returns {bool}
+	 */
+	isRdCoordinates = (x, y) => {
 		if (typeof x !== "number" || typeof y !== "number") {
 			console.error(
 				"Draad_Map.isRdCoordinates(): coordinates not valid",
@@ -283,6 +279,14 @@ class Draad_Map {
 		return x > 0 && x < 300000 && y > 300000 && y < 620000; // Typische ranges voor RD-coördinaten
 	}
 
+	/**
+	 * Converts RDnew coordinates to WGS84 coordinates
+	 * 
+	 * @param {number} x 
+	 * @param {number} y 
+	 * 
+	 * @returns {object}
+	 */
 	rdToWgs84 = (x, y) => {
 		if (typeof x !== "number" || typeof y !== "number") {
 			console.error("Draad_Map.rdToWgs84(): coordinates not valid");
@@ -373,125 +377,188 @@ class Draad_Map {
 		};
 	};
 
-	parseGeometry = (geometry, feature) => {
-		let coordinates, coordinatesObj, x, y;
+	/**
+	 * Processes dataset and loads it into the map
+	 * 
+	 * @param {object} geoJson 
+	 * @param {string} name 
+	 * @param {HTMLElement} node 
+	 */
+	loadGeoJson = (geoJson, name, node) => {
 
-		if (
-			typeof feature.properties !== "undefined" &&
-			typeof feature.properties.wkb_geometry !== "undefined"
-		) {
-			return feature.properties.wkb_geometry;
-		} else if (typeof feature.wkb_geometry !== "undefined") {
-			return feature.wkb_geometry;
+		if (typeof geoJson.type === 'undefined' || geoJson.type !== 'FeatureCollection') {
+
+			if (typeof geoJson.result.records !== 'object') {
+				console.warn('Could not find records in dataset, The dataset my be unvalid.');
+				return;
+			}
+
+			geoJson = this.jsonToGeoJSON(geoJson.result.records);
 		}
 
-		if (typeof geometry === "undefined") {
-			return;
+		// Check crs type and if it matches EPSG:28992, if it does convert it to EPSG:4326
+		if (typeof geoJson.crs === 'undefined') {
+			console.warn('Could not determine EPSG code for the GeoJSON. The coordinates may be unvalid.');
+		} else if (geoJson.crs.type === 'name' && geoJson.crs.properties.name === 'EPSG:28992') {
+			geoJson = this.convertCoordinates(geoJson);
 		}
 
-		switch (geometry.type) {
-			case "Point":
-				x = geometry.coordinates[0];
-				y = geometry.coordinates[1];
-				coordinates = [x, y];
+		delete geoJson.crs;
 
-				if (this.isRdCoordinates(x, y)) {
-					coordinatesObj = this.rdToWgs84(x, y);
-					coordinates = [coordinatesObj.lon, coordinatesObj.lat];
-				}
+		const geojsonLayer = this.addData(geoJson, node);
+		this.layers[name] = geojsonLayer;
+		this.layers[name].addTo(this.cluster);
+	}
 
-				return {
-					type: "Point",
-					coordinates: coordinates
-				};
+	/**
+	 * Processes coordinates and makes sure they are in the WGS84 format
+	 * 
+	 * @param {object} geoJson 
+	 * 
+	 * @returns {object}
+	 */
+	convertCoordinates = (geoJson) => {
 
-				break;
+        if ( geoJson.type === 'FeatureCollection' ) {
 
-			case "MultiPoint":
-				coordinates = geometry.coordinates.map((coordinate) => {
-					x = coordinate[0];
-					y = coordinate[1];
-					coordinates = [x, y];
+            geoJson.features.forEach( feature => {
+				this.convertCoordinates( feature );
+				return;
+            } );
+			geoJson.crs.properties.name = 'EPSG:4326';
 
-					if (this.isRdCoordinates(x, y)) {
-						coordinatesObj = this.rdToWgs84(x, y);
-						coordinates = [coordinatesObj.lon, coordinatesObj.lat];
-						return coordinates;
+            return geoJson;
+        }
+
+        let x, y, coords;
+        switch ( geoJson.geometry.type ) {
+
+            case 'Point':
+                x = geoJson.geometry.coordinates[0];
+                y = geoJson.geometry.coordinates[1];
+
+                if (  this.isRdCoordinates( x, y ) ) {
+                    coords = this.rdToWgs84( x, y );
+                    geoJson.geometry.coordinates = [ coords.lon, coords.lat ];
+                }
+                break;
+
+            case 'MultiPoint':
+
+				geoJson.geometry.type = 'Point';
+                x = geoJson.geometry.coordinates[0];
+                y = geoJson.geometry.coordinates[1];
+
+                if (  this.isRdCoordinates( x, y ) ) {
+                    coords = this.rdToWgs84( x, y );
+                    geoJson.geometry.coordinates = [ coords.lon, coords.lat ];
+                }
+                break;
+
+            case 'Polygon':
+                geoJson.geometry.coordinates = [geoJson.geometry.coordinates[0].map( coordinate => {	
+					if ( typeof coordinate[0] === 'object' ) {
+						x = coordinate[0][0];
+						y = coordinate[0][1];
 					} else {
-						return coordinates;
+						x = coordinate[0];
+						y = coordinate[1];
 					}
-				});
 
-				return {
-					type: "Point",
-					coordinates: coordinates[0]
-				};
+                    if ( this.isRdCoordinates( x, y ) ) {
+						coords = this.rdToWgs84( x, y );
+                        return [ coords.lon, coords.lat ];
+                    }
+                } )];
 
-				break;
+                break;
 
-			case "Polygon":
-				coordinates = geometry.coordinates[0].map((coordinate) => {
-					x = coordinate[0];
-					y = coordinate[1];
-					coordinates = [x, y];
+            case 'MultiPolygon':
+				geoJson.geometry.type = 'Polygon';
+                geoJson.geometry.coordinates = [geoJson.geometry.coordinates.map( coordinate => {
+                    x = coordinate[0];
+                    y = coordinate[1];
 
-					if (this.isRdCoordinates(x, y)) {
-						coordinatesObj = this.rdToWgs84(x, y);
-						return [coordinatesObj.lat, coordinatesObj.lon];
-					} else {
-						return coordinates;
-					}
-				});
+                    if ( this.isRdCoordinates( x, y ) ) {
+                        coords = this.rdToWgs84( x, y );
+                        return [ coords.lon, coords.lat ];
+                    }
 
-				return {
-					type: "Polygon",
-					coordinates: [coordinates]
-				};
+                } )];
+                break;
+        }
 
-				break;
+		return geoJson;
 
-			default:
-				console.error("Not a valid geometry type", geometry, feature);
-
-				break;
-		}
-	};
+    }
 
 	/**
 	 * Converts json to GeoJson format
 	 *
-	 * @param object json
-	 * @returns object
+	 * @param {object} json
+	 * 
+	 * @returns {object}
 	 */
-	jsonToGeoJSON = (json) => {
-		const data =
-			typeof json.result === "object"
-				? json.result.records
-				: json.features;
-		if (
-			typeof data[0].properties !== "undefined" &&
-			typeof data[0].properties.wkb_geometry !== "undefined"
-		) {
-			return json;
-		}
 
-		return {
-			type: "FeatureCollection",
-			features: data.map((record) => ({
-				type: "Feature",
-				geometry: this.parseGeometry(record.geometry, record),
-				properties:
-					typeof record.properties !== "undefined"
-						? { ...record.properties }
-						: { ...record }
-			}))
+	jsonToGeoJSON = (records) => {
+		let geoJson = {
+			type: 'FeatureCollection',
+			features: [],
 		};
-	};
 
+		records.forEach((record) => {
+
+			if ( typeof record.wkb_geometry === 'undefined' ) {
+				return;
+			}
+
+			let coordinates;
+			let type = record.wkb_geometry.type;
+			
+			switch ( type ) {
+				case 'MultiPoint':
+					coordinates = record.wkb_geometry.coordinates[0];
+					break;
+
+				case 'MultiPolygon':
+					coordinates = record.wkb_geometry.coordinates[0][0];
+					break;
+
+				default: 
+					coordinates = record.wkb_geometry.coordinates;
+					break;
+			}
+
+			if ( typeof geoJson.crs === 'undefined' || typeof geoJson.crs.properties.name === 'undefined' ) {
+				geoJson.crs = {
+					type: 'name',
+					properties: {
+						name: record.wkb_geometry.crs.properties.name || null,
+					},
+				};
+			}
+
+			delete record.wkb_geometry;
+
+			let feature = {
+				type: 'Feature',
+				properties: record.properties || record,
+				geometry: {
+					type: type,
+					coordinates: coordinates,
+				},
+			};
+
+			geoJson.features.push(feature);
+		});
+
+		return geoJson;
+	}
+	
 	/**
 	 * Creates a new Leaflet map.
 	 *
-	 * @returns object
+	 * @returns {object}
 	 */
 	createMap = () => {
 		const center = this.mapNode.dataset.draadCenter.split("/");
@@ -535,7 +602,7 @@ class Draad_Map {
 	 *
 	 * @param {HTMLElement} location Turns custom infowindow into a marker.
 	 *
-	 * @returns object
+	 * @returns {object}
 	 */
 	addMarker = (location) => {
 		const center = location.dataset.draadCenter.split("/").map(parseFloat);
@@ -850,29 +917,17 @@ class Draad_Map {
 								dataset.dataset.draadGeojsonTarget
 							).text
 						);
-
-						const geoJSON = this.jsonToGeoJSON(data);
-						const geojsonLayer = this.addData(geoJSON, dataset);
-						this.layers[name] = geojsonLayer;
-						this.layers[name].addTo(this.cluster);
+						
+						this.loadGeoJson( data, name, dataset );
+						return;
 					} else if (endpoint) {
 						const checkbox = dataset.querySelector("input");
 
 						fetch(endpoint)
 							.then((response) => response.json())
 							.then((data) => {
-								let geoJSON = data;
-								geoJSON = this.jsonToGeoJSON(data);
-
-								const markerSrc = dataset.dataset.draadMarker;
-								const markerActiveSrc =
-									dataset.dataset.draadMarkerActive;
-								const geojsonLayer = this.addData(
-									geoJSON,
-									dataset
-								);
-								this.layers[name] = geojsonLayer;
-								this.layers[name].addTo(this.cluster);
+								this.loadGeoJson( data, name, dataset );
+								return;
 							});
 					}
 				} else {
@@ -892,7 +947,7 @@ class Draad_Map {
 	/**
 	 * Event handler for the search input.
 	 *
-	 * @return void
+	 * @return {void}
 	 */
 	searchHandler = () => {
 		const autocomplete = document.getElementById(

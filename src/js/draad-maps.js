@@ -184,7 +184,7 @@ class Draad_Map {
 		/**
 		 * Show datalayers
 		 */
-		const datasetNodes = document.querySelectorAll(".draad-maps__dataset");
+		const datasetNodes = this.outerWrapper.querySelectorAll(".draad-maps__dataset");
 		if (datasetNodes.length) {
 			datasetNodes.forEach((node) => {
 				const endpoint = node.dataset.draadGeojson;

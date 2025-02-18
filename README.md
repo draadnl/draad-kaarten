@@ -30,3 +30,4 @@ Of voeg een dataset toe met grenzen of markers.
 
 -   Added compatibility with the RDnew format for coordinates.
 -   Added legend styles.
+-   Increased max zoom level

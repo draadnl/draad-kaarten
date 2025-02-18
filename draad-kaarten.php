@@ -219,30 +219,30 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
         $bordersLabel = $borders['label'];
         switch ( $bordersValue ) {
             case 'wijken':
-                $borderPath = plugin_dir_url( __FILE__ ) . 'dist/geojson/wijken.json';
+                $endpoint = plugin_dir_url( __FILE__ ) . 'dist/geojson/wijken.json';
                 break;
 
             case 'stadsdelen':
-                $borderPath = plugin_dir_url( __FILE__ ) . 'dist/geojson/stadsdelen.json';
+                $endpoint = plugin_dir_url( __FILE__ ) . 'dist/geojson/stadsdelen.json';
                 break;
 
             case 'buurten':
-                $borderPath = plugin_dir_url( __FILE__ ) . 'dist/geojson/buurten.json';
+                $endpoint = plugin_dir_url( __FILE__ ) . 'dist/geojson/buurten.json';
                 break;
 
             default:
-                $borderPath = false;
+                $endpoint = false;
                 break;
         }
 
         $legend = '';
 
-        if ( $borderPath || have_rows( 'datasets', $post_id ) ) {
+        if ( $endpoint || have_rows( 'datasets', $post_id ) ) {
             $legend .= '<details class="draad-maps__legend"><summary>'. __( 'Legenda', 'draad' ) .'</summary>';
 
-            if ( $borderPath ) {
+            if ( $endpoint ) {
                 // Fetch borders data
-                $data = draad_maps_get_data( $borderPath );
+                $data = draad_maps_get_data( $endpoint );
 
                 if ( $data ) {
                     $legend .= '
@@ -332,9 +332,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         $legend .= '
 									</span>
 								</label>
-								<script id="draad-map-data-' . sanitize_title( get_sub_field( 'name' ) ) . '" type="application/json">
-								' . $data . '
-								</script>
+								<script id="draad-map-data-' . sanitize_title( get_sub_field( 'name' ) ) . '" type="application/json">' . $data . '</script>
 							</div>';
                     }
                 }

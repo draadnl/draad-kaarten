@@ -1,20 +1,17 @@
 .draad-maps__wrapper {
 	.leaflet {
 		&-container {
-
 			.marker-cluster {
-				background: var(--dk__map-cluster-background,
-						var(--dk__clr-accent, hsl(207deg 80% 35%)));
-				border: var(--dk__map-cluster-border,
-						0.125rem solid var(--dk__map-cluster-border-color, hsl(0deg 0% 100%)));
+				background: var(--dk__map-cluster-background, var(--dk__clr-accent, hsl(207deg 80% 35%)));
+				border: var(--dk__map-cluster-border, 0.125rem solid var(--dk__map-cluster-border-color, hsl(0deg 0% 100%)));
 				border-radius: var(--dk__map-cluster-border-radius, 50%);
-				box-shadow: var(--dk__map-cluster-shadow,
-						0 0 0.25rem 0 hsl(0deg 0% 0% / 0.3));
-				color: var(--dk__map-cluster-color,
-						var(--dk__clr-text--light, #ffffff));
+				box-shadow: var(--dk__map-cluster-shadow, 0 0 0.25rem 0 hsl(0deg 0% 0% / 0.3));
+				color: var(--dk__map-cluster-color, var(--dk__clr-text--light, #ffffff));
 				font-size: var(--dk__map-cluster-font-size, 1.25rem);
+				height: 100%;
 				display: grid;
 				place-items: center;
+				align-items: center;
 				aspect-ratio: 1;
 			}
 		}
@@ -44,8 +41,7 @@
 
 			.leaflet-control-zoom-in,
 			.leaflet-control-zoom-out {
-				background: var(--dk__map-controls-background,
-						var(--dk__clr-text--light, #ffffff));
+				background: var(--dk__map-controls-background, var(--dk__clr-text--light, #ffffff));
 				color: var(--dk__map-controls-color, var(--dk__clr-primary, #248641));
 				display: grid;
 				place-items: center;
@@ -77,8 +73,7 @@
 			fill-opacity: var(--dk__map-overlay-path-fill-opacity, 0);
 
 			&:hover {
-				--dk__map-overlay-path-fill-opacity: var(--dk__map-overlay-path-fill-opacity--hover,
-						0.15);
+				--dk__map-overlay-path-fill-opacity: var(--dk__map-overlay-path-fill-opacity--hover, 0.15);
 			}
 		}
 	}

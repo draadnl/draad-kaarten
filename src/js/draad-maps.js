@@ -35,7 +35,7 @@ class Draad_Map {
 
 	outerWrapper = null;
 
-	layers = [];
+	layers = {};
 
 	colors = {};
 
@@ -115,8 +115,8 @@ class Draad_Map {
 			const marker = this.addMarker(location);
 			marker.addTo(locationsLayer);
 		});
-		this.layers["locations"] = locationsLayer;
-		this.layers["locations"].addTo(this.cluster);
+		this.layers.locations = locationsLayer;
+		this.layers.locations.addTo(this.cluster);
 
 		const baseFontSize = parseInt(
 			getComputedStyle(document.documentElement).fontSize
@@ -170,8 +170,8 @@ class Draad_Map {
 				);
 				marker.addTo(userLocation);
 
-				this.layers["userLocation"] = userLocation;
-				this.layers["userLocation"].addTo(this.cluster);
+				this.layers.userLocation = userLocation;
+				this.layers.userLocation.addTo(this.cluster);
 			};
 
 			function error(err) {
@@ -406,6 +406,7 @@ class Draad_Map {
 		delete geoJson.crs;
 
 		const geojsonLayer = this.addData(geoJson, node);
+
 		this.layers[name] = geojsonLayer;
 		this.layers[name].addTo(this.cluster);
 	}
@@ -678,6 +679,7 @@ class Draad_Map {
 		}
 
 		marker.on("click", (e) => {
+
 			if (
 				location &&
 				location.querySelector(".draad-card__content")?.textContent
@@ -693,7 +695,7 @@ class Draad_Map {
 				});
 
 				// update marker of other infowindows
-				this.layers["locations"].eachLayer((layer) => {
+				this.layers.locations.eachLayer((layer) => {
 					if (layer.selected === true) {
 						this.markerSetState(layer, "default");
 						layer.selected = false;
@@ -721,11 +723,29 @@ class Draad_Map {
 					close.focus();
 				}
 			} else {
+				
+				for (let key in this.layers) {
+					this.layers[key].eachLayer( layer => {
+
+						if ( typeof layer.setIcon === 'function' ) {
+							this.markerSetState(layer, "default");
+						} else if ( typeof layer.setStyle === 'function' ) {
+							layer.setStyle(layer._style);
+						}
+						layer.selected = false;
+						layer.closePopup();
+
+					} );
+				}
+
 				marker.openPopup();
 			}
+			this.map.panTo(marker.getLatLng());
 
-			this.markerSetState(marker, marker.selected ? "default" : "active");
-			marker.selected = !marker.selected;
+			if ( typeof marker.options.title !== 'undefined' ) {
+				this.markerSetState(marker, marker.selected ? "default" : "active");
+				marker.selected = !marker.selected;
+			}
 		});
 
 		marker.on("popupclose", (e) => {
@@ -831,15 +851,15 @@ class Draad_Map {
 			};
 
 			// set popup
-			if (feature.feature.properties.titel) {
-				feature.bindPopup(feature.feature.properties.titel);
+			if (feature.feature.properties.naam || feature.feature.properties.titel) {
+				feature.bindPopup(feature.feature.properties.naam || feature.feature.properties.titel);
 			}
 
 			// set border
 			if (typeof feature.setStyle === "function") {
 				feature.setStyle(feature._style);
-				feature.options.alt = feature.feature.properties?.name;
-				feature.options.title = feature.feature.properties?.titel;
+				feature.options.alt = feature.feature.properties.naam || feature.feature.properties.titel;
+				feature.options.title = feature.feature.properties.naam || feature.feature.properties.titel;
 				feature.selected = false;
 				this.dataHandler(feature);
 			}
@@ -847,9 +867,8 @@ class Draad_Map {
 			// set icon
 			if (typeof feature.setIcon === "function") {
 				feature.setIcon(feature._styles.default);
-
-				feature.options.alt = feature.feature.properties?.name;
-				feature.options.title = feature.feature.properties?.titel;
+				feature.options.alt = feature.feature.properties.naam || feature.feature.properties.titel;
+				feature.options.title = feature.feature.properties.naam || feature.feature.properties.titel;
 				feature.selected = false;
 				this.markerHandler(feature, null);
 			}
@@ -864,7 +883,6 @@ class Draad_Map {
 	 * @param {object} feature The GeoJSON feature.
 	 */
 	dataHandler = (feature) => {
-		const draad = this;
 		feature.on("click", (e) => {
 			this.dataSetState(feature, "active");
 			this.map.flyToBounds(feature.getBounds(), { padding: [0, 0] });
@@ -1059,21 +1077,21 @@ class Draad_Map {
 		});
 
 		searchLayer.addTo(this.map);
-		this.layers["search"] = searchLayer;
+		this.layers.search = searchLayer;
 	};
 
 	/**
 	 * Removes the search marker from the map.
 	 */
 	removeSearchMarker = () => {
-		if (!this.layers["search"]) {
+		if (!this.layers.search) {
 			return;
 		}
 
-		this.map.removeLayer(this.layers["search"]);
+		this.map.removeLayer(this.layers.search);
 
 		// remove search marker from layers
-		delete this.layers["search"];
+		delete this.layers.search;
 	};
 
 	/**
@@ -1086,11 +1104,11 @@ class Draad_Map {
 			".draad-card:not(.draad-card--infowindow)"
 		);
 
-		if (!this.layers["search"]) {
+		if (!this.layers.search) {
 			return;
 		}
 
-		const center = this.layers["search"]
+		const center = this.layers.search
 			.getLayers()[0]
 			.getBounds()
 			.getCenter();

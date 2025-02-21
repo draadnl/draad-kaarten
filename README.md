@@ -8,17 +8,11 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
-### 1.0.0
+### 1.1.1
 
--   Initial release of the plugin.
-
-### 1.0.2
-
--   Added new functionality to show user location on the map.
-
-### 1.0.3
-
--   Added new functionality to choose custom icons for each marker.
+-   Added compatibility with the RDnew format for coordinates.
+-   Added legend styles.
+-   Increased max zoom level
 
 ### 1.1.0
 
@@ -26,7 +20,14 @@ Of voeg een dataset toe met grenzen of markers.
 -   Removed old dataset fields.
 -   Added a legend with the map to toggle datasets.
 
-### 1.1.1
+### 1.0.3
 
--   Added compatibility with the RDnew format for coordinates.
--   Added legend styles.
+-   Added new functionality to choose custom icons for each marker.
+
+### 1.0.2
+
+-   Added new functionality to show user location on the map.
+
+### 1.0.0
+
+-   Initial release of the plugin.

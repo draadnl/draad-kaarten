@@ -430,28 +430,38 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
      *
      * @return void
      */
-    function draad_maps_get_data( $endpoint )
-    {
-        if ( !$endpoint ) {
-            return false;
+    function draad_maps_get_data($endpoint, $timeout = 10)
+{
+        if (!$endpoint) {
+            error_log('Draad Kaarten | Error: "No endpoint provided."');
         }
 
-        // Check if the URL is external
-        $endpoint = filter_var( $endpoint, FILTER_VALIDATE_URL );
+        $data = false;
 
-        if ( strpos( $endpoint, $_SERVER['HTTP_HOST'] ) ) {
-            $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace( site_url(), '', $endpoint );
-
-            return file_get_contents( $file_path );
-        } else {
-            // If it's not an external URL, treat it as a relative URL and construct the full URL
-            $response = wp_remote_get( $endpoint, [
+        // If $endpoint is external use wp_remote_get() to get dataset
+        if ( strpos( $endpoint, site_url() ) === false ) {
+            $response = wp_remote_get($endpoint, [
+                'timeout' => $timeout,
                 'sslverify' => false,
-            ] );
+            ]);
+
+            if (!is_wp_error($response)) {
+                $data = wp_remote_retrieve_body($response);
+            } else {
+                error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
+            }
+        } else {
+            $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace(site_url(), '', $endpoint);
+
+            if (file_exists($file_path)) {
+                $data = file_get_contents($file_path);
+            } else {
+                error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
+            }
         }
 
-        if ( !is_wp_error( $response ) ) {
-            return wp_remote_retrieve_body( $response );
+        if ($data) {
+            return $data;
         } else {
             return false;
         }

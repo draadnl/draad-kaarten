@@ -430,41 +430,35 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
      *
      * @return void
      */
-    function draad_maps_get_data($endpoint, $timeout = 10)
-{
-        if (!$endpoint) {
-            error_log('Draad Kaarten | Error: "No endpoint provided."');
+    function draad_maps_get_data($endpoint, $timeout = 10) {
+
+        if ( !$endpoint ) {
+            error_log('Draad Kaarten | Error: "No enpoint provided."');
         }
 
-        $data = false;
-
-        // If $endpoint is external use wp_remote_get() to get dataset
-        if ( strpos( $endpoint, site_url() ) === false ) {
-            $response = wp_remote_get($endpoint, [
-                'timeout' => $timeout,
-                'sslverify' => false,
-            ]);
-
-            if (!is_wp_error($response)) {
-                $data = wp_remote_retrieve_body($response);
-            } else {
-                error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
-            }
-        } else {
+        // If $endpoint is contains the current url use file_get_contents()
+        if ( strpos( $endpoint, site_url() ) !== false ) {
             $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace(site_url(), '', $endpoint);
 
-            if (file_exists($file_path)) {
-                $data = file_get_contents($file_path);
-            } else {
+            if ( !file_exists($file_path) ) {
                 error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
+                return false;
             }
+
+            return file_get_contents( $file_path );
         }
 
-        if ($data) {
-            return $data;
-        } else {
+        $response = wp_remote_get($endpoint, [
+            'timeout' => $timeout,
+            'sslverify' => false,
+        ]);
+
+        if ( is_wp_error($response) ) {
+            error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
             return false;
         }
+
+        return wp_remote_retrieve_body($response);
     }
 }
 

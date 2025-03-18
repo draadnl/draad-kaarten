@@ -4,7 +4,7 @@
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad
- * Version: 1.1.1
+ * Version: 1.1.2
  */
 function draad_maps_allow_json_upload( $mimes )
 {
@@ -430,31 +430,35 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
      *
      * @return void
      */
-    function draad_maps_get_data( $endpoint )
-    {
+    function draad_maps_get_data($endpoint, $timeout = 10) {
+
         if ( !$endpoint ) {
-            return false;
+            error_log('Draad Kaarten | Error: "No enpoint provided."');
         }
 
-        // Check if the URL is external
-        $endpoint = filter_var( $endpoint, FILTER_VALIDATE_URL );
+        // If $endpoint is contains the current url use file_get_contents()
+        if ( strpos( $endpoint, site_url() ) !== false ) {
+            $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace(site_url(), '', $endpoint);
 
-        if ( strpos( $endpoint, $_SERVER['HTTP_HOST'] ) ) {
-            $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace( site_url(), '', $endpoint );
+            if ( !file_exists($file_path) ) {
+                error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
+                return false;
+            }
 
             return file_get_contents( $file_path );
-        } else {
-            // If it's not an external URL, treat it as a relative URL and construct the full URL
-            $response = wp_remote_get( $endpoint, [
-                'sslverify' => false,
-            ] );
         }
 
-        if ( !is_wp_error( $response ) ) {
-            return wp_remote_retrieve_body( $response );
-        } else {
+        $response = wp_remote_get($endpoint, [
+            'timeout' => $timeout,
+            'sslverify' => false,
+        ]);
+
+        if ( is_wp_error($response) ) {
+            error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
             return false;
         }
+
+        return wp_remote_retrieve_body($response);
     }
 }
 

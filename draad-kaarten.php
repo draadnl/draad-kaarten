@@ -158,7 +158,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
         $empty = true;
 
         $infowindowOutput = '';
-        $cardwOutput      = '';
+        $cardOutput      = '';
 
         if ( have_rows( 'locations', $post_id ) ) {
             $values = get_field( 'locations', $post_id );

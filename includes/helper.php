@@ -296,9 +296,42 @@ if ( !function_exists( 'ckanToGeoJson' ) ) {
             $geometry = $record['wkb_geometry'];
             $geometry['coordinates'] = draad_maps_convert_coordinates( $geometry['coordinates'] );
 
-            unset($geometry['crs']);
+            // Remove any coordinate reference system info that isn't needed.
+            if (isset($geometry['crs'])) {
+                unset($geometry['crs']);
+            }
+
             $properties = $record;
-            unset( $properties['wkb_geometry'] );
+            if ( isset( $properties['wkb_geometry'] ) ) {
+                unset( $properties['wkb_geometry'] );
+            }
+
+            // Check and convert Multi geometries to single geometries.
+            if (isset($geometry['type']) && isset($geometry['coordinates'])) {
+                switch ($geometry['type']) {
+                    case 'MultiPoint':
+                        // Convert MultiPoint to Point by taking the first coordinate
+                        if (isset($geometry['coordinates'][0])) {
+                            $geometry['coordinates'] = $geometry['coordinates'][0];
+                            $geometry['type'] = 'Point';
+                        }
+                        break;
+                    case 'MultiLineString':
+                        // Convert MultiLineString to LineString by taking the first set of coordinates
+                        if (isset($geometry['coordinates'][0])) {
+                            $geometry['coordinates'] = $geometry['coordinates'][0];
+                            $geometry['type'] = 'LineString';
+                        }
+                        break;
+                    case 'MultiPolygon':
+                        // Convert MultiPolygon to Polygon by taking the first polygon's coordinates
+                        if (isset($geometry['coordinates'][0])) {
+                            $geometry['coordinates'] = $geometry['coordinates'][0];
+                            $geometry['type'] = 'Polygon';
+                        }
+                        break;
+                }
+            }
 
             // Construct GeoJSON Feature
             $feature = [

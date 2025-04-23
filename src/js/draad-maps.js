@@ -276,7 +276,7 @@ class Draad_Map {
 
 		this.layers[datasetName] = L.geoJSON( featureCollection );
 		this.layers[datasetName].getLayers()?.forEach((layer) => {
-
+			
 			const featureNode = document.getElementById( layer.feature.properties.infowindow );
 			
 			layer._styles = {
@@ -676,13 +676,8 @@ class Draad_Map {
 			const aDistance = this.map.distance(center, aCenter);
 			const bDistance = this.map.distance(center, bCenter);
 
-			console.log( center, aDistance, bDistance, aDistance - bDistance );
-
 			return aDistance - bDistance;
 		});
-
-		console.log( 'sortedLocations', sortedLocations );
-		console.log( 'locations', locations );
 
 		// remove all locations from dom
 		list.innerHTML = "";

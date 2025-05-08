@@ -8,6 +8,13 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.2.0
+
+-   Moved CKAN to GeoJSON and RDnew to WGS84 conversions into php from js
+-   Added infowindows to all types of data
+-   Added properties field to datasets
+-   Added table styles to infowindows
+
 ### 1.1.2
 
 -   Fixed local datasets not showing.

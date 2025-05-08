@@ -25,6 +25,7 @@ function draadMapsInit() {
 document.addEventListener("DOMContentLoaded", draadMapsInit);
 
 class Draad_Map {
+
 	node = null;
 
 	map = null;
@@ -45,6 +46,7 @@ class Draad_Map {
 	 * @param {HTMLElement} node The HTML element that contains the map.
 	 */
 	constructor(node) {
+
 		if (!node) {
 			throw new Error("Draad Maps: No map node provided.");
 		}
@@ -53,75 +55,68 @@ class Draad_Map {
 		this.outerWrapper = node.closest(".draad-maps__wrapper");
 		this.map = this.createMap();
 
-		const documentComputedStyles = getComputedStyle(
-			document.documentElement
-		);
+		const documentComputedStyles = getComputedStyle( document.documentElement );
 		this.colors = {
-			primary:
-				documentComputedStyles.getPropertyValue("--dk__clr-primary") ||
-				"#248641",
-			secondary:
-				documentComputedStyles.getPropertyValue(
-					"--dk__clr-secondary"
-				) || "#7D6200",
-			accent:
-				documentComputedStyles.getPropertyValue("--dk__clr-accent") ||
-				"#1261A3"
+			primary: documentComputedStyles.getPropertyValue("--dk__clr-primary" ) || "#248641",
+			secondary: documentComputedStyles.getPropertyValue( "--dk__clr-secondary" ) || "#7D6200",
+			accent: documentComputedStyles.getPropertyValue("--dk__clr-accent" ) || "#1261A3"
 		};
 
 		/**
 		 * Add clusters
 		 */
-		this.cluster = L.markerClusterGroup({
-			showCoverageOnHover: false,
-			iconCreateFunction: (cluster) => {
-				const childCount = cluster.getChildCount();
-				let c = " marker-cluster-large";
-				let size = 56;
-				if (childCount < 10) {
-					c = "marker-cluster-small";
-					size = 40;
-				} else if (childCount < 100) {
-					c += "marker-cluster-medium";
-					size = 48;
-				}
+		this.cluster = L.markerClusterGroup(
+			{
+				showCoverageOnHover: false,
+				iconCreateFunction: (cluster) => {
 
-				return new L.DivIcon({
-					html:
-						'<div class="marker-cluster"><span>' +
-						childCount +
-						' <span aria-label="markers"></span>' +
-						"</span></div>",
-					className: c,
-					iconSize: new L.Point(size, size)
-				});
+					const childCount = cluster.getChildCount();
+					let c = " marker-cluster-large";
+					let size = 56;
+
+					if (childCount < 10) {
+						c = "marker-cluster-small";
+						size = 40;
+					} else if (childCount < 100) {
+						c += "marker-cluster-medium";
+						size = 48;
+					}
+
+					return new L.DivIcon(
+						{
+							html:
+								'<div class="marker-cluster"><span>' +
+								childCount +
+								' <span aria-label="markers"></span>' +
+								"</span></div>",
+							className: c,
+							iconSize: new L.Point(size, size)
+						}
+					);
+
+				}
 			}
-		});
+		);
 
 		/**
-		 * Manually created markers
+		 * Add manually created markers
 		 */
-		const locations = this.outerWrapper.querySelectorAll(
-			".draad-card--infowindow"
-		);
-		const locationsLayer = L.layerGroup();
-		let minHeight = 0;
-		locations?.forEach((location) => {
-			const height = location.offsetHeight;
-			if (height > minHeight) {
-				minHeight = height;
-			}
+		this.loadFeatures( 'draad-maps-location' );
 
-			const marker = this.addMarker(location);
-			marker.addTo(locationsLayer);
+		/**
+		 * Add datasets
+		 */
+		const datasets = Array.from( this.outerWrapper.querySelectorAll( '.draad-maps__dataset' ) ).map( dataset => {
+			return dataset.dataset.datasetName;
 		});
-		this.layers.locations = locationsLayer;
-		this.layers.locations.addTo(this.cluster);
+		datasets?.forEach( dataset => {
+			this.loadFeatures( dataset );
+		});
 
-		const baseFontSize = parseInt(
-			getComputedStyle(document.documentElement).fontSize
-		);
-		node.style.minHeight = Math.round(minHeight / baseFontSize) + 3 + "rem";
+		this.legendNode = this.outerWrapper.querySelector( ".draad-maps__legend" );
+		if (this.legendNode) {
+			this.legendHandler();
+		}
 
 		/**
 		 * Add support to open infowindows with enter key
@@ -145,6 +140,8 @@ class Draad_Map {
 
 		/**
 		 * Show current GPS location of user
+		 * 
+		 * !! Not working
 		 */
 		if (document.getElementById(node.id + "-gps")) {
 			const options = {
@@ -155,6 +152,7 @@ class Draad_Map {
 
 			const success = (pos) => {
 				const crd = pos.coords;
+
 				const userLocation = L.layerGroup();
 				const marker = L.marker(
 					[parseFloat(crd.latitude), parseFloat(crd.longitude)],
@@ -179,38 +177,6 @@ class Draad_Map {
 			}
 
 			navigator.geolocation.getCurrentPosition(success, error, options);
-		}
-
-		/**
-		 * Show datalayers
-		 */
-		const datasetNodes = this.outerWrapper.querySelectorAll(".draad-maps__dataset");
-		if (datasetNodes.length) {
-			datasetNodes.forEach((node) => {
-				const endpoint = node.dataset.draadGeojson;
-				const name = node.dataset.datasetName;
-
-				if (document.getElementById(node.dataset.draadGeojsonTarget)) {
-					const data = JSON.parse( document.getElementById(node.dataset.draadGeojsonTarget).text );
-
-					this.loadGeoJson( data, name, node );
-					return;
-				} else if (endpoint) {
-					fetch(endpoint)
-						.then((response) => response.json())
-						.then((data) => {
-							this.loadGeoJson( data, name, node );
-							return;
-						});
-				}
-			});
-
-			this.legendNode = this.outerWrapper.querySelector(
-				".draad-maps__legend"
-			);
-			if (this.legendNode) {
-				this.legendHandler();
-			}
 		}
 
 		/**
@@ -240,320 +206,7 @@ class Draad_Map {
 				instructions.remove()
 			);
 		}
-	}
 
-	/**
-	 * Returns default marker styles
-	 *
-	 * @param {object} config
-	 * 
-	 * @returns {object}
-	 */
-	getLeafletIcon = (config) =>
-		L.icon({
-			iconUrl: "",
-			iconSize: [39.2, 51.2],
-			iconAnchor: [19.6, 51.2],
-			popupAnchor: [-3, -76],
-			...config
-	});
-
-	/**
-	 * Checks if coordinates are in the RDnew format
-	 * 
-	 * @param {number} x 
-	 * @param {number} y 
-	 * 
-	 * @returns {bool}
-	 */
-	isRdCoordinates = (x, y) => {
-		if (typeof x !== "number" || typeof y !== "number") {
-			console.error(
-				"Draad_Map.isRdCoordinates(): coordinates not valid",
-				x,
-				y
-			);
-			return false;
-		}
-
-		return x > 0 && x < 300000 && y > 300000 && y < 620000; // Typische ranges voor RD-coördinaten
-	}
-
-	/**
-	 * Converts RDnew coordinates to WGS84 coordinates
-	 * 
-	 * @param {number} x 
-	 * @param {number} y 
-	 * 
-	 * @returns {object}
-	 */
-	rdToWgs84 = (x, y) => {
-		if (typeof x !== "number" || typeof y !== "number") {
-			console.error("Draad_Map.rdToWgs84(): coordinates not valid");
-			return false;
-		}
-
-		if (x < 1000) x *= 1000;
-		if (y < 1000) y *= 1000;
-
-		const x0 = 155000.0;
-		const y0 = 463000.0;
-
-		const f0 = 52.156160556;
-		const l0 = 5.387638889;
-
-		const a01 = 3236.0331637;
-		const b10 = 5261.3028966;
-		const a20 = -32.5915821;
-		const b11 = 105.9780241;
-		const a02 = -0.2472814;
-		const b12 = 2.4576469;
-		const a21 = -0.8501341;
-		const b30 = -0.8192156;
-		const a03 = -0.0655238;
-		const b31 = -0.0560092;
-		const a22 = -0.0171137;
-		const b13 = 0.0560089;
-		const a40 = 0.0052771;
-		const b32 = -0.0025614;
-		const a23 = -0.0003859;
-		const b14 = 0.001277;
-		const a41 = 0.0003314;
-		const b50 = 0.0002574;
-		const a04 = 0.0000371;
-		const b33 = -0.0000973;
-		const a42 = 0.0000143;
-		const b51 = 0.0000293;
-		const a24 = -0.000009;
-		const b15 = 0.0000291;
-
-		const dx = (x - x0) * Math.pow(10, -5);
-		const dy = (y - y0) * Math.pow(10, -5);
-
-		let df =
-			a01 * dy +
-			a20 * Math.pow(dx, 2) +
-			a02 * Math.pow(dy, 2) +
-			a21 * Math.pow(dx, 2) * dy +
-			a03 * Math.pow(dy, 3);
-		df +=
-			a40 * Math.pow(dx, 4) +
-			a22 * Math.pow(dx, 2) * Math.pow(dy, 2) +
-			a04 * Math.pow(dy, 4) +
-			a41 * Math.pow(dx, 4) * dy;
-		df +=
-			a23 * Math.pow(dx, 2) * Math.pow(dy, 3) +
-			a42 * Math.pow(dx, 4) * Math.pow(dy, 2) +
-			a24 * Math.pow(dx, 2) * Math.pow(dy, 4);
-
-		const f = f0 + df / 3600;
-
-		let dl =
-			b10 * dx +
-			b11 * dx * dy +
-			b30 * Math.pow(dx, 3) +
-			b12 * dx * Math.pow(dy, 2) +
-			b31 * Math.pow(dx, 3) * dy;
-		dl +=
-			b13 * dx * Math.pow(dy, 3) +
-			b50 * Math.pow(dx, 5) +
-			b32 * Math.pow(dx, 3) * Math.pow(dy, 2) +
-			b14 * dx * Math.pow(dy, 4);
-		dl +=
-			b51 * Math.pow(dx, 5) * dy +
-			b33 * Math.pow(dx, 3) * Math.pow(dy, 3) +
-			b15 * dx * Math.pow(dy, 5);
-
-		const l = l0 + dl / 3600;
-
-		const fWgs =
-			f + (-96.862 - 11.714 * (f - 52) - 0.125 * (l - 5)) / 100000;
-		const lWgs =
-			l + (-37.902 + 0.329 * (f - 52) - 14.667 * (l - 5)) / 100000;
-
-		return {
-			lat: fWgs,
-			lon: lWgs
-		};
-	};
-
-	/**
-	 * Processes dataset and loads it into the map
-	 * 
-	 * @param {object} geoJson 
-	 * @param {string} name 
-	 * @param {HTMLElement} node 
-	 */
-	loadGeoJson = (geoJson, name, node) => {
-
-		if (typeof geoJson.type === 'undefined' || geoJson.type !== 'FeatureCollection') {
-
-			if (typeof geoJson.result.records !== 'object') {
-				console.warn('Could not find records in dataset, The dataset my be unvalid.');
-				return;
-			}
-
-			geoJson = this.jsonToGeoJSON(geoJson.result.records);
-		}
-
-		// Check crs type and if it matches EPSG:28992, if it does convert it to EPSG:4326
-		if (typeof geoJson.crs === 'undefined') {
-			console.warn('Could not determine EPSG code for the GeoJSON. The coordinates may be unvalid.');
-		} else if (geoJson.crs.type === 'name' && geoJson.crs.properties.name === 'EPSG:28992') {
-			geoJson = this.convertCoordinates(geoJson);
-		}
-
-		delete geoJson.crs;
-
-		const geojsonLayer = this.addData(geoJson, node);
-
-		this.layers[name] = geojsonLayer;
-		this.layers[name].addTo(this.cluster);
-	}
-
-	/**
-	 * Processes coordinates and makes sure they are in the WGS84 format
-	 * 
-	 * @param {object} geoJson 
-	 * 
-	 * @returns {object}
-	 */
-	convertCoordinates = (geoJson) => {
-
-        if ( geoJson.type === 'FeatureCollection' ) {
-
-            geoJson.features.forEach( feature => {
-				this.convertCoordinates( feature );
-				return;
-            } );
-			geoJson.crs.properties.name = 'EPSG:4326';
-
-            return geoJson;
-        }
-
-        let x, y, coords;
-        switch ( geoJson.geometry.type ) {
-
-            case 'Point':
-                x = geoJson.geometry.coordinates[0];
-                y = geoJson.geometry.coordinates[1];
-
-                if (  this.isRdCoordinates( x, y ) ) {
-                    coords = this.rdToWgs84( x, y );
-                    geoJson.geometry.coordinates = [ coords.lon, coords.lat ];
-                }
-                break;
-
-            case 'MultiPoint':
-
-				geoJson.geometry.type = 'Point';
-                x = geoJson.geometry.coordinates[0];
-                y = geoJson.geometry.coordinates[1];
-
-                if (  this.isRdCoordinates( x, y ) ) {
-                    coords = this.rdToWgs84( x, y );
-                    geoJson.geometry.coordinates = [ coords.lon, coords.lat ];
-                }
-                break;
-
-            case 'Polygon':
-                geoJson.geometry.coordinates = [geoJson.geometry.coordinates[0].map( coordinate => {	
-					if ( typeof coordinate[0] === 'object' ) {
-						x = coordinate[0][0];
-						y = coordinate[0][1];
-					} else {
-						x = coordinate[0];
-						y = coordinate[1];
-					}
-
-                    if ( this.isRdCoordinates( x, y ) ) {
-						coords = this.rdToWgs84( x, y );
-                        return [ coords.lon, coords.lat ];
-                    }
-                } )];
-
-                break;
-
-            case 'MultiPolygon':
-				geoJson.geometry.type = 'Polygon';
-                geoJson.geometry.coordinates = [geoJson.geometry.coordinates.map( coordinate => {
-                    x = coordinate[0];
-                    y = coordinate[1];
-
-                    if ( this.isRdCoordinates( x, y ) ) {
-                        coords = this.rdToWgs84( x, y );
-                        return [ coords.lon, coords.lat ];
-                    }
-
-                } )];
-                break;
-        }
-
-		return geoJson;
-
-    }
-
-	/**
-	 * Converts json to GeoJson format
-	 *
-	 * @param {object} json
-	 * 
-	 * @returns {object}
-	 */
-
-	jsonToGeoJSON = (records) => {
-		let geoJson = {
-			type: 'FeatureCollection',
-			features: [],
-		};
-
-		records.forEach((record) => {
-
-			if ( typeof record.wkb_geometry === 'undefined' ) {
-				return;
-			}
-
-			let coordinates;
-			let type = record.wkb_geometry.type;
-			
-			switch ( type ) {
-				case 'MultiPoint':
-					coordinates = record.wkb_geometry.coordinates[0];
-					break;
-
-				case 'MultiPolygon':
-					coordinates = record.wkb_geometry.coordinates[0][0];
-					break;
-
-				default: 
-					coordinates = record.wkb_geometry.coordinates;
-					break;
-			}
-
-			if ( typeof geoJson.crs === 'undefined' || typeof geoJson.crs.properties.name === 'undefined' ) {
-				geoJson.crs = {
-					type: 'name',
-					properties: {
-						name: record.wkb_geometry.crs.properties.name || null,
-					},
-				};
-			}
-
-			delete record.wkb_geometry;
-
-			let feature = {
-				type: 'Feature',
-				properties: record.properties || record,
-				geometry: {
-					type: type,
-					coordinates: coordinates,
-				},
-			};
-
-			geoJson.features.push(feature);
-		});
-
-		return geoJson;
 	}
 	
 	/**
@@ -576,8 +229,7 @@ class Draad_Map {
 		// Tile layer
 		L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			maxZoom: 20,
-			attribution:
-				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
 		// remove zoom control
@@ -586,11 +238,9 @@ class Draad_Map {
 		L.control
 			.zoom({
 				position: "bottomleft",
-				zoomInText:
-					'<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g><path d="M10 4.16602V15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.16602 10H15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>',
+				zoomInText: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g><path d="M10 4.16602V15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.16602 10H15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>',
 				zoomInTitle: "Zoom in",
-				zoomOutText:
-					'<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g><path d="M4.16602 10H15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>',
+				zoomOutText: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g><path d="M4.16602 10H15.8327" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>',
 				zoomOutTitle: "Zoom out"
 			})
 			.addTo(map);
@@ -599,54 +249,122 @@ class Draad_Map {
 	};
 
 	/**
-	 * Adds a marker to the map.
-	 *
-	 * @param {HTMLElement} location Turns custom infowindow into a marker.
-	 *
-	 * @returns {object}
+	 * Add features found in the DOM to the map
 	 */
-	addMarker = (location) => {
-		const center = location.dataset.draadCenter.split("/").map(parseFloat);
-		const marker = L.marker(center, {
-			riseOnHover: true,
-			alt: location.querySelector(".draad-card__title")?.textContent
-		});
+	loadFeatures( datasetName ) {
 
-		marker._styles = {
-			default:
-				location.dataset.marker !== ""
-					? this.getLeafletIcon({ iconUrl: location.dataset.marker })
-					: this.getLeafletIcon({
-							iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker.png`
-						}),
-			hover:
-				location.dataset.markerHover !== ""
-					? this.getLeafletIcon({
-							iconUrl: location.dataset.markerHover
-						})
-					: this.getLeafletIcon({
-							iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-hover.png`
-						}),
-			active:
-				location.dataset.markerActive !== ""
-					? this.getLeafletIcon({
-							iconUrl: location.dataset.markerActive
-						})
-					: this.getLeafletIcon({
-							iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-active.png`
-						})
+		const features = this.outerWrapper.querySelectorAll( '.draad-card--infowindow[data-dataset-name="' + datasetName + '"]' );
+
+		if ( features.length === 0 ) {
+			return;
+		}
+
+		let featureCollection = {
+			"type": "FeatureCollection",
+			"features": []
 		};
 
-		marker.setIcon(marker._styles.default);
+		this.layers[datasetName] = L.layerGroup();
+		features.forEach((featureNode) => {
 
-		// set aria-selected
-		marker.selected = false;
+			const feature = JSON.parse( featureNode.dataset.draadFeature );
+			feature.properties.infowindow = featureNode.id;
+			feature.properties.datasetName = featureNode.dataset.datasetName;
+			featureCollection.features.push( feature );
 
-		marker.locationTrap = new Draad_Focus_Trap(location);
+		});
 
-		this.markerHandler(marker, location);
+		this.layers[datasetName] = L.geoJSON( featureCollection );
+		this.layers[datasetName].getLayers()?.forEach((layer) => {
+			
+			const featureNode = document.getElementById( layer.feature.properties.infowindow );
+			
+			layer._styles = {
+				default:
+					typeof featureNode !== "undefined" && featureNode.dataset.marker !== ""
+						? this.getLeafletIcon({ iconUrl: featureNode.dataset.marker })
+						: this.getLeafletIcon({
+								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker.png`
+							}),
+				hover:
+					typeof featureNode !== "undefined" &&
+					featureNode.dataset.markerHover !== ""
+						? this.getLeafletIcon({
+								iconUrl: featureNode.dataset.markerHover
+							})
+						: this.getLeafletIcon({
+								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-hover.png`
+							}),
+				active:
+					typeof featureNode !== "undefined" &&
+					featureNode.dataset.markerActive !== ""
+						? this.getLeafletIcon({
+								iconUrl: featureNode.dataset.markerActive
+							})
+						: this.getLeafletIcon({
+								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-active.png`
+							})
+			};
 
-		return marker;
+			layer._style = {
+				color:
+					typeof featureNode !== "undefined" &&
+					featureNode.dataset.shapeColor !== ""
+						? featureNode.dataset.shapeColor
+						: this.colors.primary,
+				weight:
+					typeof featureNode !== "undefined" &&
+					featureNode.dataset.shapeWidth !== ""
+						? featureNode.dataset.shapeWidth
+						: 4,
+				dashArray:
+					typeof featureNode !== "undefined" &&
+					featureNode.dataset.shapeStyle === "solid"
+						? "0, 0"
+						: "8, 8",
+				fillColor:
+					typeof featureNode !== "undefined" &&
+					featureNode.dataset.shapeColor !== ""
+						? featureNode.dataset.shapeColor
+						: this.colors.primary,
+				fillOpacity: 0
+			};
+
+			layer.locationTrap = new Draad_Focus_Trap(featureNode);
+
+			// set style
+			if (typeof layer.setIcon === "function") {
+				layer.setIcon(layer._styles.default);
+			} else if (typeof layer.setStyle === "function") {
+				layer.setStyle(layer._style);
+			}
+			layer.selected = false;
+			this.markerHandler(layer, featureNode);
+
+		});
+
+		this.layers[datasetName].addTo( this.cluster );
+	}
+
+	/**
+	 * Changes the state of a GeoJSON feature.
+	 *
+	 * @param {object} feature The GeoJSON feature.
+	 * @param {string} state The state of the feature.
+	 */
+	dataSetState = (feature, state) => {
+		const style = feature._style;
+		switch (state) {
+			case "active":
+			case "hover":
+			case "focus":
+				style.fillOpacity = 0.15;
+				break;
+			default:
+				style.fillOpacity = 0;
+				break;
+		}
+		feature.setStyle(style);
 	};
 
 	/**
@@ -655,21 +373,21 @@ class Draad_Map {
 	 * @param {object} marker The marker object.
 	 * @param {HTMLElement} location The infowindow.
 	 */
-	markerHandler = (marker, location = null) => {
-		const draad = this;
+	markerHandler = (layer, location = null) => {
 
-		const close = location
-			? location.querySelector(".draad-card__close")
-			: null;
+		const close = location ? location.querySelector(".draad-card__close") : null;
 		if (close) {
 			close.addEventListener("click", (e) => {
-				marker.locationTrap.active = false;
+				if (typeof layer.setIcon === "function") {
+					layer.setIcon(layer._styles.default);
+				} else if (typeof layer.setStyle === "function") {
+					layer.setStyle(layer._style);
+				}
 
-				this.markerSetState(marker, "default");
-				marker.selected = false;
+				layer.selected = false;
 
-				if (marker.icon) {
-					marker.icon.focus();
+				if (layer.icon) {
+					layer.icon.focus();
 				}
 
 				location.classList.remove("draad-infowindow--active");
@@ -678,36 +396,41 @@ class Draad_Map {
 			});
 		}
 
-		marker.on("click", (e) => {
+		layer.on("click", (e) => {
 
-			if (
-				location &&
-				location.querySelector(".draad-card__content")?.textContent
-			) {
+			if ( location ) {
+				
 				// close other infowindows
-				const locations = location
-					.closest(".draad-maps__wrapper")
-					.querySelectorAll(".draad-card--infowindow");
-				locations.forEach((location) => {
-					location.classList.remove("draad-card--active");
-					location.setAttribute("aria-hidden", "true");
-					location.setAttribute("hidden", "");
+				const infowindows = this.outerWrapper.querySelectorAll(".draad-card--infowindow");
+				infowindows.forEach((infowindow) => {
+					infowindow.classList.remove("draad-card--active");
+					infowindow.setAttribute("aria-hidden", "true");
+					infowindow.setAttribute("hidden", "");
 				});
-
+				
 				// update marker of other infowindows
-				this.layers.locations.eachLayer((layer) => {
-					if (layer.selected === true) {
-						this.markerSetState(layer, "default");
-						layer.selected = false;
-					}
-				});
+				for (let layerGroupName in this.layers) {
+					this.layers[layerGroupName].eachLayer((layer) => {
+						if (layer.selected === true) {
+							
+							if ( typeof layer.setStyle === 'function' ) {
+								this.dataSetState(layer, "default");
+							}
+							
+							if ( typeof layer.setIcon === 'function' ) {
+								this.markerSetState(layer, "default");
+							}
+							layer.locationTrap.active = false;
+							layer.selected = false;
+						}
+					});
+				}
 
-				if (marker.selected === true) {
-					marker.locationTrap.active = false;
-
+				if (layer.selected === true) {
 					location.classList.remove("draad-card--active");
 					location.setAttribute("aria-hidden", "true");
 					location.setAttribute("hidden", "");
+					layer.locationTrap.active = false;
 
 					if (marker.icon) {
 						marker.icon.focus();
@@ -716,8 +439,7 @@ class Draad_Map {
 					location.classList.add("draad-card--active");
 					location.setAttribute("aria-hidden", "false");
 					location.removeAttribute("hidden");
-
-					marker.locationTrap.active = true;
+					layer.locationTrap.active = true;
 
 					const close = location.querySelector(".draad-card__close");
 					close.focus();
@@ -732,35 +454,35 @@ class Draad_Map {
 						} else if ( typeof layer.setStyle === 'function' ) {
 							layer.setStyle(layer._style);
 						}
+
 						layer.selected = false;
+						layer.locationTrap.active = false;
 						layer.closePopup();
 
 					} );
 				}
 
-				marker.openPopup();
+				layer.openPopup();
 			}
-			this.map.panTo(marker.getLatLng());
 
-			if ( typeof marker.options.title !== 'undefined' ) {
-				this.markerSetState(marker, marker.selected ? "default" : "active");
-				marker.selected = !marker.selected;
+			if ( typeof layer.getLatLng === 'function' ) {
+				this.map.panTo(layer.getLatLng());
+			} else if ( typeof layer.getBounds === 'function' ) {
+				this.map.flyToBounds(layer.getBounds(), { padding: [0, 0] });
 			}
 		});
 
-		marker.on("popupclose", (e) => {
-			this.markerSetState(marker, "default");
-			marker.selected = false;
+		layer.on("popupclose", (e) => {
+			this.markerSetState(layer, "default");
+			layer.selected = false;
 
 			if (location) {
-				marker.locationTrap.active = false;
-
 				location.classList.remove("draad-card--active");
 				location.setAttribute("aria-hidden", "true");
 				location.setAttribute("hidden", "");
 
-				if (marker.icon) {
-					marker.icon.focus();
+				if (layer.icon) {
+					layer.icon.focus();
 				}
 			}
 		});
@@ -787,179 +509,6 @@ class Draad_Map {
 				marker.setIcon(marker._styles.default);
 				break;
 		}
-	};
-
-	/**
-	 * Adds a GeoJSON layer to the map.
-	 *
-	 * @param {object} data The GeoJSON data.
-	 * @param {HTMLElement} node The Legend item node.
-	 */
-	addData = (data, node) => {
-		const layer = L.geoJSON(data);
-
-		layer.getLayers()?.forEach((feature) => {
-			feature._styles = {
-				default:
-					typeof node !== "undefined" && node.dataset.marker !== ""
-						? this.getLeafletIcon({ iconUrl: node.dataset.marker })
-						: this.getLeafletIcon({
-								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker.png`
-							}),
-				hover:
-					typeof node !== "undefined" &&
-					node.dataset.markerHover !== ""
-						? this.getLeafletIcon({
-								iconUrl: node.dataset.markerHover
-							})
-						: this.getLeafletIcon({
-								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-hover.png`
-							}),
-				active:
-					typeof node !== "undefined" &&
-					node.dataset.markerActive !== ""
-						? this.getLeafletIcon({
-								iconUrl: node.dataset.markerActive
-							})
-						: this.getLeafletIcon({
-								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-active.png`
-							})
-			};
-
-			feature._style = {
-				color:
-					typeof node !== "undefined" &&
-					node.dataset.shapeColor !== ""
-						? node.dataset.shapeColor
-						: this.colors.primary,
-				weight:
-					typeof node !== "undefined" &&
-					node.dataset.shapeWidth !== ""
-						? node.dataset.shapeWidth
-						: 4,
-				dashArray:
-					typeof node !== "undefined" &&
-					node.dataset.shapeStyle === "solid"
-						? "0, 0"
-						: "8, 8",
-				fillColor:
-					typeof node !== "undefined" &&
-					node.dataset.shapeColor !== ""
-						? node.dataset.shapeColor
-						: this.colors.primary,
-				fillOpacity: 0
-			};
-
-			// set popup
-			if (feature.feature.properties.naam || feature.feature.properties.titel) {
-				feature.bindPopup(feature.feature.properties.naam || feature.feature.properties.titel);
-			}
-
-			// set border
-			if (typeof feature.setStyle === "function") {
-				feature.setStyle(feature._style);
-				feature.options.alt = feature.feature.properties.naam || feature.feature.properties.titel;
-				feature.options.title = feature.feature.properties.naam || feature.feature.properties.titel;
-				feature.selected = false;
-				this.dataHandler(feature);
-			}
-
-			// set icon
-			if (typeof feature.setIcon === "function") {
-				feature.setIcon(feature._styles.default);
-				feature.options.alt = feature.feature.properties.naam || feature.feature.properties.titel;
-				feature.options.title = feature.feature.properties.naam || feature.feature.properties.titel;
-				feature.selected = false;
-				this.markerHandler(feature, null);
-			}
-		});
-
-		return layer;
-	};
-
-	/**
-	 * Event handler for GeoJSON data.
-	 *
-	 * @param {object} feature The GeoJSON feature.
-	 */
-	dataHandler = (feature) => {
-		feature.on("click", (e) => {
-			this.dataSetState(feature, "active");
-			this.map.flyToBounds(feature.getBounds(), { padding: [0, 0] });
-		});
-
-		feature.on("popupclose", (e) => this.dataSetState(feature, "default"));
-	};
-
-	/**
-	 * Changes the state of a GeoJSON feature.
-	 *
-	 * @param {object} feature The GeoJSON feature.
-	 * @param {string} state The state of the feature.
-	 */
-	dataSetState = (feature, state) => {
-		const style = feature._style;
-		switch (state) {
-			case "active":
-			case "hover":
-			case "focus":
-				style.fillOpacity = 0.15;
-				break;
-			default:
-				style.fillOpacity = 0;
-				break;
-		}
-		feature.setStyle(style);
-	};
-
-	/**
-	 * Event handler for legend
-	 */
-	legendHandler = () => {
-		const checkboxes = this.legendNode.querySelectorAll("input");
-		checkboxes?.forEach((checkbox) => {
-			const dataset = checkbox.closest(".draad-maps__dataset");
-			const name = dataset.dataset.datasetName;
-
-			checkbox.addEventListener("change", (event) => {
-				if (checkbox.checked) {
-					const endpoint = dataset.dataset.draadGeojson;
-
-					if (
-						document.getElementById(
-							dataset.dataset.draadGeojsonTarget
-						)
-					) {
-						const data = JSON.parse(
-							document.getElementById(
-								dataset.dataset.draadGeojsonTarget
-							).text
-						);
-						
-						this.loadGeoJson( data, name, dataset );
-						return;
-					} else if (endpoint) {
-						const checkbox = dataset.querySelector("input");
-
-						fetch(endpoint)
-							.then((response) => response.json())
-							.then((data) => {
-								this.loadGeoJson( data, name, dataset );
-								return;
-							});
-					}
-				} else {
-					if (!this.layers[name]) {
-						return;
-					}
-
-					this.cluster.removeLayer(this.layers[name]);
-
-					// remove search marker from layers
-					delete this.layers[name];
-				}
-			});
-		});
 	};
 
 	/**
@@ -1100,8 +649,8 @@ class Draad_Map {
 	sortLocations = () => {
 		const wrapper = this.mapNode.closest(".draad-maps__wrapper");
 		const list = wrapper.querySelector(".draad-grid");
-		const locations = wrapper.querySelectorAll(
-			".draad-card:not(.draad-card--infowindow)"
+		const locations = list.querySelectorAll(
+			".draad-card"
 		);
 
 		if (!this.layers.search) {
@@ -1136,6 +685,75 @@ class Draad_Map {
 		// add sorted locations to dom
 		sortedLocations.forEach((location) => list.appendChild(location));
 	};
+
+	/**
+	 * Event handler for legend
+	 */
+	legendHandler = () => {
+		const checkboxes = this.legendNode.querySelectorAll("input");
+		checkboxes?.forEach((checkbox) => {
+			const dataset = checkbox.closest(".draad-maps__dataset");
+			const name = dataset.dataset.datasetName;
+
+			checkbox.addEventListener("change", (event) => {
+				if (checkbox.checked) {
+					const endpoint = dataset.dataset.draadGeojson;
+
+					if (
+						document.getElementById(
+							dataset.dataset.draadGeojsonTarget
+						)
+					) {
+						const data = JSON.parse(
+							document.getElementById(
+								dataset.dataset.draadGeojsonTarget
+							).text
+						);
+						
+						this.loadFeatures( name );
+						// this.loadGeoJson( data, name, dataset );
+						return;
+					} else if (endpoint) {
+						const checkbox = dataset.querySelector("input");
+
+						fetch(endpoint)
+							.then((response) => response.json())
+							.then((data) => {
+								this.loadFeatures( name );
+								// this.loadGeoJson( data, name, dataset );
+								return;
+							});
+					}
+				} else {
+					if (!this.layers[name]) {
+						return;
+					}
+
+					this.cluster.removeLayer(this.layers[name]);
+
+					// remove search marker from layers
+					delete this.layers[name];
+				}
+			});
+		});
+	};
+	
+	/**
+	 * Returns default marker styles
+	 *
+	 * @param {object} config
+	 * 
+	 * @returns {object}
+	 */
+	getLeafletIcon = (config) =>
+		L.icon({
+			iconUrl: "",
+			iconSize: [39.2, 51.2],
+			iconAnchor: [19.6, 51.2],
+			popupAnchor: [-3, -76],
+			...config
+	});
+
 }
 
 /**

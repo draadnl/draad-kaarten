@@ -27,7 +27,7 @@ if ( !function_exists( 'draad_maps_get_properties' ) ) {
         $type = '';
         $breadcrumb = '';
         $properties = [];
-        if ( isset( $data->features ) ) {
+        if ( is_object( $data ) && isset( $data->features ) ) {
     
             if ( !isset( $data->features[0]->properties ) ) {
                 error_log( 'Draad Kaarten | Error: "Invalid geojson"' );
@@ -387,6 +387,11 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
             }
 
             $data = json_decode( $data );
+
+            // Check if JSON is valid
+            if ( json_last_error() !== JSON_ERROR_NONE ) {
+                throw new \InvalidArgumentException( 'Invalid JSON: '. json_last_error_msg() );
+            }
 
             $properties = draad_maps_get_properties( $data );
 

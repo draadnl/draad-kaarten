@@ -241,7 +241,18 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             </label>
                         </div>';
 
+                    $uniqueIds = [];
+
                     foreach ( $geoJson['features'] as $feature ) {
+
+                        if ( isset( $feature['properties'] ) && isset( $feature['properties']['id'] ) ) {
+
+                            if ( in_array( $feature['properties']['id'], $uniqueIds ) ) {
+                                continue;
+                            }
+                            
+                            array_push( $uniqueIds, $feature['properties']['id'] );
+                        }
 
                         if ( isset( $feature['properties'][ $infowindowContentRows[0]['key'] ] ) ) {
                             $title = $feature['properties'][ $infowindowContentRows[0]['key'] ];

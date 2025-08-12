@@ -1,9 +1,9 @@
-@use "../includes/" as *;
+@use '../includes/' as *;
 
-@include font-face("TheSans", "../fonts/sans/TheSansPlain", 400, normal);
-@include font-face("TheSans", "../fonts/sans/TheSansBold", 700, normal);
-@include font-face("TheMix", "../fonts/mix/TheMixPlain", 400, normal);
-@include font-face("TheMix", "../fonts/mix/TheMixBold", 700, normal);
+@include font-face('TheSans', '../fonts/sans/TheSansPlain', 400, normal);
+@include font-face('TheSans', '../fonts/sans/TheSansBold', 700, normal);
+@include font-face('TheMix', '../fonts/mix/TheMixPlain', 400, normal);
+@include font-face('TheMix', '../fonts/mix/TheMixBold', 700, normal);
 
 ::selection {
 	background: var(--color-1, #248641);

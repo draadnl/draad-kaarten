@@ -60,6 +60,7 @@
 		font-size: var(--dk__card-title-font-size, 1.5rem);
 		font-weight: var(--dk__card-title-font-weight, 700);
 		line-height: var(--dk__card-title-line-height, 1.3);
+		line-break: normal;
 		margin-block-start: var(--dk__card-title-margin-block-start, 0);
 		margin-block-end: var(--dk__card-title-margin-block-end, 1.5rem);
 	}

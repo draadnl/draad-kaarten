@@ -8,12 +8,17 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.2.1
+
+-   Added option to remove hide legend.
+-   Fixed overflowing title in infowindow.
+
 ### 1.2.0
 
 -   Moved CKAN to GeoJSON and RDnew to WGS84 conversions into php from js
--   Added infowindows to all types of data
--   Added properties field to datasets
--   Added table styles to infowindows
+-   Added infowindows to all types of data.
+-   Added properties field to datasets.
+-   Added table styles to infowindows.
 
 ### 1.1.2
 
@@ -23,7 +28,7 @@ Of voeg een dataset toe met grenzen of markers.
 
 -   Added compatibility with the RDnew format for coordinates.
 -   Added legend styles.
--   Increased max zoom level
+-   Increased max zoom level.
 
 ### 1.1.0
 

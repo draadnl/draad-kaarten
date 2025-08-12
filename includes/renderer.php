@@ -388,8 +388,10 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                                 <p>' . __( 'Sleep met twee vingers om de kaart te bewegen.', 'draad' ) . '</p>
                             </div>';
 
+                            $showLegend = get_field( 'legend', $post_id );
+                            var_dump( $showLegend );
                             $output .= $infowindowOutput ? '<div class="draad-maps__list" id="draad-maps-' . $mapId . '-list">'. $infowindowOutput .'</div>' : '';
-                            $output .= $dataLayersOutput ? '<details class="draad-maps__legend"><summary>'. __( 'Legenda', 'draad' ) .'</summary>'. $dataLayersOutput . '</details>' : '';
+                            $output .= $dataLayersOutput ? '<details class="draad-maps__legend "'. ( $showLegend === false ? 'aria-hidden="true" hidden' : '' ) .'><summary>'. __( 'Legenda', 'draad' ) .'</summary>'. $dataLayersOutput . '</details>' : '';
                             $output .= $gps ? '<div class="draad-maps__layer" id="draad-maps-' . $mapId . '-gps"></div>' : '';
                             
                             $output .= '

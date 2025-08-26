@@ -8,6 +8,10 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.2.2
+
+-   Replaced static border data with API endpoints.
+
 ### 1.2.1
 
 -   Added option to remove hide legend.

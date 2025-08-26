@@ -109,15 +109,18 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
         $bordersLabel = $borders['label'];
         switch ( $bordersValue ) {
             case 'wijken':
-                $bordersEndpoint = DRAAD_MAPS_URI . 'dist/geojson/wijken.json';
+                $bordersEndpoint = 'https://ckan.dataplatform.nl/api/3/action/datastore_search?resource_id=a175afe5-67e2-4e45-8b71-62f30377bf7d';
+                $featureTitleProperty = 'wijknaam';
                 break;
 
             case 'stadsdelen':
-                $bordersEndpoint = DRAAD_MAPS_URI . 'dist/geojson/stadsdelen.json';
+                $bordersEndpoint = 'https://ckan.dataplatform.nl/api/3/action/datastore_search?resource_id=3de9bdcb-c949-4440-a731-f5238aaa089c';
+                $featureTitleProperty = 'stadsdeelnaam';
                 break;
 
             case 'buurten':
-                $bordersEndpoint = DRAAD_MAPS_URI . 'dist/geojson/buurten.json';
+                $bordersEndpoint = 'https://ckan.dataplatform.nl/api/3/action/datastore_search?resource_id=04a96768-4662-4b43-bfa3-7a2ff2e30602&';
+                $featureTitleProperty = 'buurtnaam';
                 break;
 
             default:
@@ -151,7 +154,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
                 foreach ( $geoJson['features'] as $feature ) {
 
-                    $title = $feature['properties']['titel'];
+                    $title = $feature['properties'][$featureTitleProperty];
                     
                     $infowindow = '<div 
                         class="draad-maps__item draad-card draad-card--infowindow" 

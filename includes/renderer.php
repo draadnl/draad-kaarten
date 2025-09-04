@@ -62,7 +62,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         class="draad-maps__item draad-card draad-card--infowindow" 
                         id="'. wp_unique_id( 'draad-maps-feature-' ) .'"
                         data-draad-feature="' . esc_attr( json_encode( $feature ) ) . '"
-                        data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker.png' ) . '" 
+                        data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-icon.png' ) . '" 
                         data-marker-hover="' . ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-hover.png' ) . '" 
                         data-marker-active="' . ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-active.png' ) . '" 
                         data-dataset-type="point"
@@ -141,7 +141,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         class="draad-maps__dataset" 
                         data-draad-geojson="' . esc_attr( $bordersEndpoint ) . '"
                         data-draad-geojson-target="draad-map-data-' . $bordersValue . '"
-                        data-shape-color="#248641" 
+                        data-shape-color="#248641"
                         data-shape-opacity="0" 
                         data-shape-width="3" 
                         data-shape-style="solid"
@@ -161,7 +161,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         class="draad-maps__item draad-card draad-card--infowindow" 
                         id="'. wp_unique_id( 'draad-maps-feature-' ) .'"
                         data-draad-feature="' . esc_attr( json_encode( $feature ) ) . '"
-                        data-marker="' .  DRAAD_MAPS_URI . 'dist/images/marker.png" 
+                        data-marker="' .  DRAAD_MAPS_URI . 'dist/images/marker-icon.png" 
                         data-marker-hover="' . DRAAD_MAPS_URI . 'dist/images/marker-hover.png" 
                         data-marker-active="' . DRAAD_MAPS_URI . 'dist/images/marker-active.png" 
                         data-shape-color="#248641" 
@@ -215,13 +215,13 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
 
                     $shapeWidth   = get_sub_field( 'shape_width' );
                     $shapeStyle   = get_sub_field( 'shape_style' );
-                    
+
                     $dataLayersOutput .= '
                         <div 
                             class="draad-maps__dataset" 
                             data-draad-geojson="' . esc_attr( $endpoint ) . '"
                             data-draad-geojson-target="draad-map-data-' . sanitize_title( get_sub_field( 'name' ) ) . '" 
-                            data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker.png' ) . '" 
+                            data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-icon.png' ) . '" 
                             data-marker-hover="' . ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-hover.png' ) . '" 
                             data-marker-active="' . ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-active.png' ) . '" 
                             data-shape-color="' . $shapeColorHex. '" 
@@ -296,7 +296,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             class="draad-maps__item draad-card draad-card--infowindow" 
                             id="'. wp_unique_id( 'draad-maps-feature-' ) .'"
                             data-draad-feature="' . esc_attr( json_encode( $feature ) ) . '"
-                            data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker.png' ) . '" 
+                            data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-icon.png' ) . '" 
                             data-marker-hover="' . ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-hover.png' ) . '" 
                             data-marker-active="' . ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-active.png' ) . '" 
                             data-shape-color="' . $shapeColorHex . '" 

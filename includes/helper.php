@@ -310,24 +310,12 @@ if ( !function_exists( 'ckanToGeoJson' ) ) {
             if (isset($geometry['type']) && isset($geometry['coordinates'])) {
                 switch ($geometry['type']) {
                     case 'MultiPoint':
-                        // Convert MultiPoint to Point by taking the first coordinate
-                        if (isset($geometry['coordinates'][0])) {
-                            $geometry['coordinates'] = $geometry['coordinates'][0];
-                            $geometry['type'] = 'Point';
-                        }
-                        break;
                     case 'MultiLineString':
-                        // Convert MultiLineString to LineString by taking the first set of coordinates
-                        if (isset($geometry['coordinates'][0])) {
-                            $geometry['coordinates'] = $geometry['coordinates'][0];
-                            $geometry['type'] = 'LineString';
-                        }
-                        break;
                     case 'MultiPolygon':
-                        // Convert MultiPolygon to Polygon by taking the first polygon's coordinates
-                        if (isset($geometry['coordinates'][0])) {
-                            $geometry['coordinates'] = $geometry['coordinates'][0];
-                            $geometry['type'] = 'Polygon';
+                        foreach ( $geometry['coordinates'] as $coordinates ) {
+                            $newRecord = $record;
+                            $newRecord['wkb_geometry']['coordinates'] = $coordinates;
+                            $data['result']['records'][] = $newRecord;
                         }
                         break;
                 }

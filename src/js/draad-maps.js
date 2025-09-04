@@ -315,19 +315,18 @@ class Draad_Map {
 				weight:
 					typeof featureNode !== "undefined" &&
 					featureNode.dataset.shapeWidth !== ""
-						? featureNode.dataset.shapeWidth
+						? parseInt( featureNode.dataset.shapeWidth )
 						: 4,
 				dashArray:
 					typeof featureNode !== "undefined" &&
 					featureNode.dataset.shapeStyle === "solid"
 						? "0, 0"
 						: "8, 8",
-				fillColor:
-					typeof featureNode !== "undefined" &&
-					featureNode.dataset.shapeColor !== ""
-						? featureNode.dataset.shapeColor
-						: this.colors.primary,
-				fillOpacity: 0
+				fill: true,
+				fillOpacity: typeof featureNode !== "undefined" &&
+					featureNode.dataset.shapeOpacity !== ""
+						? parseFloat( featureNode.dataset.shapeOpacity )
+						: 0.3
 			};
 
 			layer.locationTrap = new Draad_Focus_Trap(featureNode);
@@ -353,15 +352,25 @@ class Draad_Map {
 	 * @param {string} state The state of the feature.
 	 */
 	dataSetState = (feature, state) => {
-		const style = feature._style;
+		let style = { ...feature._style };
+		const originalOpacity = !isNaN( feature._style.fillOpacity ) ? parseFloat(feature._style.fillOpacity) : 0.3;
+
 		switch (state) {
 			case "active":
-			case "hover":
-			case "focus":
-				style.fillOpacity = 0.15;
+				feature.isActive = true; // Flag to persist active state
+				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // More visible (e.g., 0.5 -> 1.0)
 				break;
-			default:
-				style.fillOpacity = 0;
+			case "hover":
+				if (feature.isActive) return; // Don't override active
+				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // Moderate increase (e.g., 0.5 -> 0.75)
+				break;
+			case "focus":
+				if (feature.isActive) return; // Don't override active
+				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // Same as hover for consistency
+				break;
+			default: // Reset
+				feature.isActive = false;
+				style.fillOpacity = originalOpacity;
 				break;
 		}
 		feature.setStyle(style);

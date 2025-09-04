@@ -142,6 +142,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         data-draad-geojson="' . esc_attr( $bordersEndpoint ) . '"
                         data-draad-geojson-target="draad-map-data-' . $bordersValue . '"
                         data-shape-color="#248641" 
+                        data-shape-opacity="0" 
                         data-shape-width="3" 
                         data-shape-style="solid"
                         data-dataset-name="draad-maps-borders">
@@ -164,6 +165,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         data-marker-hover="' . DRAAD_MAPS_URI . 'dist/images/marker-hover.png" 
                         data-marker-active="' . DRAAD_MAPS_URI . 'dist/images/marker-active.png" 
                         data-shape-color="#248641" 
+                        data-shape-opacity="0" 
                         data-shape-width="3" 
                         data-shape-style="solid"
                         aria-hidden="true"
@@ -202,6 +204,15 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                     $markerHover  = get_sub_field( 'marker_hover' );
                     $markerActive = get_sub_field( 'marker_active' );
                     $shapeColor   = get_sub_field( 'shape_color' );
+                    
+                    if (preg_match('/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([0-9.]+)\)/', $shapeColor, $matches)) {
+                        $shapeColorHex = sprintf("#%02x%02x%02x", $matches[1], $matches[2], $matches[3]);
+                        $shapeOpacity = $matches[4];
+                    } else {
+                        $shapeColorHex = $shapeColor; // fallback if not RGBA
+                        $shapeOpacity = '1'; // default opacity
+                    }
+
                     $shapeWidth   = get_sub_field( 'shape_width' );
                     $shapeStyle   = get_sub_field( 'shape_style' );
                     
@@ -213,7 +224,8 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker.png' ) . '" 
                             data-marker-hover="' . ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-hover.png' ) . '" 
                             data-marker-active="' . ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-active.png' ) . '" 
-                            data-shape-color="' . $shapeColor . '" 
+                            data-shape-color="' . $shapeColorHex. '" 
+                            data-shape-opacity="' . $shapeOpacity. '" 
                             data-shape-width="' . $shapeWidth . '" 
                             data-shape-style="' . $shapeStyle . '"
                             data-dataset-name="' . sanitize_title( get_sub_field( 'name' ) ) . '">
@@ -287,7 +299,8 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker.png' ) . '" 
                             data-marker-hover="' . ( $markerHover ? wp_get_attachment_image_url( $markerHover, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-hover.png' ) . '" 
                             data-marker-active="' . ( $markerActive ? wp_get_attachment_image_url( $markerActive, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-active.png' ) . '" 
-                            data-shape-color="' . $shapeColor . '" 
+                            data-shape-color="' . $shapeColorHex . '" 
+                            data-shape-opacity="' . $shapeOpacity. '" 
                             data-shape-width="' . $shapeWidth . '" 
                             data-shape-style="' . $shapeStyle . '"
                             data-dataset-type="' . $featureType . '"

@@ -284,7 +284,7 @@ class Draad_Map {
 					typeof featureNode !== "undefined" && featureNode.dataset.marker !== ""
 						? this.getLeafletIcon({ iconUrl: featureNode.dataset.marker })
 						: this.getLeafletIcon({
-								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker.png`
+								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-icon.png`
 							}),
 				hover:
 					typeof featureNode !== "undefined" &&

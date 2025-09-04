@@ -8,6 +8,15 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.2.3
+
+- Added ability to choose fill opacity for datasets, borders always show the full color.
+- Renamed default marker icon to align with Leaflet styles.
+- Added marker-shadow.png to prevent 404 errors from Leaflet styles.
+- Added support for MultiPoint, MultiLine and MultiPolygon.
+- Decreased max zoom to prevent 404 errors for Leaflet map tiles.
+- Fixed interactive states for markers and polygons.
+
 ### 1.2.2
 
 -   Replaced static border data with API endpoints.

@@ -68,13 +68,5 @@
 			object-fit: contain;
 			object-position: center;
 		}
-
-		&-overlay-pane path {
-			fill-opacity: var(--dk__map-overlay-path-fill-opacity, 0);
-
-			&:hover {
-				--dk__map-overlay-path-fill-opacity: var(--dk__map-overlay-path-fill-opacity--hover, 0.15);
-			}
-		}
 	}
 }

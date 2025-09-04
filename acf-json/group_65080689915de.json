@@ -699,8 +699,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#248641",
-                    "enable_opacity": 0,
+                    "default_value": "rgba(35, 134, 65, 0.3)",
+                    "enable_opacity": 1,
                     "return_format": "string",
                     "allow_in_bindings": 0,
                     "parent_repeater": "field_66e289800b7ab"
@@ -921,5 +921,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1754991165
+    "modified": 1756902441
 }

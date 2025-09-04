@@ -228,7 +228,7 @@ class Draad_Map {
 
 		// Tile layer
 		L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-			maxZoom: 20,
+			maxZoom: 19,
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
@@ -278,13 +278,12 @@ class Draad_Map {
 		this.layers[datasetName].getLayers()?.forEach((layer) => {
 			
 			const featureNode = document.getElementById( layer.feature.properties.infowindow );
-			
 			layer._styles = {
 				default:
 					typeof featureNode !== "undefined" && featureNode.dataset.marker !== ""
 						? this.getLeafletIcon({ iconUrl: featureNode.dataset.marker })
 						: this.getLeafletIcon({
-								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker.png`
+								iconUrl: `${draadMapsConfig.pluginDir}/dist/images/marker-icon.png`
 							}),
 				hover:
 					typeof featureNode !== "undefined" &&
@@ -315,31 +314,64 @@ class Draad_Map {
 				weight:
 					typeof featureNode !== "undefined" &&
 					featureNode.dataset.shapeWidth !== ""
-						? featureNode.dataset.shapeWidth
+						? parseInt( featureNode.dataset.shapeWidth )
 						: 4,
 				dashArray:
 					typeof featureNode !== "undefined" &&
 					featureNode.dataset.shapeStyle === "solid"
 						? "0, 0"
 						: "8, 8",
-				fillColor:
-					typeof featureNode !== "undefined" &&
-					featureNode.dataset.shapeColor !== ""
-						? featureNode.dataset.shapeColor
-						: this.colors.primary,
-				fillOpacity: 0
+				fill: true,
+				fillOpacity: typeof featureNode !== "undefined" &&
+					featureNode.dataset.shapeOpacity !== ""
+						? parseFloat( featureNode.dataset.shapeOpacity )
+						: 0.3
 			};
 
 			layer.locationTrap = new Draad_Focus_Trap(featureNode);
 
 			// set style
-			if (typeof layer.setIcon === "function") {
-				layer.setIcon(layer._styles.default);
-			} else if (typeof layer.setStyle === "function") {
-				layer.setStyle(layer._style);
-			}
 			layer.selected = false;
+			this.dataSetState(layer, 'default');
+			this.markerSetState(layer, 'default');
+
 			this.markerHandler(layer, featureNode);
+
+			// Add hover and focus events for polygons
+			if ( typeof layer._layers !== 'undefined' ) {
+
+				// LayerGroup with markers - add hover events to each marker in the group
+				layer.eachLayer((marker) => {
+					if (typeof marker.setIcon === "function") {
+						marker.on('mouseover', () => this.markerSetState(layer, 'hover'));
+						marker.on('mouseout', () => {
+							if (!layer.selected) this.markerSetState(layer, 'default');
+						});
+					}
+				});
+
+				// Link focus to infowindow (for accessibility)
+				if (featureNode) {
+					featureNode.addEventListener('focus', () => this.markerSetState(layer, 'focus'));
+					featureNode.addEventListener('blur', () => {
+						if (!layer.selected) this.markerSetState(layer, 'default');
+					});
+				}
+				
+			} else if (typeof layer.setStyle === "function") {
+				layer.on('mouseover', () => this.dataSetState(layer, 'hover'));
+				layer.on('mouseout', () => {
+					if (!layer.selected) this.dataSetState(layer, 'default'); // Only reset if not active
+				});
+
+				// Link focus to infowindow (for accessibility)
+				if (featureNode) {
+					featureNode.addEventListener('focus', () => this.dataSetState(layer, 'focus'));
+					featureNode.addEventListener('blur', () => {
+						if (!layer.selected) this.dataSetState(layer, 'default');
+					});
+				}
+			}
 
 		});
 
@@ -353,17 +385,27 @@ class Draad_Map {
 	 * @param {string} state The state of the feature.
 	 */
 	dataSetState = (feature, state) => {
-		const style = feature._style;
+		if (typeof feature.setStyle !== "function") return;
+		
+		let style = { ...feature._style };
+		const originalOpacity = !isNaN( feature._style.fillOpacity ) ? parseFloat(feature._style.fillOpacity) : 0.3;
+
 		switch (state) {
 			case "active":
+				feature.isActive = true; // Flag to persist active state
+				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // More visible (e.g., 0.5 -> 1.0)
+				break;
 			case "hover":
 			case "focus":
-				style.fillOpacity = 0.15;
+				if (feature.isActive) return; // Don't override active
+				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // Same as hover for consistency
 				break;
-			default:
-				style.fillOpacity = 0;
+			default: // Reset
+				feature.isActive = false;
+				style.fillOpacity = originalOpacity;
 				break;
 		}
+		
 		feature.setStyle(style);
 	};
 
@@ -378,13 +420,10 @@ class Draad_Map {
 		const close = location ? location.querySelector(".draad-card__close") : null;
 		if (close) {
 			close.addEventListener("click", (e) => {
-				if (typeof layer.setIcon === "function") {
-					layer.setIcon(layer._styles.default);
-				} else if (typeof layer.setStyle === "function") {
-					layer.setStyle(layer._style);
-				}
-
+				
 				layer.selected = false;
+				this.dataSetState(layer, 'default');
+				this.markerSetState(layer, 'default');
 
 				if (layer.icon) {
 					layer.icon.focus();
@@ -413,13 +452,9 @@ class Draad_Map {
 					this.layers[layerGroupName].eachLayer((layer) => {
 						if (layer.selected === true) {
 							
-							if ( typeof layer.setStyle === 'function' ) {
-								this.dataSetState(layer, "default");
-							}
-							
-							if ( typeof layer.setIcon === 'function' ) {
-								this.markerSetState(layer, "default");
-							}
+							this.dataSetState(layer, "default");
+							this.markerSetState(layer, "default");
+
 							layer.locationTrap.active = false;
 							layer.selected = false;
 						}
@@ -431,6 +466,7 @@ class Draad_Map {
 					location.setAttribute("aria-hidden", "true");
 					location.setAttribute("hidden", "");
 					layer.locationTrap.active = false;
+					layer.selected = false;
 
 					if (marker.icon) {
 						marker.icon.focus();
@@ -440,6 +476,9 @@ class Draad_Map {
 					location.setAttribute("aria-hidden", "false");
 					location.removeAttribute("hidden");
 					layer.locationTrap.active = true;
+					layer.selected = true;
+					this.dataSetState(layer, layer.selected ? 'active' : 'default');
+					this.markerSetState(layer, layer.selected ? 'active' : 'default');
 
 					const close = location.querySelector(".draad-card__close");
 					close.focus();
@@ -448,33 +487,38 @@ class Draad_Map {
 				
 				for (let key in this.layers) {
 					this.layers[key].eachLayer( layer => {
+						
+						layer.selected = false;
+						layer.locationTrap.active = false;
+						layer.closePopup();
 
 						if ( typeof layer.setIcon === 'function' ) {
 							this.markerSetState(layer, "default");
 						} else if ( typeof layer.setStyle === 'function' ) {
-							layer.setStyle(layer._style);
+							this.dataSetState(layer, 'default');
 						}
-
-						layer.selected = false;
-						layer.locationTrap.active = false;
-						layer.closePopup();
 
 					} );
 				}
 
 				layer.openPopup();
 			}
+			
+			this.dataSetState(layer, layer.selected ? 'active' : 'default');
+			this.markerSetState(layer, layer.selected ? 'active' : 'default');
 
 			if ( typeof layer.getLatLng === 'function' ) {
 				this.map.panTo(layer.getLatLng());
 			} else if ( typeof layer.getBounds === 'function' ) {
 				this.map.flyToBounds(layer.getBounds(), { padding: [0, 0] });
 			}
+
 		});
 
 		layer.on("popupclose", (e) => {
 			this.markerSetState(layer, "default");
 			layer.selected = false;
+			this.dataSetState(layer, 'default');
 
 			if (location) {
 				location.classList.remove("draad-card--active");
@@ -494,19 +538,38 @@ class Draad_Map {
 	 * @param {object} marker The marker object.
 	 * @param {string} state The state of the marker.
 	 */
-	markerSetState = (marker, state) => {
+	markerSetState = (feature, state) => {
+
+		// If it's a LayerGroup, iterate through its layers
+		if (feature._layers) {
+			feature.eachLayer((layer) => {
+				if (typeof layer.setIcon === "function") {
+					this.setIconForLayer(layer, feature._styles, state);
+				}
+			});
+			return;
+		}
+
+		// If it's a single marker
+		if (typeof feature.setIcon === "function") {
+			this.setIconForLayer(feature, feature._styles, state);
+		}
+
+	};
+
+	setIconForLayer = (layer, styles, state) => {
 		switch (state) {
 			case "active":
 			case "focus":
-				marker.setIcon(marker._styles.active);
+				layer.setIcon(styles.active);
 				break;
 
 			case "hover":
-				marker.setIcon(marker._styles.hover);
+				layer.setIcon(styles.hover);
 				break;
 
 			default:
-				marker.setIcon(marker._styles.default);
+				layer.setIcon(styles.default);
 				break;
 		}
 	};
@@ -524,7 +587,7 @@ class Draad_Map {
 		this.searchInput.addEventListener(
 			"keyup",
 			debounce(() => {
-				// get posible locations from nominatim api
+				// get possible locations from nominatim api
 				fetch(
 					`https://nominatim.openstreetmap.org/search?&q=Den+Haag+${this.searchInput.value}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=json&addressdetails=1&accept-language=nl-NL&limit=10`
 				)

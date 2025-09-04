@@ -396,9 +396,6 @@ class Draad_Map {
 				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // More visible (e.g., 0.5 -> 1.0)
 				break;
 			case "hover":
-				if (feature.isActive) return; // Don't override active
-				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // Moderate increase (e.g., 0.5 -> 0.75)
-				break;
 			case "focus":
 				if (feature.isActive) return; // Don't override active
 				style.fillOpacity = Math.min(originalOpacity + 0.2, 0.8); // Same as hover for consistency

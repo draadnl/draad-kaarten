@@ -232,6 +232,13 @@ class Draad_Map {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
+		// BGT map tile layer
+		L.tileLayer('https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/standaard/EPSG:3857/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			minZoom: 1,
+			attribution: 'Kaartgegevens: © <a href="https://www.pdok.nl/" target="_blank">PDOK</a>'
+		}).addTo(map);
+
 		// remove zoom control
 		map.removeControl(map.zoomControl);
 

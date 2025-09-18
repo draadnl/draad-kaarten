@@ -8,6 +8,10 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.2.4
+
+- Added "Basisregistratie Topografie (BRT)" tile layer from PDOK
+
 ### 1.2.3
 
 - Added ability to choose fill opacity for datasets, borders always show the full color.

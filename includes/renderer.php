@@ -77,7 +77,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                 $infowindow .= '</div>';
                 $infowindow .= wp_get_attachment_image( get_sub_field( 'thumbnail' ), 'draad-card', false, ['class' => 'draad-card__image'] );
                 $infowindow .= ( $button ) ? '</a>' : '</div>';
-                $infowindow .= '<button class="draad-card__close button button--secondary button--icon-only" aria-label="' . __( 'Popup sluiten', 'draad' ) . '">' . draad_maps_icon( 'close' ) . '</button>';
+                $infowindow .= '<button class="draad-card__close button button--secondary button--icon-only" aria-label="' . __( 'Popup sluiten', 'draad-kaarten' ) . '">' . draad_maps_icon( 'close' ) . '</button>';
                 $infowindow .= '</div>';
 
                 $infowindowOutput .= apply_filters( 'draad_maps_infowindow', $infowindow, $values[ get_row_index() - 1 ] );
@@ -179,7 +179,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         $infowindow .= '
                                         </div>
                                     </div>
-                                <button class="draad-card__close button button--secondary button--icon-only" aria-label="' . __( 'Popup sluiten', 'draad' ) . '">' . draad_maps_icon( 'close' ) . '</button>
+                                <button class="draad-card__close button button--secondary button--icon-only" aria-label="' . __( 'Popup sluiten', 'draad-kaarten' ) . '">' . draad_maps_icon( 'close' ) . '</button>
                             </div>';
 
                     $infowindowOutput .= apply_filters( 'draad_maps_infowindow', $infowindow );
@@ -244,7 +244,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         $json = json_encode( draad_wfs_xml_to_geojson( $json ) );
                         
                         if ( json_last_error() !== JSON_ERROR_NONE ) {
-                            error_log( 'Invalid JSON: ' . json_last_error_msg() );
+                            // error_log( 'Invalid JSON: ' . esc_text( json_last_error_msg() ) );
                             continue;
                         }
 
@@ -370,7 +370,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             $infowindow .= ( $infowindowContent ) ? '<div class="draad-card__description">' . $infowindowContent . '</div>' : '';
                             $infowindow .= '</div>
                                             </div>
-                                            <button class="draad-card__close button button--secondary button--icon-only" aria-label="' . __( 'Popup sluiten', 'draad' ) . '">' . draad_maps_icon( 'close' ) . '</button>';
+                                            <button class="draad-card__close button button--secondary button--icon-only" aria-label="' . __( 'Popup sluiten', 'draad-kaarten' ) . '">' . draad_maps_icon( 'close' ) . '</button>';
                         }
                         $infowindow .= '</div>';
 
@@ -413,13 +413,13 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                     <form class="draad-search__form">
 
                         <div class="draad-search__field">
-                            <label class="draad-search__label" for="draad-maps-' . $mapId . '-search-input">' . __( 'Zoek op straat, wijk of stadsdeel', 'draad' ) . '</label>
-                            <input class="draad-search__input" id="draad-maps-' . $mapId . '-search-input" type="search" placeholder="' . __( 'Zoeken...', 'draad' ) . '" list="draad-maps-' . $mapId . '-autocomplete" />
+                            <label class="draad-search__label" for="draad-maps-' . $mapId . '-search-input">' . __( 'Zoek op straat, wijk of stadsdeel', 'draad-kaarten' ) . '</label>
+                            <input class="draad-search__input" id="draad-maps-' . $mapId . '-search-input" type="search" placeholder="' . __( 'Zoeken...', 'draad-kaarten' ) . '" list="draad-maps-' . $mapId . '-autocomplete" />
                             <datalist class="draad-search__autocomplete" id="draad-maps-' . $mapId . '-autocomplete"></datalist>
                         </div>
 
                         <button class="draad-search__submit button button--primary button--icon-only" id="draad-maps-' . $mapId . '-search-submit" role="button">
-                            <span class="button__title sr-only">' . __( 'Zoeken', 'draad' ) . '</span>
+                            <span class="button__title sr-only">' . __( 'Zoeken', 'draad-kaarten' ) . '</span>
                             ' . draad_maps_icon( 'search' ) . '
                         </button>
 
@@ -435,16 +435,16 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         <button class="draad-tabs__tab button button--secondary" id="tab-' . $firstTabId . '" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-' . $firstTabId . '">
                             ' . draad_maps_icon( 'map' ) . '
                             <span class="button__title">
-                                <span>' . __( 'Kaart', 'draad' ) . '</span>
-                                <span>' . __( 'bekijken', 'draad' ) . '</span>
+                                <span>' . __( 'Kaart', 'draad-kaarten' ) . '</span>
+                                <span>' . __( 'bekijken', 'draad-kaarten' ) . '</span>
                             </span>
                         </button>
 
                         <button class="draad-tabs__tab button button--secondary ' . ( $empty ? '--empty' : '' ) . '" id="tab-' . $secondTabId . '" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-' . $secondTabId . '">
                             ' . draad_maps_icon( 'list' ) . '
                             <span class="button__title">
-                                <span>' . __( 'Lijst', 'draad' ) . '</span>
-                                <span>' . __( 'bekijken', 'draad' ) . '</span>
+                                <span>' . __( 'Lijst', 'draad-kaarten' ) . '</span>
+                                <span>' . __( 'bekijken', 'draad-kaarten' ) . '</span>
                             </span>
                         </button>
 
@@ -457,12 +457,12 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             <div class="draad-maps__map" id="draad-maps-' . $mapId . '-map"></div>
 
                             <div class="draad-maps__instructions">
-                                <p>' . __( 'Sleep met twee vingers om de kaart te bewegen.', 'draad' ) . '</p>
+                                <p>' . __( 'Sleep met twee vingers om de kaart te bewegen.', 'draad-kaarten' ) . '</p>
                             </div>';
 
                             $showLegend = get_field( 'legend', $post_id );
                             $output .= $infowindowOutput ? '<div class="draad-maps__list" id="draad-maps-' . $mapId . '-list">'. $infowindowOutput .'</div>' : '';
-                            $output .= $dataLayersOutput ? '<details class="draad-maps__legend "'. ( $showLegend === false ? 'aria-hidden="true" hidden' : '' ) .'><summary>'. __( 'Legenda', 'draad' ) .'</summary>'. $dataLayersOutput . '</details>' : '';
+                            $output .= $dataLayersOutput ? '<details class="draad-maps__legend "'. ( $showLegend === false ? 'aria-hidden="true" hidden' : '' ) .'><summary>'. __( 'Legenda', 'draad-kaarten' ) .'</summary>'. $dataLayersOutput . '</details>' : '';
                             $output .= $gps ? '<div class="draad-maps__layer" id="draad-maps-' . $mapId . '-gps"></div>' : '';
                             
                             $output .= '

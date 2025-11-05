@@ -30,7 +30,7 @@ if ( !function_exists( 'draad_maps_get_properties' ) ) {
         if ( is_object( $data ) && isset( $data->features ) ) {
     
             if ( !isset( $data->features[0]->properties ) ) {
-                error_log( 'Draad Kaarten | Error: "Invalid geojson"' );
+                // error_log( 'Draad Kaarten | Error: "Invalid geojson"' );
                 return false;
             }
     
@@ -63,15 +63,16 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
     function draad_maps_get_data($endpoint, $timeout = 10) {
 
         if ( !$endpoint ) {
-            error_log('Draad Kaarten | Error: "No enpoint provided."');
+            // error_log('Draad Kaarten | Error: "No enpoint provided."');
         }
 
         // If $endpoint is contains the current url use file_get_contents()
         if ( strpos( $endpoint, site_url() ) !== false ) {
-            $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace(site_url(), '', $endpoint);
+            $documentRoot = isset( $_SERVER['DOCUMENT_ROOT'] ) ? esc_url( wp_unslash( $_SERVER['DOCUMENT_ROOT'] ) ) : '';
+            $file_path = $documentRoot . str_replace(site_url(), '', $endpoint);
 
             if ( !file_exists($file_path) ) {
-                error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
+                // error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
                 return false;
             }
 
@@ -84,7 +85,7 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
         ]);
 
         if ( is_wp_error($response) ) {
-            error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
+            // error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
             return false;
         }
 
@@ -103,7 +104,7 @@ if ( !function_exists( 'draad_maps_is_rd_coordinates' ) ) {
     function draad_maps_is_rd_coordinates( $x, $y ) : bool {
 
         if (!is_numeric($x) || !is_numeric($y)) {
-            error_log( 'Draad Kaarten | Error: "draad_maps_is_rd_coordinates() retrieved unvalid coordinates."' );
+            // error_log( 'Draad Kaarten | Error: "draad_maps_is_rd_coordinates() retrieved unvalid coordinates."' );
         }
 
         return $x > 0 && $x < 300000 && $y > 300000 && $y < 620000;
@@ -122,7 +123,7 @@ if ( !function_exists( 'draad_maps_rd_to_wgs' ) ) {
     function draad_maps_rd_to_wgs( $x, $y ) : array {
 
         if (!is_numeric($x) || !is_numeric($y)) {
-            error_log("rdToWgs84(): coordinates not valid");
+            // error_log("rdToWgs84(): coordinates not valid");
             return false;
         }
     
@@ -251,7 +252,7 @@ if ( !function_exists( 'ckanToGeoJson' ) ) {
 
         // Check if JSON is valid
         if ( json_last_error() !== JSON_ERROR_NONE ) {
-            throw new \InvalidArgumentException( 'Invalid JSON: '. json_last_error_msg() );
+            throw new \InvalidArgumentException( 'Invalid JSON: '. esc_html( json_last_error_msg() ) );
         }
 
         // Check if JSON is already valid GeoJSON, if so return as is.
@@ -350,7 +351,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
         $post = get_post( $post_id );
 
         if ( !$post ) {
-            error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no post found' );
+            // error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no post found' );
             return;
         }
 
@@ -358,7 +359,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
 
         $datasets = get_field( 'datasets' );
         if ( !is_iterable( $datasets ) || empty( $datasets ) ) {
-            error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no datasets found' );
+            // error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no datasets found' );
             return;
         }
 
@@ -374,7 +375,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
                 case 'wfs':
 
                     // Check outputFormat parameter in endpoint
-                    $endPointParts = parse_url( $endpoint );
+                    $endPointParts = wp_parse_url( $endpoint );
                     parse_str( $endPointParts['query'], $queryParams );
 
                     if ( !isset( $queryParams['outputFormat'] ) || ( $queryParams['outputFormat'] !== 'json' && $queryParams['outputFormat'] !== 'gml3' ) ) { 
@@ -402,7 +403,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
 
             // Check if JSON is valid
             if ( json_last_error() !== JSON_ERROR_NONE ) {
-                error_log( 'Invalid JSON: '. json_last_error_msg() );
+                // error_log( 'Invalid JSON: '. json_last_error_msg() );
                 continue;
             }
 

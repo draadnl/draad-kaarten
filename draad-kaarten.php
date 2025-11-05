@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
- * text-domain: draad
+ * text-domain: draad-kaarten
  * Version: 1.2.4
  */
 

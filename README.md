@@ -1,4 +1,7 @@
-# Draad Kaarten Plugin
+=== Draad Kaarten ===
+Tested up to: 6.8
+Requires PHP: 8.0
+Plugin voor het maken van kaarten met OpenStreetMaps
 
 ## Description
 
@@ -8,9 +11,13 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.3.0
+
+- Added support for WMS & WFS datasets.
+
 ### 1.2.4
 
-- Added "Basisregistratie Topografie (BRT)" tile layer from PDOK
+- Added "Basisregistratie Topografie (BRT)" tile layer from PDOK.
 
 ### 1.2.3
 

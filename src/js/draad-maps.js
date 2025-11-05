@@ -106,11 +106,24 @@ class Draad_Map {
 		/**
 		 * Add datasets
 		 */
-		const datasets = Array.from( this.outerWrapper.querySelectorAll( '.draad-maps__dataset' ) ).map( dataset => {
+		const datasets = Array.from( this.outerWrapper.querySelectorAll( '.draad-maps__dataset[data-draad-type="geojson"]' ) ).map( dataset => {
 			return dataset.dataset.datasetName;
 		});
 		datasets?.forEach( dataset => {
+
+			console.log( dataset );
+
 			this.loadFeatures( dataset );
+		});
+
+		/**
+		 * Add datasets
+		 */
+		const datasetOverlays = Array.from( this.outerWrapper.querySelectorAll( '.draad-maps__dataset[data-draad-type="wms"]' ) ).map( dataset => {
+			return dataset.dataset.datasetName;
+		});
+		datasetOverlays?.forEach( dataset => {
+			this.loadWMS( dataset );
 		});
 
 		this.legendNode = this.outerWrapper.querySelector( ".draad-maps__legend" );
@@ -383,6 +396,34 @@ class Draad_Map {
 		});
 
 		this.layers[datasetName].addTo( this.cluster );
+	}
+
+	/**
+	 * Add WMS overlay
+	 */
+	loadWMS = ( datasetName ) => {
+
+		if ( ! datasetName ) {
+			console.error( 'No dataset provided' );
+			return;
+		}
+
+		const datasetNode = document.querySelector(`.draad-maps__dataset[data-dataset-name="${datasetName}"]`);
+		const endpoint = datasetNode.dataset.draadEndpoint;
+		const endpointUrl = new URL( endpoint );
+
+		this.layers[datasetName] = L.layerGroup();
+
+
+		// Add WMS overlay layer
+		const overlay = L.tileLayer.wms( endpointUrl.origin + endpointUrl.pathname , {
+			layers: endpointUrl.searchParams.get('layers'),
+			format: endpointUrl.searchParams.get('format'),
+			transparent: true,
+		});
+		
+		this.layers[datasetName].addLayer( overlay );
+		this.layers[datasetName].addTo( this.map );
 	}
 
 	/**
@@ -764,44 +805,41 @@ class Draad_Map {
 		checkboxes?.forEach((checkbox) => {
 			const dataset = checkbox.closest(".draad-maps__dataset");
 			const name = dataset.dataset.datasetName;
+			const type = dataset.dataset.draadType;
 
 			checkbox.addEventListener("change", (event) => {
 				if (checkbox.checked) {
-					const endpoint = dataset.dataset.draadGeojson;
 
-					if (
-						document.getElementById(
-							dataset.dataset.draadGeojsonTarget
-						)
-					) {
-						const data = JSON.parse(
-							document.getElementById(
-								dataset.dataset.draadGeojsonTarget
-							).text
-						);
-						
-						this.loadFeatures( name );
-						// this.loadGeoJson( data, name, dataset );
-						return;
-					} else if (endpoint) {
-						const checkbox = dataset.querySelector("input");
+					switch ( type ) {
+						case 'wms':
+							this.loadWMS( name );
+							break;
 
-						fetch(endpoint)
-							.then((response) => response.json())
-							.then((data) => {
-								this.loadFeatures( name );
-								// this.loadGeoJson( data, name, dataset );
-								return;
-							});
+						default:
+							this.loadFeatures( name );
+							break;
+
 					}
+
 				} else {
 					if (!this.layers[name]) {
 						return;
 					}
 
-					this.cluster.removeLayer(this.layers[name]);
+					console.log( name, type, dataset );
+					console.log( this.layers[name] );
+					console.log( this.map.hasLayer(this.layers[name]) );
 
-					// remove search marker from layers
+					switch ( type ) {
+						case 'wms':
+							console.log( this.map.removeLayer(this.layers[name]) );
+							break;
+
+						default:
+							this.cluster.removeLayer(this.layers[name]);
+							break;
+
+					}
 					delete this.layers[name];
 				}
 			});

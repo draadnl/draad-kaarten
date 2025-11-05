@@ -30,7 +30,7 @@ if ( !function_exists( 'draad_maps_get_properties' ) ) {
         if ( is_object( $data ) && isset( $data->features ) ) {
     
             if ( !isset( $data->features[0]->properties ) ) {
-                error_log( 'Draad Kaarten | Error: "Invalid geojson"' );
+                // error_log( 'Draad Kaarten | Error: "Invalid geojson"' );
                 return false;
             }
     
@@ -63,15 +63,24 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
     function draad_maps_get_data($endpoint, $timeout = 10) {
 
         if ( !$endpoint ) {
-            error_log('Draad Kaarten | Error: "No enpoint provided."');
+            // error_log('Draad Kaarten | Error: "No enpoint provided."');
+            return false;
+        }
+
+        // Check for transient
+        $transient_name = 'draad_maps_' . md5( $endpoint );
+        $transient = get_transient( $transient_name );
+        if ( $transient ) {
+            return $transient;
         }
 
         // If $endpoint is contains the current url use file_get_contents()
         if ( strpos( $endpoint, site_url() ) !== false ) {
-            $file_path = $_SERVER['DOCUMENT_ROOT'] . str_replace(site_url(), '', $endpoint);
+            $documentRoot = isset( $_SERVER['DOCUMENT_ROOT'] ) ? esc_url( wp_unslash( $_SERVER['DOCUMENT_ROOT'] ) ) : '';
+            $file_path = $documentRoot . str_replace(site_url(), '', $endpoint);
 
             if ( !file_exists($file_path) ) {
-                error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
+                // error_log('Draad Kaarten | Error: "File not found: ' . $file_path . '"');
                 return false;
             }
 
@@ -84,11 +93,16 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
         ]);
 
         if ( is_wp_error($response) ) {
-            error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
+            // error_log('Draad Kaarten | Error: "Error retrieving remote data: ' . $response->get_error_message() . '"');
             return false;
         }
 
-        return wp_remote_retrieve_body($response);
+        $body = wp_remote_retrieve_body($response);
+
+        // Set transient
+        set_transient( $transient_name, $body, DAY_IN_SECONDS );
+
+        return $body;
     }
 }
 
@@ -103,7 +117,7 @@ if ( !function_exists( 'draad_maps_is_rd_coordinates' ) ) {
     function draad_maps_is_rd_coordinates( $x, $y ) : bool {
 
         if (!is_numeric($x) || !is_numeric($y)) {
-            error_log( 'Draad Kaarten | Error: "draad_maps_is_rd_coordinates() retrieved unvalid coordinates."' );
+            // error_log( 'Draad Kaarten | Error: "draad_maps_is_rd_coordinates() retrieved unvalid coordinates."' );
         }
 
         return $x > 0 && $x < 300000 && $y > 300000 && $y < 620000;
@@ -122,7 +136,7 @@ if ( !function_exists( 'draad_maps_rd_to_wgs' ) ) {
     function draad_maps_rd_to_wgs( $x, $y ) : array {
 
         if (!is_numeric($x) || !is_numeric($y)) {
-            error_log("rdToWgs84(): coordinates not valid");
+            // error_log("rdToWgs84(): coordinates not valid");
             return false;
         }
     
@@ -251,7 +265,7 @@ if ( !function_exists( 'ckanToGeoJson' ) ) {
 
         // Check if JSON is valid
         if ( json_last_error() !== JSON_ERROR_NONE ) {
-            throw new \InvalidArgumentException( 'Invalid JSON: '. json_last_error_msg() );
+            throw new \InvalidArgumentException( 'Invalid JSON: '. esc_html( json_last_error_msg() ) );
         }
 
         // Check if JSON is already valid GeoJSON, if so return as is.
@@ -350,7 +364,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
         $post = get_post( $post_id );
 
         if ( !$post ) {
-            error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no post found' );
+            // error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no post found' );
             return;
         }
 
@@ -358,7 +372,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
 
         $datasets = get_field( 'datasets' );
         if ( !is_iterable( $datasets ) || empty( $datasets ) ) {
-            error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no datasets found' );
+            // error_log( 'Draad Kaarten | draad_maps_populate_infowindow() - no datasets found' );
             return;
         }
 
@@ -367,8 +381,32 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
             
             $newFieldValue[] = $dataset;
 
-            $endpoint = $dataset['type_dataset'] === 'api' ? $dataset['api_endpoint'] : ( $dataset['type_dataset'] === 'file' ? wp_get_attachment_url( $dataset['file'] ) : '' );
-            $data = draad_maps_get_data( $endpoint );
+            $endpoint = $dataset['type_dataset'] === 'file' ? wp_get_attachment_url( $dataset['file'] ) : $dataset['api_endpoint'];
+
+            $data = false;
+            switch ( $dataset['type_dataset'] ) {
+                case 'wfs':
+
+                    // Check outputFormat parameter in endpoint
+                    $endPointParts = wp_parse_url( $endpoint );
+                    parse_str( $endPointParts['query'], $queryParams );
+
+                    if ( !isset( $queryParams['outputFormat'] ) || ( $queryParams['outputFormat'] !== 'json' && $queryParams['outputFormat'] !== 'gml3' ) ) { 
+                        continue;
+                    }
+
+                    $data = draad_maps_get_data( $endpoint );
+                    if ( $queryParams['outputFormat'] === 'gml3' ) {
+                        $data = json_encode( draad_wfs_xml_to_geojson( $data ) );
+                    }
+
+                    break;
+
+                case 'file':
+                case 'api':
+                    $data = draad_maps_get_data( $endpoint );
+                    break;
+            }
 
             if ( !$data ) {
                 continue;
@@ -378,7 +416,8 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
 
             // Check if JSON is valid
             if ( json_last_error() !== JSON_ERROR_NONE ) {
-                throw new \InvalidArgumentException( 'Invalid JSON: '. json_last_error_msg() );
+                // error_log( 'Invalid JSON: '. json_last_error_msg() );
+                continue;
             }
 
             $properties = draad_maps_get_properties( $data );
@@ -407,5 +446,66 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
 
         return;
 
+    }
+}
+
+if ( !function_exists( 'draad_wfs_xml_to_geojson' ) ) {
+    /**
+     * Convert WFS in XML to GeoJson
+     */
+    function draad_wfs_xml_to_geojson($xml_string) {
+        $xml = simplexml_load_string($xml_string);
+
+        if ($xml === false) {
+            return ['error' => 'Invalid XML'];
+        }
+
+        // Register all necessary namespaces
+        $namespaces = [
+            'wfs' => 'http://www.opengis.net/wfs',
+            'gml' => 'http://www.opengis.net/gml',
+            'ws'  => 'http://workspace_datastore_ckan_dataplatform_nl'
+        ];
+
+        foreach ($namespaces as $prefix => $uri) {
+            $xml->registerXPathNamespace($prefix, $uri);
+        }
+
+        $features = [];
+        $feature_members = $xml->xpath('//gml:featureMembers/*');
+
+        foreach ($feature_members as $feature) {
+            // Get all properties
+            $properties = [];
+            foreach ($feature->children($namespaces['ws']) as $key => $value) {
+                if ($key !== 'wkb_geometry') {
+                    $properties[$key] = trim((string)$value);
+                }
+            }
+
+            // Extract geometry
+            $geometry = $feature->children($namespaces['ws'])->wkb_geometry;
+            $point = $geometry->children($namespaces['gml'])->MultiPoint->pointMember->Point;
+            $pos = explode(' ', trim((string)$point->pos));
+
+            if (count($pos) === 2) {
+                $features[] = [
+                    'type' => 'Feature',
+                    'geometry' => [
+                        'type' => 'Point',
+                        'coordinates' => [
+                            (float)$pos[1], // longitude
+                            (float)$pos[0]  // latitude
+                        ]
+                    ],
+                    'properties' => $properties
+                ];
+            }
+        }
+
+        return [
+            'type' => 'FeatureCollection',
+            'features' => $features
+        ];
     }
 }

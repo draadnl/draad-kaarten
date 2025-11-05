@@ -139,6 +139,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                 $dataLayersOutput .= '
                     <div 
                         class="draad-maps__dataset" 
+                        data-draad-type="geojson"
                         data-draad-geojson="' . esc_attr( $bordersEndpoint ) . '"
                         data-draad-geojson-target="draad-map-data-' . $bordersValue . '"
                         data-shape-color="#248641"
@@ -194,9 +195,63 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
             while ( have_rows( 'datasets', $post_id ) ) {
                 the_row();
 
-                $endpoint = ( get_sub_field( 'type_dataset' ) === 'api' ) ? get_sub_field( 'api_endpoint' ) : ( ( get_sub_field( 'type_dataset' ) === 'file' ) ? wp_get_attachment_url( get_sub_field( 'file' ) ) : false );
-                $response = draad_maps_get_data( $endpoint );
-                $geoJson = $response ? json_decode( ckanToGeoJson( $response ), true ) : [];
+                $typeDataset = get_sub_field( 'type_dataset' );
+                $endpoint = ( $typeDataset === 'file' ) ? wp_get_attachment_url( get_sub_field( 'file' ) ) : get_sub_field( 'api_endpoint' );
+                
+                if ( $typeDataset === 'wms' ) {
+                    $dataLayersOutput .= '
+                        <div 
+                            class="draad-maps__dataset"
+                            data-draad-type="wms"
+                            data-draad-endpoint="' . esc_attr( $endpoint ) . '"
+                            data-dataset-name="' . sanitize_title( get_sub_field( 'name' ) ) . '">
+                            <label>
+                                <input type="checkbox" name="draad-maps-datalayers[]" id="draad-maps-datalayer-' . sanitize_title( get_sub_field( 'name' ) ) . '" checked>
+                                <span class="label">';
+
+                                if ( get_sub_field( 'description' ) ) {
+                                    $dataLayersOutput .= '
+                                        <details>
+                                            <summary>
+                                                <span class="label-text">
+                                                    ' . wp_get_attachment_image( get_sub_field( 'icon' ) ) . '
+                                                    <svg width="24" height="24" class="summary-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z" fill="black"/>
+                                                    </svg>
+                                                    ' . get_sub_field( 'name' ) . '
+                                                </span>
+                                            </summary>
+                                            <div><p>' . get_sub_field( 'description' ) . '</p></div>
+                                        </details>';
+                                } else {
+                                    $dataLayersOutput .= '<span class="label-text">' . wp_get_attachment_image( get_sub_field( 'icon' ) ) . get_sub_field( 'name' ) . '</span>';
+                                }
+
+                    $dataLayersOutput .= '
+                                </span>
+                            </label>
+                        </div>';
+                    continue;
+                }
+                
+                $json = draad_maps_get_data( $endpoint );
+                
+                json_decode($json);
+                $isJson = json_last_error() === JSON_ERROR_NONE;
+
+                if ( $typeDataset === 'wfs' ) {
+                    if ( !$isJson ) {
+                        $json = json_encode( draad_wfs_xml_to_geojson( $json ) );
+                        
+                        if ( json_last_error() !== JSON_ERROR_NONE ) {
+                            error_log( 'Invalid JSON: ' . json_last_error_msg() );
+                            continue;
+                        }
+
+                    }
+                }
+
+                $geoJson = $json ? json_decode( ckanToGeoJson( $json ), true ) : [];
                 $infowindowContentRows = get_sub_field( 'infowindow_content' );
 
                 if ( is_iterable( $geoJson['features'] ) && !empty( $geoJson['features'] ) ) {    
@@ -219,6 +274,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                     $dataLayersOutput .= '
                         <div 
                             class="draad-maps__dataset" 
+                            data-draad-type="geojson"
                             data-draad-geojson="' . esc_attr( $endpoint ) . '"
                             data-draad-geojson-target="draad-map-data-' . sanitize_title( get_sub_field( 'name' ) ) . '" 
                             data-marker="' . ( $marker ? wp_get_attachment_image_url( $marker, 'full-size', true ) : DRAAD_MAPS_URI . 'dist/images/marker-icon.png' ) . '" 

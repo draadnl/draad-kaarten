@@ -1,5 +1,6 @@
 === Draad Kaarten ===
 Tested up to: 6.8
+Stable tag: 1.3.0
 Requires PHP: 8.0
 Plugin voor het maken van kaarten met OpenStreetMaps
 
@@ -14,6 +15,8 @@ Of voeg een dataset toe met grenzen of markers.
 ### 1.3.0
 
 - Added support for WMS & WFS datasets.
+- Added transients for datasets
+- Improved compliance with Wordpress best practices
 
 ### 1.2.4
 

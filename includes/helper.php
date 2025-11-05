@@ -64,6 +64,14 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
 
         if ( !$endpoint ) {
             // error_log('Draad Kaarten | Error: "No enpoint provided."');
+            return false;
+        }
+
+        // Check for transient
+        $transient_name = 'draad_maps_' . md5( $endpoint );
+        $transient = get_transient( $transient_name );
+        if ( $transient ) {
+            return $transient;
         }
 
         // If $endpoint is contains the current url use file_get_contents()
@@ -89,7 +97,12 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
             return false;
         }
 
-        return wp_remote_retrieve_body($response);
+        $body = wp_remote_retrieve_body($response);
+
+        // Set transient
+        set_transient( $transient_name, $body, DAY_IN_SECONDS );
+
+        return $body;
     }
 }
 

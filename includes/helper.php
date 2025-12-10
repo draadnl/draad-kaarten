@@ -229,22 +229,26 @@ if ( !function_exists( 'draad_maps_convert_coordinates' ) ) {
      * @param array $data
      * @return array
      */
-    function draad_maps_convert_coordinates( array $data) : array {
+    function draad_maps_convert_coordinates( $data ) {
 
-        if ( is_numeric( $data ) ) {
-            return $data;
-        }
+        if ( is_array( $data ) ) {
 
-        if ( is_array( $data[0] ) ) {
-            $data = array_map( 'draad_maps_convert_coordinates', $data );
-            return $data;
-        }
+            if ( 
+                ( isset( $data[0] ) && is_numeric( $data[0] ) ) &&
+                ( isset( $data[1] ) && is_numeric( $data[1] ) )
+            ) {
 
-        if ( is_numeric( $data[0] ) && is_numeric( $data[1] ) ) {
-            if ( draad_maps_is_rd_coordinates( $data[0], $data[1] ) ) {
-                $coords = draad_maps_rd_to_wgs( $data[0], $data[1] );
-                return [ $coords['lon'], $coords['lat'] ];
+                if ( draad_maps_is_rd_coordinates( $data[0], $data[1] ) ) {
+                    $coords = draad_maps_rd_to_wgs( $data[0], $data[1] );
+                    return [ $coords['lon'], $coords['lat'] ];
+                }
+
+                return $data;
+
+            } else {
+                return array_map( 'draad_maps_convert_coordinates', $data );
             }
+
         }
 
         return $data;
@@ -392,7 +396,7 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
                     parse_str( $endPointParts['query'], $queryParams );
 
                     if ( !isset( $queryParams['outputFormat'] ) || ( $queryParams['outputFormat'] !== 'json' && $queryParams['outputFormat'] !== 'gml3' ) ) { 
-                        continue;
+                        break;
                     }
 
                     $data = draad_maps_get_data( $endpoint );

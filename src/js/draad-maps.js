@@ -110,9 +110,6 @@ class Draad_Map {
 			return dataset.dataset.datasetName;
 		});
 		datasets?.forEach( dataset => {
-
-			console.log( dataset );
-
 			this.loadFeatures( dataset );
 		});
 
@@ -826,13 +823,9 @@ class Draad_Map {
 						return;
 					}
 
-					console.log( name, type, dataset );
-					console.log( this.layers[name] );
-					console.log( this.map.hasLayer(this.layers[name]) );
-
 					switch ( type ) {
 						case 'wms':
-							console.log( this.map.removeLayer(this.layers[name]) );
+							this.map.removeLayer(this.layers[name]);
 							break;
 
 						default:

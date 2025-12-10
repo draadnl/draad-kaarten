@@ -252,6 +252,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                 }
 
                 $geoJson = $json ? json_decode( ckanToGeoJson( $json ), true ) : [];
+                $geoJson = draad_maps_convert_coordinates( $geoJson );
                 $infowindowContentRows = get_sub_field( 'infowindow_content' );
 
                 if ( is_iterable( $geoJson['features'] ) && !empty( $geoJson['features'] ) ) {    

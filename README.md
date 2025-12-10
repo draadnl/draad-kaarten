@@ -12,6 +12,11 @@ Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
 
+### 1.3.1
+
+- Added coordinates conversion for GeoJson datasets
+- Improved draad_maps_convert_coordinates()
+
 ### 1.3.0
 
 - Added support for WMS & WFS datasets.

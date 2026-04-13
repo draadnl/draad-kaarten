@@ -71,7 +71,7 @@ add_action( 'save_post', 'draad_maps_populate_infowindow' );
  */
 add_action( 'admin_menu', function () {
     add_submenu_page(
-        'edit.php?post_type=draad_kaart',
+        'edit.php?post_type=draad_maps',
         __( 'Kaarten tools', 'draad-kaarten' ),
         __( 'Tools', 'draad-kaarten' ),
         'edit_posts',

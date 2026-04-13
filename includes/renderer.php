@@ -371,7 +371,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                                 continue;
                             }
                             
-                            $infowindowContent .= '<tr><th>'. $row['label'] .'</th><td>'. $feature['properties'][ $row['key'] ] .'</td></tr>';
+                            $infowindowContent .= '<tr><th>' . esc_html( $row['label'] ) . '</th><td>' . esc_html( $feature['properties'][ $row['key'] ] ) . '</td></tr>';
                         }
                         $infowindowContent .= '</table>';
 
@@ -395,7 +395,7 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                         if ( is_iterable( $infowindowContentRows ) && !empty( $infowindowContentRows ) ) {
                             $infowindow .= '<div class="draad-card__wrapper">
                                             <div class="draad-card__content">';
-                            $infowindow .= ( $title ) ? '<h3 class="draad-card__title">' . $title . '</h3>' : '';
+                            $infowindow .= ( $title ) ? '<h3 class="draad-card__title">' . esc_html( $title ) . '</h3>' : '';
                             $infowindow .= ( $infowindowContent ) ? '<div class="draad-card__description">' . $infowindowContent . '</div>' : '';
                             $infowindow .= '</div>
                                             </div>

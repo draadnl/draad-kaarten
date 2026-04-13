@@ -556,7 +556,7 @@
                     },
                     "default_value": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "https:\/\/ckan.dataplatform.nl\/api\/3\/action\/datastore_search?resource_id=#",
+                    "placeholder": "https:\/\/den-haag-opendata.opendatasoft.com\/api\/explore\/v2.1\/catalog\/datasets\/{dataset_id}\/exports\/geojson",
                     "parent_repeater": "field_66e289800b7ab"
                 },
                 {

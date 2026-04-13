@@ -6,9 +6,19 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
      */
     function draad_maps_renderer( $output, $args )
     {
-        $post_id = $args['map'];
-        $post = get_post( $post_id );
+        if ( ! function_exists( 'get_field' ) ) {
+            return $output;
+        }
 
+        $post_id = (int) ( $args['map'] ?? 0 );
+        if ( ! $post_id ) {
+            return $output;
+        }
+
+        $post = get_post( $post_id );
+        if ( ! $post ) {
+            return $output;
+        }
 
         $dataLayersOutput = '';
         $infowindowOutput = '';
@@ -105,21 +115,21 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
          * Border Dataset
          */
         $borders      = get_field( 'borders', $post_id );
-        $bordersValue = $borders['value'];
-        $bordersLabel = $borders['label'];
+        $bordersValue = is_array( $borders ) && isset( $borders['value'] ) ? $borders['value'] : '';
+        $bordersLabel = is_array( $borders ) && isset( $borders['label'] ) ? $borders['label'] : '';
         switch ( $bordersValue ) {
             case 'wijken':
-                $bordersEndpoint = 'https://ckan.dataplatform.nl/api/3/action/datastore_search?resource_id=a175afe5-67e2-4e45-8b71-62f30377bf7d';
+                $bordersEndpoint = 'https://den-haag-opendata.opendatasoft.com/api/explore/v2.1/catalog/datasets/wijken/exports/geojson';
                 $featureTitleProperty = 'wijknaam';
                 break;
 
             case 'stadsdelen':
-                $bordersEndpoint = 'https://ckan.dataplatform.nl/api/3/action/datastore_search?resource_id=3de9bdcb-c949-4440-a731-f5238aaa089c';
+                $bordersEndpoint = 'https://den-haag-opendata.opendatasoft.com/api/explore/v2.1/catalog/datasets/stadsdelen/exports/geojson';
                 $featureTitleProperty = 'stadsdeelnaam';
                 break;
 
             case 'buurten':
-                $bordersEndpoint = 'https://ckan.dataplatform.nl/api/3/action/datastore_search?resource_id=04a96768-4662-4b43-bfa3-7a2ff2e30602&';
+                $bordersEndpoint = 'https://den-haag-opendata.opendatasoft.com/api/explore/v2.1/catalog/datasets/buurten/exports/geojson';
                 $featureTitleProperty = 'buurtnaam';
                 break;
 
@@ -131,10 +141,18 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
         if ( isset( $bordersEndpoint ) && !empty( $bordersEndpoint ) ) {
 
             $response = draad_maps_get_data( $bordersEndpoint );
-            $geoJson = $response ? json_decode( ckanToGeoJson( $response ), true ) : [];
+            $geoJson  = [];
+            if ( $response ) {
+                try {
+                    $geoJson = json_decode( ckanToGeoJson( $response ), true ) ?: [];
+                } catch ( \InvalidArgumentException $e ) {
+                    error_log( 'Draad Kaarten: ' . $e->getMessage() );
+                    draad_maps_delete_cache( $bordersEndpoint );
+                }
+            }
             $infowindowContentRows = get_sub_field( 'infowindow_content' );
 
-            if ( is_iterable( $geoJson['features'] ) && !empty( $geoJson['features'] ) ) {
+            if ( ! empty( $geoJson['features'] ) ) {
 
                 $dataLayersOutput .= '
                     <div 
@@ -251,11 +269,19 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                     }
                 }
 
-                $geoJson = $json ? json_decode( ckanToGeoJson( $json ), true ) : [];
+                $geoJson = [];
+                if ( $json ) {
+                    try {
+                        $geoJson = json_decode( ckanToGeoJson( $json ), true ) ?: [];
+                    } catch ( \InvalidArgumentException $e ) {
+                        error_log( 'Draad Kaarten: ' . $e->getMessage() );
+                        draad_maps_delete_cache( $endpoint );
+                    }
+                }
                 $geoJson = draad_maps_convert_coordinates( $geoJson );
                 $infowindowContentRows = get_sub_field( 'infowindow_content' );
 
-                if ( is_iterable( $geoJson['features'] ) && !empty( $geoJson['features'] ) ) {    
+                if ( ! empty( $geoJson['features'] ) ) {    
                     $marker       = get_sub_field( 'marker' );
                     $markerHover  = get_sub_field( 'marker_hover' );
                     $markerActive = get_sub_field( 'marker_active' );
@@ -326,7 +352,9 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
                             array_push( $uniqueIds, $feature['properties']['id'] );
                         }
 
-                        if ( isset( $feature['properties'][ $infowindowContentRows[0]['key'] ] ) ) {
+                        if ( ! empty( $infowindowContentRows )
+                            && isset( $infowindowContentRows[0]['key'] )
+                            && isset( $feature['properties'][ $infowindowContentRows[0]['key'] ] ) ) {
                             $title = $feature['properties'][ $infowindowContentRows[0]['key'] ];
                         } else {
                             $title = 'undefined';
@@ -397,8 +425,11 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
         $secondTabId = wp_unique_id();
         $mapId       = wp_unique_id();
 
-        $center             = get_field( 'center', $post_id );
-        $args['center']     = $center['zoom'] . '/' . $center['coordinates']['lat'] . '/' . $center['coordinates']['lng'];
+        $center = get_field( 'center', $post_id );
+        if ( is_array( $center )
+            && isset( $center['zoom'], $center['coordinates']['lat'], $center['coordinates']['lng'] ) ) {
+            $args['center'] = $center['zoom'] . '/' . $center['coordinates']['lat'] . '/' . $center['coordinates']['lng'];
+        }
         $args['aria-label'] = $post->post_title;
         $attributes         = '';
 

@@ -1,6 +1,6 @@
 === Draad Kaarten ===
 Tested up to: 6.8
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 Requires PHP: 8.0
 Plugin voor het maken van kaarten met OpenStreetMaps
 
@@ -11,6 +11,11 @@ Voeg vervolgens locaties met vrij invulbare tegels toe aan de kaart.
 Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
+
+### 1.4.1
+
+- Fixed admin submenu parent so the Kaarten tools page appears under the correct post type menu
+- Widened composer/installers constraint to `^1.0 || ^2.0` for broader compatibility
 
 ### 1.4.0
 

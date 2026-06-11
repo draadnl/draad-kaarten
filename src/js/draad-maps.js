@@ -688,7 +688,29 @@ class Draad_Map {
 
 					noticeNode.innerHTML = "";
 
-					this.addSearchMarker(data.features);
+					// If the query exactly matches a street name, show only
+					// that street (all of its segments). Otherwise show every
+					// matching result so the user can choose.
+					const term = this.searchInput.value
+						.split(",")[0]
+						.trim()
+						.toLowerCase();
+
+					const exactStreet = data.features.filter((feature) => {
+						const props = feature.properties;
+						const isRoad =
+							props.category === "highway" ||
+							props.addresstype === "road";
+
+						return (
+							isRoad &&
+							(props.name || "").toLowerCase() === term
+						);
+					});
+
+					this.addSearchMarker(
+						exactStreet.length ? exactStreet : data.features
+					);
 				})
 				.then(() => this.sortLocations());
 		});

@@ -655,7 +655,7 @@ class Draad_Map {
 
 			// get posible locations from nominatim api
 			fetch(
-				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent(this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&accept-language=nl-NL&limit=50`
+				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent("Den Haag " + this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&accept-language=nl-NL&limit=50`
 			)
 				.then((response) => response.json())
 				.then((data) => {
@@ -668,10 +668,13 @@ class Draad_Map {
 					}
 
 					data.features = data.features.filter((feature) => {
-						return (
-							feature.properties.address.municipality ===
-							"Den Haag"
-						);
+						const address = feature.properties.address || {};
+						return [
+							address.municipality,
+							address.city,
+							address.town,
+							address.village
+						].includes("Den Haag");
 					});
 
 					if (data.features.length === 0) {

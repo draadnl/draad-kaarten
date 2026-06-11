@@ -22,6 +22,10 @@ if ( !defined( 'DRAAD_MAPS_PATH' ) ) {
     define( 'DRAAD_MAPS_PATH', plugin_dir_path( __FILE__ ) );
 }
 
+if ( !defined( 'DRAAD_KAARTEN_VERSIE' ) ) {
+    define( 'DRAAD_KAARTEN_VERSIE', '1.4.1' );
+}
+
 /**
  * Allow users to upload json files
  */

@@ -4,7 +4,7 @@
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad-kaarten
- * Version: 1.4.1
+ * Version: 1.4.2
  */
 
 include_once 'includes/helper.php';
@@ -23,7 +23,7 @@ if ( !defined( 'DRAAD_MAPS_PATH' ) ) {
 }
 
 if ( !defined( 'DRAAD_KAARTEN_VERSIE' ) ) {
-    define( 'DRAAD_KAARTEN_VERSIE', '1.4.1' );
+    define( 'DRAAD_KAARTEN_VERSIE', '1.4.2' );
 }
 
 /**

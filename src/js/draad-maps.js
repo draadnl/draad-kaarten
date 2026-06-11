@@ -755,15 +755,21 @@ class Draad_Map {
 	 * Sorts locations by distance to search marker.
 	 */
 	sortLocations = () => {
-		const wrapper = this.mapNode.closest(".draad-maps__wrapper");
-		const list = wrapper.querySelector(".draad-grid");
-		const locations = list.querySelectorAll(
-			".draad-card"
-		);
-
 		if (!this.layers.search) {
 			return;
 		}
+
+		const wrapper = this.mapNode.closest(".draad-maps__wrapper");
+		const list = wrapper?.querySelector(".draad-grid");
+
+		// No list view (e.g. a single dataset with no separate items).
+		if (!list) {
+			return;
+		}
+
+		const locations = list.querySelectorAll(
+			".draad-card"
+		);
 
 		const center = this.layers.search
 			.getLayers()[0]

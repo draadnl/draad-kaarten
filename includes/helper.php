@@ -97,13 +97,51 @@ if ( !function_exists( 'draad_maps_get_data' ) ) {
             return false;
         }
 
-        $body = wp_remote_retrieve_body($response);
+        $status = wp_remote_retrieve_response_code( $response );
+        $body   = wp_remote_retrieve_body( $response );
+
+        if ( $status < 200 || $status >= 300 || empty( $body ) ) {
+            return false;
+        }
 
         // Set transient
         set_transient( $transient_name, $body, DAY_IN_SECONDS );
 
         return $body;
     }
+}
+
+if ( ! function_exists( 'draad_maps_delete_cache' ) ) {
+    /**
+     * Delete the cached response for a single endpoint.
+     */
+    function draad_maps_delete_cache( $endpoint ) {
+        if ( ! $endpoint ) {
+            return;
+        }
+        delete_transient( 'draad_maps_' . md5( $endpoint ) );
+    }
+}
+
+if ( ! function_exists( 'draad_maps_flush_all_cache' ) ) {
+    /**
+     * Delete all Draad Kaarten map transients.
+     */
+    function draad_maps_flush_all_cache() {
+        global $wpdb;
+        $wpdb->query(
+            "DELETE FROM {$wpdb->options}
+             WHERE option_name LIKE '\\_transient\\_draad\\_maps\\_%'
+                OR option_name LIKE '\\_transient\\_timeout\\_draad\\_maps\\_%'"
+        );
+    }
+}
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+    WP_CLI::add_command( 'draad-maps flush-cache', function () {
+        draad_maps_flush_all_cache();
+        WP_CLI::success( 'Draad Kaarten cache cleared.' );
+    } );
 }
 
 if ( !function_exists( 'draad_maps_is_rd_coordinates' ) ) {
@@ -365,6 +403,10 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
      */
     function draad_maps_populate_infowindow( $post_id ) {
 
+        if ( ! function_exists( 'get_field' ) ) {
+            return;
+        }
+
         $post = get_post( $post_id );
 
         if ( !$post ) {
@@ -450,6 +492,36 @@ if ( !function_exists( 'draad_maps_populate_infowindow' ) ) {
 
         return;
 
+    }
+}
+
+if ( ! function_exists( 'draad_maps_dataset_notice' ) ) {
+    /**
+     * Return an inline notice for editors when a dataset fails to load.
+     * Always writes to the PHP error log so ops can see it.
+     *
+     * @param string $endpoint The source URL or file path that failed.
+     * @param string $message  The error message.
+     * @return string HTML notice for editors, empty string for everyone else.
+     */
+    function draad_maps_dataset_notice( $endpoint, $message ) {
+        error_log( sprintf(
+            'Draad Kaarten | Dataset error [%s]: %s',
+            $endpoint,
+            $message
+        ) );
+
+        if ( ! is_user_logged_in() || ! current_user_can( 'edit_posts' ) ) {
+            return '';
+        }
+
+        return sprintf(
+            '<div class="draad-maps__dataset-error notice notice-error" role="alert">'
+            . '<strong>%s</strong><br><code>%s</code><br>%s</div>',
+            esc_html__( 'Draad Kaarten: kon dataset niet laden', 'draad-kaarten' ),
+            esc_html( (string) $endpoint ),
+            esc_html( $message )
+        );
     }
 }
 

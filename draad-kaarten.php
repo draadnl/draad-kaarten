@@ -4,7 +4,7 @@
  * Plugin Name: Draad Kaarten
  * Description: Draad Kaarten laat je makkelijk kaarten toevoegen aan je website doormiddel van een shortcode of gutenberg blok.
  * text-domain: draad-kaarten
- * Version: 1.3.1
+ * Version: 1.4.1
  */
 
 include_once 'includes/helper.php';
@@ -65,3 +65,38 @@ add_action( 'init', function () {
  * Populate dataset content repeater with keys from feature properties
  */
 add_action( 'save_post', 'draad_maps_populate_infowindow' );
+
+/**
+ * Admin tools page: flush map cache
+ */
+add_action( 'admin_menu', function () {
+    add_submenu_page(
+        'edit.php?post_type=draad_maps',
+        __( 'Kaarten tools', 'draad-kaarten' ),
+        __( 'Tools', 'draad-kaarten' ),
+        'edit_posts',
+        'draad-maps-tools',
+        'draad_maps_tools_page'
+    );
+} );
+
+function draad_maps_tools_page() {
+    if (
+        isset( $_POST['draad_maps_flush_cache'], $_POST['draad_maps_flush_nonce'] )
+        && wp_verify_nonce( sanitize_key( $_POST['draad_maps_flush_nonce'] ), 'draad_maps_flush_cache' )
+        && current_user_can( 'edit_posts' )
+    ) {
+        draad_maps_flush_all_cache();
+        echo '<div class="notice notice-success"><p>' . esc_html__( 'Kaartencache geleegd.', 'draad-kaarten' ) . '</p></div>';
+    }
+
+    ?>
+    <div class="wrap">
+        <h1><?php esc_html_e( 'Draad Kaarten tools', 'draad-kaarten' ); ?></h1>
+        <form method="post">
+            <?php wp_nonce_field( 'draad_maps_flush_cache', 'draad_maps_flush_nonce' ); ?>
+            <?php submit_button( __( 'Kaartencache leegmaken', 'draad-kaarten' ), 'secondary', 'draad_maps_flush_cache' ); ?>
+        </form>
+    </div>
+    <?php
+}

@@ -1,7 +1,9 @@
 <?php
 
-$args = [
-    'map' => get_field( 'map' ),
-];
+$map_id = function_exists( 'get_field' ) ? (int) get_field( 'map' ) : 0;
 
-echo draad_maps_renderer( '', $args );
+if ( ! $map_id ) {
+    return;
+}
+
+echo draad_maps_renderer( '', [ 'map' => $map_id ] );

@@ -655,7 +655,7 @@ class Draad_Map {
 
 			// get posible locations from nominatim api
 			fetch(
-				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent(this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&accept-language=nl-NL&limit=50`
+				`https://nominatim.openstreetmap.org/search?&q=${encodeURIComponent("Den Haag " + this.searchInput.value)}&layer=address,manmade,poi&polygon_geojson=1&countrycodes=nl&format=geojson&addressdetails=1&accept-language=nl-NL&limit=50`
 			)
 				.then((response) => response.json())
 				.then((data) => {
@@ -668,10 +668,13 @@ class Draad_Map {
 					}
 
 					data.features = data.features.filter((feature) => {
-						return (
-							feature.properties.address.municipality ===
-							"Den Haag"
-						);
+						const address = feature.properties.address || {};
+						return [
+							address.municipality,
+							address.city,
+							address.town,
+							address.village
+						].includes("Den Haag");
 					});
 
 					if (data.features.length === 0) {
@@ -685,7 +688,29 @@ class Draad_Map {
 
 					noticeNode.innerHTML = "";
 
-					this.addSearchMarker(data.features);
+					// If the query exactly matches a street name, show only
+					// that street (all of its segments). Otherwise show every
+					// matching result so the user can choose.
+					const term = this.searchInput.value
+						.split(",")[0]
+						.trim()
+						.toLowerCase();
+
+					const exactStreet = data.features.filter((feature) => {
+						const props = feature.properties;
+						const isRoad =
+							props.category === "highway" ||
+							props.addresstype === "road";
+
+						return (
+							isRoad &&
+							(props.name || "").toLowerCase() === term
+						);
+					});
+
+					this.addSearchMarker(
+						exactStreet.length ? exactStreet : data.features
+					);
 				})
 				.then(() => this.sortLocations());
 		});
@@ -755,15 +780,21 @@ class Draad_Map {
 	 * Sorts locations by distance to search marker.
 	 */
 	sortLocations = () => {
-		const wrapper = this.mapNode.closest(".draad-maps__wrapper");
-		const list = wrapper.querySelector(".draad-grid");
-		const locations = list.querySelectorAll(
-			".draad-card"
-		);
-
 		if (!this.layers.search) {
 			return;
 		}
+
+		const wrapper = this.mapNode.closest(".draad-maps__wrapper");
+		const list = wrapper?.querySelector(".draad-grid");
+
+		// No list view (e.g. a single dataset with no separate items).
+		if (!list) {
+			return;
+		}
+
+		const locations = list.querySelectorAll(
+			".draad-card"
+		);
 
 		const center = this.layers.search
 			.getLayers()[0]

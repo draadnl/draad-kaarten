@@ -1,6 +1,6 @@
 === Draad Kaarten ===
 Tested up to: 6.8
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 Requires PHP: 8.0
 Plugin voor het maken van kaarten met OpenStreetMaps
 
@@ -11,6 +11,13 @@ Voeg vervolgens locaties met vrij invulbare tegels toe aan de kaart.
 Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
+
+### 1.4.2
+
+- Fixed location search crashing on maps with a single dataset and no list view
+- Fixed location search returning no results for plain street names and autocomplete selections
+- Search now highlights the matched street instead of every result when the query is an exact street name
+- Versioned plugin assets via the `DRAAD_KAARTEN_VERSIE` constant so updates bust the browser cache
 
 ### 1.4.1
 

@@ -1,6 +1,6 @@
 === Draad Kaarten ===
 Tested up to: 6.8
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 Requires PHP: 8.0
 Plugin voor het maken van kaarten met OpenStreetMaps
 
@@ -11,6 +11,10 @@ Voeg vervolgens locaties met vrij invulbare tegels toe aan de kaart.
 Of voeg een dataset toe met grenzen of markers.
 
 ## Changelog
+
+### 1.4.3
+
+- Fixed the map container having no accessible name: the label was rendered as `data-draad-aria-label`, which screen readers ignore. It is now a real `aria-label` on a `role="region"` container
 
 ### 1.4.2
 

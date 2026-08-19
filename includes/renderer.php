@@ -430,8 +430,12 @@ if ( ! function_exists( 'draad_maps_renderer' ) ) {
             && isset( $center['zoom'], $center['coordinates']['lat'], $center['coordinates']['lng'] ) ) {
             $args['center'] = $center['zoom'] . '/' . $center['coordinates']['lat'] . '/' . $center['coordinates']['lng'];
         }
-        $args['aria-label'] = $post->post_title;
-        $attributes         = '';
+        // A real aria-label, not data-draad-aria-label: the loop below prefixes
+        // every $args key, and screen readers ignore the data- attribute. role=region
+        // is required with it — the container is a role-less div (Leaflet only adds
+        // tabindex), and aria-label on a generic element is not exposed.
+        $attributes = ' role="region" aria-label="'
+            . esc_attr( sprintf( __( 'Kaart %s', 'draad-kaarten' ), $post->post_title ) ) . '"';
 
         if ( is_iterable( $args ) ) {
             foreach ( $args as $key => $value ) {
